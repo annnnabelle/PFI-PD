@@ -1,5 +1,5 @@
 <?php 
 
-$routes =[
+const ROUTES =[
     '/' => 'index.php',
 ];
