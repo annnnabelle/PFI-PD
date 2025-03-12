@@ -1,8 +1,6 @@
-<?php
-require 'partials/header.php';
-require 'partials/footer.php';
-?>
-<body>
+<?php require 'partials/header.php'; ?>
+
+<main>
     <div class="filter">
         Trier par: 
         <input type="checkbox"> Armures
@@ -19,6 +17,6 @@ require 'partials/footer.php';
         <div class="item"><span class="badge">2</span><img src="cowboy_hat.png"><br>Chapeau de cowboy<br>⚖ 3 lbs<br>💰 7 caps</div>
         <div class="item"><span class="badge">2</span><img src="cheese.png"><br>Bloc de fromage<br>⚖ 2 lbs<br>💰 5 caps</div>
     </div>
-    <div class="footer">Réalisé par ModCrabs</div>
-</body>
-</html>
+</main>
+
+<?php require 'partials/footer.php'; ?>
