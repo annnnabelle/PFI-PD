@@ -1,4 +1,6 @@
-<?php require 'partials/header.php'; ?>
+<?php 
+    require 'partials/header.php'; 
+?>
 
 <main>
     <div class="filter">
@@ -10,31 +12,45 @@
         <input type="checkbox"> Médicaments
     </div>
     <div class="grid">
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/FishingRod" alt="Fishing Rod"> Fishing rod<br><br>10 lbs<br>3 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/Strawberry" alt="Strawberry"> Fraise<br><br>1 lbs<br>2 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/Joja_Cola" alt="Joja Cola"> Soda<br><br>3 lbs<br>8 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/SlingShot" alt="Sling Shot"> Sling Shot<br><br>1 lbs<br>2 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/cowboy_hat" alt="Cowboy Hat"> Chapeau de cowboy<br><br>3 lbs<br>7 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/Cheese" alt="Cheese"> Bloc de fromage<br><br>2 lbs<br>5 caps
-    </a>
-</div>
+    <table>
+        <tr style="align-items: flex-start;">
+            <td style="width: 25%;">    
+                <a href="/" class="item">
+                    <span class="badge">2</span>
+                    <img src="/public/img/FishingRod" alt="Fishing Rod"> 
+                    <div style="display: inline-block; font-size: 25px;">
+                        <div style="padding:3px; font-weight: bold;">TITRE</div>
+                        <div style="padding:1px;">
+                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/weight">
+                            <span style="line-height: 25px; vertical-align: middle;">POIDS lbs</span>
+                        </div>
+                        <div style="padding:1px;">
+                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/gold">
+                            <span style="line-height: 25px; vertical-align: middle;">PRIX gold</span>
+                        </div>
+                    </div>
+                </a>
+            </td>
+            <td style="width: 25%;">
+                <a href="/" class="item">
+                    <span class="badge">2</span>
+                    <img src="/public/img/FishingRod" alt="Fishing Rod"> 
+                    <div style="display: inline-block; font-size: 25px;">
+                        <div style="padding:3px; font-weight: bold;">TITRE</div>
+                        <div style="padding:1px;">
+                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/weight">
+                            <span style="line-height: 25px; vertical-align: middle;">POIDS lbs</span>
+                        </div>
+                        <div style="padding:1px;">
+                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/gold">
+                            <span style="line-height: 25px; vertical-align: middle;">PRIX gold</span>
+                        </div>
+                    </div>
+                </a>
+            </td>
+        </tr>
+    </table>
+    </div>
 
 </main>
 
