@@ -1,5 +1,14 @@
 <?php
 
+function routeToController($path, $routes) {
+
+    if (array_key_exists($path, $routes) && file_exists($routes[$path])) {
+       
+        require $routes[$path];
+
+    }
+}
+
 function urlPath() : string {
 
     $uri = $_SERVER['REQUEST_URI'];
@@ -38,5 +47,15 @@ function redirect(string $url) : void
 {
     header('location: '. $url);
     exit;
+}
+
+function uriPath() : string{
+
+    $url = $_SERVER['REQUEST_URI'];
+
+    $urlParts = parse_url($url);
+    
+    return $urlParts['path'];
+
 }
 
