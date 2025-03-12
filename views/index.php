@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knapsack</title>
-    <style>
-       
-    </style>
-</head>
+<?php
+require 'partials/header.php';
+require 'partials/footer.php';
+?>
 <body>
-    <div class="header">Knapsack 
-        <span class="top-right">
-            <button>Inscription</button>
-            <button>Connexion</button>
-        </span>
-    </div>
     <div class="filter">
         Trier par: 
-        <input type="checkbox" checked> Armures
-        <input type="checkbox" checked> Armes
-        <input type="checkbox" checked> Munitions
-        <input type="checkbox" checked> Nourritures
-        <input type="checkbox" checked> Médicaments
+        <input type="checkbox"> Armures
+        <input type="checkbox"> Armes
+        <input type="checkbox"> Munitions
+        <input type="checkbox"> Nourritures
+        <input type="checkbox"> Médicaments
     </div>
     <div class="grid">
         <div class="item"><span class="badge">2</span><img src="fishing_rod.png"><br>Fishing rod<br>⚖ 10 lbs<br>💰 3 caps</div>
