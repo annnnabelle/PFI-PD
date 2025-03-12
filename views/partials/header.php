@@ -10,4 +10,11 @@
 
 <header class="head">
     <h2>Knapsack</h2>
+    <div class="links">
+        <a href="/" class="inscription">Inscription</a>
+        <a href="/" class="connexion">Connexion</a>
+    </div>
 </header>
+
+</body>
+</html>

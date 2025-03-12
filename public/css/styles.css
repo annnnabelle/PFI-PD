@@ -7,13 +7,12 @@ body {
 .head {
     background-color: #064b9a;
     color: orange;
-    padding: 10px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-    
-    font-family: 'Daydream', Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    height: 50px;
 }
 .top-right {
     position: absolute;
@@ -21,7 +20,7 @@ body {
     right: 20px;
 }
 .top-right button {
-    background: yellow;
+    background: #23BA0A;
     border: none;
     padding: 5px 10px;
     margin-left: 5px;
@@ -30,7 +29,9 @@ body {
 }
 .filter {
     text-align: center;
-    margin: 20px;
+    margin:20px;
+    color: #017EF2;
+    font-size: 20px;
 }
 .grid {
     display: grid;
@@ -51,6 +52,7 @@ body {
     align-items: center;
     gap: 10px;
     font-size: 20px;
+    cursor: pointer;
 }
 .item img {
     width: 50px;
@@ -68,8 +70,8 @@ body {
     font-weight: bold;
 }
 .footer {
-    background-color: green;
-    color: yellow;
+    background-color: #55a846;
+    color: #418b34;
     text-align: right;
     padding: 10px;
     font-size: 14px;
@@ -84,6 +86,45 @@ html, body {
 main {
     flex: 1;
 }
+
+
+.head h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Daydream', sans-serif;
+}
+
+.links {
+    position: absolute;
+    right: 20px;
+}
+
+a {
+    color: orange;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'ByteBounce', sans-serif;
+    color: inherit;
+}
+
+a:hover {
+    color: #db8e29;
+}
+
+.footer img {
+    width: 2em;
+    height: auto;
+    vertical-align: middle;
+}
+
+.item:hover {
+    background-color: #ebebeb;
+}
+
+
+
+
 @font-face {
     font-family: 'ByteBounce';
     src: url('/public/fonts/ByteBounce.ttf') format('truetype');
