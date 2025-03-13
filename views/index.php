@@ -6,23 +6,23 @@ require 'partials/header.php';
 <main>
     <div class="filter">
         <div class="filterField">
-            <input type="checkbox" name="armor" checked>
+            <input type="checkbox" name="armor">
             <label for="armor">Armure</label>
         </div>
         <div class="filterField">
-            <input type="checkbox" name="weapon" checked>
+            <input type="checkbox" name="weapon">
             <label for="weapon">Armes</label>
         </div>
         <div class="filterField">
-            <input type="checkbox" name="ammo" checked>
+            <input type="checkbox" name="ammo">
             <label for="ammo">Munitions</label>
         </div>
         <div class="filterField">
-            <input type="checkbox" name="food" checked>
+            <input type="checkbox" name="food">
             <label for="food">Nourritures</label>
         </div>
         <div class="filterField">
-            <input type="checkbox" name="heal" checked>
+            <input type="checkbox" name="heal">
             <label for="heal">Médicaments</label>
         </div>
     </div>
