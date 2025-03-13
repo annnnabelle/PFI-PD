@@ -40,6 +40,18 @@
                     <div class="badge"><?= $item['qty'] ?></div>
                     <img src="<?= $item['img'] ?>" alt="Fishing Rod">
                     <div>
+<<<<<<< HEAD
+                        <img class="symbol" src="/public/img/Weight">
+                        <span class="value"><?= $item['weight'] ?> lbs</span>
+                    </div>
+                    <div>
+                        <img class="symbol" src="/public/img/Gold">
+                        <span class="value"><?= $item['price'] ?> gold</span>
+                    </div>
+                    <span class="type"><?= $item['type'] ?></span>
+                </div>
+            </a>
+=======
                         <div class="title">
                             <span><?= $item['title'] ?></span>
                         </div>
@@ -55,6 +67,7 @@
                     </div>
                 </a>
                 <?php } ?>
+>>>>>>> 4a6546bdb0d91d3ed61664bfae8bd3bd91e39db1
         <?php } ?>
     </div>
 
