@@ -1,40 +1,294 @@
-<?php require 'partials/header.php'; ?>
+<?php 
+    require 'partials/header.php'; 
+
+
+    $testData = [
+        [
+            'qty' => 20,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 20,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 20,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+    ];
+?>
 
 <main>
     <div class="filter">
-        Trier par: 
-        <input type="checkbox"> Armures
-        <input type="checkbox"> Armes
-        <input type="checkbox"> Munitions
-        <input type="checkbox"> Nourritures
-        <input type="checkbox"> Médicaments
+        <div class="filterField">
+            <input type="checkbox" name="armor" checked>
+            <label for="armor">Armure</label>
+        </div>
+        <div class="filterField">
+            <input type="checkbox" name="weapon" checked>
+            <label for="weapon">Armes</label>
+        </div>
+        <div class="filterField">
+            <input type="checkbox" name="ammo" checked>
+            <label for="ammo">Munitions</label>
+        </div>
+        <div class="filterField">
+            <input type="checkbox" name="food" checked>
+            <label for="food">Nourritures</label>
+        </div>
+        <div class="filterField">
+            <input type="checkbox" name="heal" checked>
+            <label for="heal">Médicaments</label>
+        </div>
     </div>
     <div class="grid">
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/FishingRod" alt="Fishing Rod"> Fishing rod<br><br>10 lbs<br>3 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/Strawberry" alt="Strawberry"> Fraise<br><br>1 lbs<br>2 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/Joja_Cola" alt="Joja Cola"> Soda<br><br>3 lbs<br>8 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/SlingShot" alt="Sling Shot"> Sling Shot<br><br>1 lbs<br>2 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/cowboy_hat" alt="Cowboy Hat"> Chapeau de cowboy<br><br>3 lbs<br>7 caps
-    </a>
-    <a href="/" class="item">
-        <span class="badge">2</span>
-        <img src="/public/img/Cheese" alt="Cheese"> Bloc de fromage<br><br>2 lbs<br>5 caps
-    </a>
-</div>
+    <?php foreach ($testData as $key => $item) { ?>
+            <a href="/" class="item">
+                <div class="badge"><?= $item['qty'] ?></div>
+                <img src="<?= $item['img'] ?>" alt="Fishing Rod">
+                <div>
+                    <div><?= $item['title'] ?></div>
+                    <div>
+                        <img class="symbol" src="/public/img/weight">
+                        <span class="value"><?= $item['weight'] ?> lbs</span>
+                    </div>
+                    <div>
+                        <img class="symbol" src="/public/img/gold">
+                        <span class="value"><?= $item['price'] ?> gold</span>
+                    </div>
+                    <span class="type"><?= $item['type'] ?></span>
+                </div>
+            </a>
+        <?php } ?>
+    </div>
 
 </main>
 
