@@ -34,11 +34,11 @@ require 'partials/header.php';
                 <div>
                     <div><?= $item['title'] ?></div>
                     <div>
-                        <img class="symbol" src="/public/img/weight">
+                        <img class="symbol" src="/public/img/Weight">
                         <span class="value"><?= $item['weight'] ?> lbs</span>
                     </div>
                     <div>
-                        <img class="symbol" src="/public/img/gold">
+                        <img class="symbol" src="/public/img/Gold">
                         <span class="value"><?= $item['price'] ?> gold</span>
                     </div>
                     <span class="type"><?= $item['type'] ?></span>
