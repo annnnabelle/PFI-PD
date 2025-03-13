@@ -1,55 +1,134 @@
 <?php 
     require 'partials/header.php'; 
+
+
+    $testData = [
+        [
+            'qty' => 20,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        [
+            'qty' => 2,
+            'img' => '/public/img/FishingRod',
+            'title' => 'TITRE',
+            'type' => "Arme",
+            'weight' => 20,
+            'price' => 10
+        ],
+        
+    ];
 ?>
 
 <main>
     <div class="filter">
-        Trier par: 
-        <input type="checkbox"> Armures
-        <input type="checkbox"> Armes
-        <input type="checkbox"> Munitions
-        <input type="checkbox"> Nourritures
-        <input type="checkbox"> Médicaments
+        <div>
+            <input type="checkbox" name="armor" checked>
+            <label for="armor">Armure</label>
+        </div>
+        <div>
+            <input type="checkbox" name="weapon" checked>
+            <label for="weapon">Armes</label>
+        </div>
+        <div>
+            <input type="checkbox" name="ammo" checked>
+            <label for="ammo">Munitions</label>
+        </div>
+        <div>
+            <input type="checkbox" name="food" checked>
+            <label for="food">Nourritures</label>
+        </div>
+        <div>
+            <input type="checkbox" name="heal" checked>
+            <label for="heal">Médicaments</label>
+        </div>
     </div>
     <div class="grid">
-    <table>
-        <tr style="align-items: flex-start;">
-            <td style="width: 25%;">    
-                <a href="/" class="item">
-                    <span class="badge">2</span>
-                    <img src="/public/img/FishingRod" alt="Fishing Rod"> 
-                    <div style="display: inline-block; font-size: 25px;">
-                        <div style="padding:3px; font-weight: bold;">TITRE</div>
-                        <div style="padding:1px;">
-                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/weight">
-                            <span style="line-height: 25px; vertical-align: middle;">POIDS lbs</span>
-                        </div>
-                        <div style="padding:1px;">
-                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/gold">
-                            <span style="line-height: 25px; vertical-align: middle;">PRIX gold</span>
-                        </div>
+    <?php foreach ($testData as $key => $item) { ?>
+            <a href="/" class="item">
+                <div class="badge"><?= $item['qty'] ?></div>
+                <img src="<?= $item['img'] ?>" alt="Fishing Rod">
+                <div>
+                    <div><?= $item['title'] ?></div>
+                    <div>
+                        <img class="symbol" src="/public/img/weight">
+                        <span class="value"><?= $item['weight'] ?> lbs</span>
                     </div>
-                </a>
-            </td>
-            <td style="width: 25%;">
-                <a href="/" class="item">
-                    <span class="badge">2</span>
-                    <img src="/public/img/FishingRod" alt="Fishing Rod"> 
-                    <div style="display: inline-block; font-size: 25px;">
-                        <div style="padding:3px; font-weight: bold;">TITRE</div>
-                        <div style="padding:1px;">
-                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/weight">
-                            <span style="line-height: 25px; vertical-align: middle;">POIDS lbs</span>
-                        </div>
-                        <div style="padding:1px;">
-                            <img style="height:20px; width: 20px; vertical-align: middle;" src="/public/img/gold">
-                            <span style="line-height: 25px; vertical-align: middle;">PRIX gold</span>
-                        </div>
+                    <div>
+                        <img class="symbol" src="/public/img/gold">
+                        <span class="value"><?= $item['price'] ?> gold</span>
                     </div>
-                </a>
-            </td>
-        </tr>
-    </table>
+                    <span class="type"><?= $item['type'] ?></span>
+                </div>
+            </a>
+        <?php } ?>
     </div>
 
 </main>

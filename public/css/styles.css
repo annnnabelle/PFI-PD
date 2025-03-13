@@ -28,18 +28,34 @@ body {
     font-weight: bold;
 }
 .filter {
+    display: flex;
     text-align: center;
-    margin:20px;
-    color: #017EF2;
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 50px;
+    border-radius: 10px;
+    padding:10px;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin:20px auto 20px auto;
+    background-color: #064b9a;
+    border: 1px solid black;
 }
+.filter input{
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+}
+.filter label{
+    vertical-align: middle;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px;
     max-width: 80%;
     margin: auto;
+    overflow: auto;
 }
 .item {
     background: white;
@@ -51,31 +67,67 @@ body {
     position: relative;
     display: flex;
     gap: 10px;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
-    width: 25%;
+    width: auto;
+    align-items: center;
+    white-space: nowrap;
 }
 .item img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 }
+
+
 
 
 .item .badge {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: -5px;
-    left: -5px;
-    border: 1px solid black;
-    background: red;
+    width:40px;
+    height: 40px;
+    top: -10px;
+    left: -10px;
     color: white;
-    padding: 5px;
-    border-radius: 50%;
-    font-weight: bold;
+    background-image: url('/public/img/Badge.png'); 
+    background-size: 50px; 
+    background-position: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
     text-align: center;
     vertical-align: middle;
+    padding-bottom: 5px;
+    padding-left: 1px;
+    overflow: visible; 
 }
+.item .type {
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 5px 0px 5px 0px;
+    background: rgb(37, 37, 37);
+    color: white;
+    padding: 3px;
+    padding-left: 5px;
+    vertical-align: middle;
+    font-size: 17px;
+    text-align: center;
+}
+.item .title{
+    padding:3px;
+    font-weight: bold;
+}
+.item .symbol{
+    height:20px;
+    width: 20px;
+    vertical-align: middle;
+}
+.item .value{
+    vertical-align: middle;
+}
+
 .footer {
     background-color: #55a846;
     color: #418b34;
