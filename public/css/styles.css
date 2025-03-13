@@ -74,6 +74,7 @@ body {
     width: auto;
     align-items: center;
     white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .item img {
     width: 60px;
@@ -116,10 +117,13 @@ body {
     vertical-align: middle;
     font-size: 20px;
     text-align: center;
+
 }
-.item .title{
-    padding:3px;
-    font-weight: bold;
+.item .title {
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    max-width: 250px; 
 }
 .item .symbol{
     height:20px;
@@ -128,6 +132,7 @@ body {
 }
 .item .value{
     vertical-align: middle;
+    text-overflow: ellipsis;
 }
 
 .footer {

@@ -220,8 +220,8 @@ $testData = [
     [
         'qty' => 2,
         'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
+        'title' => 'coutelas dent de dragon',
+        'type' => "Armure",
         'weight' => 20,
         'price' => 10
     ],
