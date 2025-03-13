@@ -183,7 +183,64 @@ a:hover {
     background-color: #ebebeb;
 }
 
+.inscription-container {
+    background-color: white;
+    width: 500px;
+    min-height: 300px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #017EF2;
+    font-size: 23px;
 
+}
+.inscription-container a {
+    text-decoration: none;
+    color: #017EF2;
+    font-size: 18px;
+    font-family: 'ByteBounce', sans-serif;
+    display: block;
+    margin-bottom: 15px;
+}
+.inscription-container a:hover {
+    color: #db8e29;
+}
+
+.inscription-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.inscription-btn {
+    background-color: #064b9a;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    width: 50%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'ByteBounce', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inscription-btn:hover {
+color: #db8e29;
+}
 
 
 @font-face {

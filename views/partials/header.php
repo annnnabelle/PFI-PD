@@ -11,7 +11,7 @@
 <header class="head">
     <h2>Knapsack</h2>
     <div class="links">
-        <a href="/inscription" class="inscription">Inscription</a>
-        <a href="/connexion" class="connexion">Connexion</a>
+        <a href="/inscription">Inscription</a>
+        <a href="/connexion">Connexion</a>
     </div>
 </header>
