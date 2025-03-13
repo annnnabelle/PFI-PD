@@ -3,9 +3,8 @@ require 'partials/header.php';
 ?>
 
 <main>
-    <div>
+    <div class="inscription-container ">
         <a href="/">&larr; Retour</a>
-        <br>
         <label for="alias">Alias:</label>
         <input type="text" id="alias" name="alias" required>
         <br>
@@ -18,7 +17,7 @@ require 'partials/header.php';
         <label for="password">Mot de passe:</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <button type="submit">Inscription</button>
+        <button type="submit" class="inscription-btn">Inscription</button>
     </div>
 </main>
 
