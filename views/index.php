@@ -4,23 +4,19 @@
 <main>
 <form method="post">
 
-        <div class="filter">
+    <div class="filter">
             <form method="post">
-
-
                 <?php foreach ($Filters as $key => $Filter) { ?>
                     <div class="filterField">
                         <input class="filterInput" type="checkbox" name="Filters[]" id="<?=$Filter['name']?>" value="<?=$Filter['name']?>" <?= $Filter['status'] ?>>
                         <label for="<?=$Filter['name']?>"><?=$Filter['name']?></label>
                     </div>
                 <?php } ?>
-
                 <div class="filterButtonField">
                     <input type="submit" class="filterButton" value="Filtrer">
                 </div>
             </form>
         </div>
-
 
     <div class="grid">
         <?php foreach ($testData as $key => $item) { ?>
