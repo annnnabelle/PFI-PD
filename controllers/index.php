@@ -1,5 +1,10 @@
 <?php
 
+require "models/index.php";
+require "src/database.php";
+
+$pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+
 $testData = [
     [
         'qty' => 20,
@@ -242,6 +247,9 @@ $testData = [
         'price' => 10
     ],
 ];
+
+
+var_dump(itemsGetAll($pdo));
 
 
 $Filters = [
