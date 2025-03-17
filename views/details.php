@@ -3,27 +3,24 @@
 ?>
 
 
-    <main class="detailsMain">
-
-
-    <div class="details">
-
-        <img src="https://stardewvalleywiki.com/mediawiki/images/d/d7/Rusty_Sword.png" alt="Fishing Rod" class="detailsImg">
-        <div class="body">
-            <div class="title">titre</div>
+<main class="detail-main">
+    <div class="detail">
+        <img src="https://stardewvalleywiki.com/mediawiki/images/d/d7/Rusty_Sword.png" alt="Fishing Rod" class="detail-img">
+        <div class="detail-body">
+            <div class="detail-title">titre</div>
             <div>type</div>
             <div>Efficacité</div>
             <div>
-                <img class="symbol" src="/public/img/weight">
+                <img class="detail-symbol" src="/public/img/weight">
                 <span>poids lbs</span>
             </div>
             <div>
-                <img class="symbol" src="/public/img/gold">
+                <img class="detail-symbol" src="/public/img/gold">
                 <span>prix gold</span>
             </div>
-            <div class="description">
-                <span>Description:</span><br>
-                <span>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
+            <div>
+                <span class="title">Description:</span><br>
+                <span class="detail-description">ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
             </div>
         </div>
     </div>
