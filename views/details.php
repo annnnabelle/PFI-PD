@@ -4,7 +4,11 @@
 
 
 <main class="detail-main">
+
     <div class="detail">
+        <a href="/">
+            <button class="return-button">Retour</button>
+        </a>
         <img src="https://stardewvalleywiki.com/mediawiki/images/d/d7/Rusty_Sword.png" alt="Fishing Rod" class="detail-img">
         <div class="detail-body">
             <div class="detail-title">titre</div>
