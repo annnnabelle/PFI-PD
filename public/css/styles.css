@@ -11,8 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 20px;
-    height: 50px;
+    padding: 20px;
 }
 .top-right {
     position: absolute;
@@ -36,13 +35,15 @@ body {
     padding:10px;
     justify-content: space-between;
     max-width: 80%;
-    margin:20px auto 20px auto;
+    margin:20px auto;
     background-color: #064b9a;
     border: 1px solid black;
     text-align: left;
 }
 .filterInput{
-    vertical-align: middle;
+    transform: scale(2);
+    height: 30px;
+    margin-left: 20px;
 }
 .filterField{
     vertical-align: middle;

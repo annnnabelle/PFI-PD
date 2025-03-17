@@ -19,29 +19,31 @@
         </div>
 
     <div class="grid">
-        <?php foreach ($testData as $key => $item) { ?>
-            <?php if(empty($_POST) || in_array($item['type'], $_POST['Filters']) != null) { ?>
+        <?php foreach ($Items as $key => $Item) { ?>
+            <?php if(empty($_POST) || in_array($Item['type'], $_POST['Filters']) != null) { ?>
                 <a href="/" class="item">
-                    <div class="badge"><?= $item['qty'] ?></div>
-                    <img src="<?= $item['img'] ?>" alt="Fishing Rod">
+                    <div class="badge"><?= $Item['quantite'] ?></div>
+                    <img src="<?= $Item['photo'] ?>" alt="Fishing Rod">
                     <div>
                         <div class="title">
-                            <span><?= $item['title'] ?></span>
+                            <span><?= $Item['nom'] ?></span>
                         </div>
                         <div>
                             <img class="symbol" src="/public/img/weight">
-                            <span class="value"><?= $item['weight'] ?> lbs</span>
+                            <span class="value"><?= $Item['poids'] ?> lbs</span>
                         </div>
                         <div>
                             <img class="symbol" src="/public/img/gold">
-                            <span class="value"><?= $item['price'] ?> gold</span>
+                            <span class="value"><?= $Item['prix'] ?> gold</span>
                         </div>
-                        <span class="type"><?= $item['type'] ?></span>
+                        <span class="type"><?= $Item['type'] ?></span>
                     </div>
                 </a>
                 <?php } ?>
         <?php } ?>
     </div>
+
+
 
 </main>
 
