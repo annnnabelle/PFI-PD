@@ -21,9 +21,9 @@
     <div class="grid">
         <?php foreach ($Items as $key => $Item) { ?>
             <?php if(empty($_POST) || in_array($Item['type'], $_POST['Filters']) != null) { ?>
-                <a href="/" class="item">
+                <a href="/details" class="item">
                     <div class="badge"><?= $Item['quantite'] ?></div>
-                    <img src="<?= $Item['photo'] ?>" alt="Fishing Rod">
+                    <img src="<?= $Item['photo'] ?>" alt="Fishing Rod" class="itemImg">
                     <div>
                         <div class="title">
                             <span><?= $Item['nom'] ?></span>

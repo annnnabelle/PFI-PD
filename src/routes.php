@@ -5,4 +5,5 @@ const ROUTES =[
     '/inscription' => 'inscription.php',
     '/connexion' => 'connexion.php',
     '/panier' => 'panier.php',
+    '/details' => 'details.php',
 ];
