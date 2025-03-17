@@ -6,26 +6,15 @@
 
         <div class="filter">
             <form method="post">
-                <div class="filterField">
-                    <input class="filterInput" type="checkbox" name="Filters[]" id="armor" value="Armure">
-                    <label for="armor">Armure</label>
-                </div>
-                <div class="filterField">
-                    <input class="filterInput" type="checkbox" name="Filters[]" id="weapon" value="Arme">
-                    <label for="weapon">Armes</label>
-                </div>
-                <div class="filterField">
-                    <input class="filterInput" type="checkbox" name="Filters[]" id="ammo" value="munitions">
-                    <label for="ammo">Munitions</label>
-                </div>
-                <div class="filterField">
-                    <input class="filterInput" type="checkbox" name="Filters[]" id="food" value="nourriture">
-                    <label for="food">Nourritures</label>
-                </div>
-                <div class="filterField">
-                    <input class="filterInput" type="checkbox" name="Filters[]" id="heal" value="medicament">
-                    <label for="heal">Médicaments</label>
-                </div>
+
+
+                <?php foreach ($Filters as $key => $Filter) { ?>
+                    <div class="filterField">
+                        <input class="filterInput" type="checkbox" name="Filters[]" id="<?=$Filter['name']?>" value="<?=$Filter['name']?>" <?= $Filter['status'] ?>>
+                        <label for="<?=$Filter['name']?>"><?=$Filter['name']?></label>
+                    </div>
+                <?php } ?>
+
                 <div class="filterButtonField">
                     <input type="submit" class="filterButton" value="Filtrer">
                 </div>
@@ -35,11 +24,11 @@
 
     <div class="grid">
         <?php foreach ($testData as $key => $item) { ?>
-            <?php if(in_array($item['type'], $_POST['Filters']) != null) { ?>
+            <?php if(empty($_POST) || in_array($item['type'], $_POST['Filters']) != null) { ?>
                 <a href="/" class="item">
                     <div class="badge"><?= $item['qty'] ?></div>
                     <img src="<?= $item['img'] ?>" alt="Fishing Rod">
-                    <div>=======
+                    <div>
                         <div class="title">
                             <span><?= $item['title'] ?></span>
                         </div>
