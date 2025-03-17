@@ -12,8 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 20px;
-    height: 50px;
+    padding: 20px;
 }
 .top-right {
     position: absolute;
@@ -35,35 +34,52 @@ body {
     font-size: 50px;
     border-radius: 10px;
     padding:10px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     max-width: 80%;
-    margin:20px auto 20px auto;
+    margin:20px auto;
     background-color: #064b9a;
     border: 1px solid black;
     text-align: left;
 }
-.filter input{
-    height: 25px;
-    width: 25px;
+.filterInput{
+    transform: scale(2);
+    height: 30px;
+    margin-left: 20px;
 }
 .filterField{
     vertical-align: middle;
     white-space: nowrap;
+    margin: auto 0 auto 0;
+}
+.filterButtonField{
+    display: flex;
+    align-items: center;
+}
+.filterButtonField .filterButton{
+    padding:10px;
+    border-radius: 10px;
+    width: auto;
+    background-color:#db8e29;
+    color:white;
+    font-family: 'ByteBounce', Arial, sans-serif;
+    font-size: 35px;
+    margin: auto;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
     max-width: 80%;
     margin: auto;
     overflow: auto;
     padding-bottom: 20px;
+    overflow: visible;
 }
 .item {
     background: white;
     padding: 15px;
-    margin: 10px;
+    margin: auto;
     border-radius: 5px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     text-align: left;
@@ -72,7 +88,7 @@ body {
     gap: 10px;
     font-size: 30px;
     cursor: pointer;
-    width: auto;
+    width: 300px;
     align-items: center;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -118,7 +134,6 @@ body {
     vertical-align: middle;
     font-size: 20px;
     text-align: center;
-
 }
 .item .title {
     white-space: nowrap;
@@ -134,6 +149,16 @@ body {
 .item .value{
     vertical-align: middle;
     text-overflow: ellipsis;
+}
+.filterField .filterButton{
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    padding:10px;
+    border-radius: 10px;
+    background-color: #017EF2;
+    min-height: 20px;
+    width: 200px;
+    color: #ffffff;
 }
 
 .footer {
@@ -245,7 +270,7 @@ a:hover {
 }
 
 .inscription-btn:hover {
-color: #db8e29;
+    color: #db8e29;
 }
 
 

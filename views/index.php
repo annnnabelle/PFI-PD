@@ -1,62 +1,49 @@
 <?php
     require 'partials/header.php';
-
-    var_dump($_POST);
 ?>
 <main>
 <form method="post">
 
-        <div class="filter">
+    <div class="filter">
             <form method="post">
-                <div class="filterField">
-                    <input type="checkbox" name="Filters[]" id="armor" value="Armure">
-                    <label for="armor">Armure</label>
+                <?php foreach ($Filters as $key => $Filter) { ?>
+                    <div class="filterField">
+                        <input class="filterInput" type="checkbox" name="Filters[]" id="<?=$Filter['name']?>" value="<?=$Filter['name']?>" <?= $Filter['status'] ?>>
+                        <label for="<?=$Filter['name']?>"><?=$Filter['name']?></label>
+                    </div>
+                <?php } ?>
+                <div class="filterButtonField">
+                    <input type="submit" class="filterButton" value="Filtrer">
                 </div>
-                <div class="filterField">
-                    <input type="checkbox" name="Filters[]" id="weapon" value="Arme">
-                    <label for="weapon">Armes</label>
-                </div>
-                <div class="filterField">
-                    <input type="checkbox" name="Filters[]" id="ammo" value="munitions">
-                    <label for="ammo">Munitions</label>
-                </div>
-                <div class="filterField">
-                    <input type="checkbox" name="Filters[]" id="food" value="nourriture">
-                    <label for="food">Nourritures</label>
-                </div>
-                <div class="filterField">
-                    <input type="checkbox" name="Filters[]" id="heal" value="medicament">
-                    <label for="heal">Médicaments</label>
-                </div>
-                <input type="submit" value="Filtrer">
-                </form>
+            </form>
         </div>
 
-
     <div class="grid">
-        <?php foreach ($testData as $key => $item) { ?>
-            <?php if(in_array($item['type'], $_POST['Filters']) != null) { ?>
+        <?php foreach ($Items as $key => $Item) { ?>
+            <?php if(empty($_POST) || in_array($Item['type'], $_POST['Filters']) != null) { ?>
                 <a href="/" class="item">
-                    <div class="badge"><?= $item['qty'] ?></div>
-                    <img src="<?= $item['img'] ?>" alt="Fishing Rod">
+                    <div class="badge"><?= $Item['quantite'] ?></div>
+                    <img src="<?= $Item['photo'] ?>" alt="Fishing Rod">
                     <div>
                         <div class="title">
-                            <span><?= $item['title'] ?></span>
+                            <span><?= $Item['nom'] ?></span>
                         </div>
                         <div>
                             <img class="symbol" src="/public/img/weight">
-                            <span class="value"><?= $item['weight'] ?> lbs</span>
+                            <span class="value"><?= $Item['poids'] ?> lbs</span>
                         </div>
                         <div>
                             <img class="symbol" src="/public/img/gold">
-                            <span class="value"><?= $item['price'] ?> gold</span>
+                            <span class="value"><?= $Item['prix'] ?> gold</span>
                         </div>
-                        <span class="type"><?= $item['type'] ?></span>
+                        <span class="type"><?= $Item['type'] ?></span>
                     </div>
                 </a>
                 <?php } ?>
         <?php } ?>
     </div>
+
+
 
 </main>
 
