@@ -11,9 +11,9 @@
         </a>
         <img src="https://stardewvalleywiki.com/mediawiki/images/d/d7/Rusty_Sword.png" alt="Fishing Rod" class="detail-img">
         <div class="detail-body">
-            <div class="detail-title">titre</div>
-            <div>type</div>
-            <div>Efficacité</div>
+            <div>nom: titre</div>
+            <div>Type: type</div>
+            <div>Efficacité: efficacité</div>
             <div>
                 <img class="detail-symbol" src="/public/img/weight">
                 <span>poids lbs</span>

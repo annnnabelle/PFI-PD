@@ -439,11 +439,8 @@ h1 {
     height: auto;
     padding:30px;
 }
-.details-title {
-    font-size: clamp(2rem, 5vw, 5rem);
-}
 .detail-body {
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: 50px;
 }
 .detail-symbol {
     height: clamp(1rem, 3vw, 3rem);
