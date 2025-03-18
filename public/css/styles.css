@@ -6,15 +6,45 @@ body {
     font-family: 'ByteBounce', Arial, sans-serif;
     background-attachment: fixed;
 }
+
+
+
+
+
+/* -----HEAD----- */
 .head {
     background-color: #064b9a;
     color: orange;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 3vh;
 }
+.head h2 {
+    font-size: 5vh;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Daydream', sans-serif;
+}
+.links {
+    position: absolute;
+    right: 1vh;
+    display: flex;
+    align-items: center;
+}
+.links a {
+    color: orange;
+    font-size: 3vh;
+    text-decoration: none;
+    font-family: 'ByteBounce', sans-serif;
+    color: inherit;
+    padding:1vh;
+}
+
+
+
+
+
 .top-right {
     position: absolute;
     top: 15px;
@@ -61,17 +91,9 @@ main {
 }
 
 
-.head h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    font-family: 'Daydream', sans-serif;
-}
 
-.links {
-    position: absolute;
-    right: 20px;
-}
+
+
 
 a {
     color: orange;
