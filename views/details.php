@@ -9,18 +9,17 @@
         </a>
     <div class="detail">
 
-        <img src="https://stardewvalleywiki.com/mediawiki/images/d/d7/Rusty_Sword.png" alt="Fishing Rod" class="detail-img">
+        <img src="<?=$item['photo']?>" alt="Fishing Rod" class="detail-img">
         <div class="detail-body">
-            <div>nom: titre</div>
-            <div>Type: type</div>
-            <div>Efficacité: efficacité</div>
+            <div>nom: <?=$item['nom']?></div>
+            <div>Type: <?=$item['type']?></div>
             <div>
                 <img class="detail-symbol" src="/public/img/weight">
-                <span>poids lbs</span>
+                <span><?=$item['poids']?> lbs</span>
             </div>
             <div>
                 <img class="detail-symbol" src="/public/img/gold">
-                <span>prix gold</span>
+                <span><?=$item['prix']?> gold</span>
             </div>
             <div>
                 <span class="title">Description:</span><br>

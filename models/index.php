@@ -2,7 +2,7 @@
 
 function itemsGetDisplay(PDO $pdo)
 {
-    $sql = 'select nom, quantite, 
+    $sql = 'select idItems, nom, quantite, 
                 CASE
                     WHEN type="a" then "Arme"
                     WHEN type="r" then "Armure"

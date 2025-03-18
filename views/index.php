@@ -21,7 +21,7 @@
     <div class="grid">
         <?php foreach ($Items as $key => $Item) { ?>
             <?php if(empty($_POST) || in_array($Item['type'], $_POST['Filters']) != null) { ?>
-                <a href="/details" class="item">
+                <form action="/details" method="GET" class="item" onclick="submit()">
                     <div class="badge"><?= $Item['quantite'] ?></div>
                     <img src="<?= $Item['photo'] ?>" alt="Fishing Rod" class="item-img">
                     <div>
@@ -38,8 +38,9 @@
                         </div>
                         <span class="item-type"><?= $Item['type'] ?></span>
                     </div>
-                </a>
-                <?php } ?>
+                    <input type="hidden" name="idItem" value="<?=$Item['idItems']?>"/>
+                </form>
+            <?php } ?>
         <?php } ?>
     </div>
 
