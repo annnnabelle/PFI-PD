@@ -18,14 +18,14 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <header class="head">
         <?php if (isset($_SESSION['user'])): ?>
-            <div>
+            <div class="profile-container">
                 <img>
-                <div>
+                <div class="stats">
                     <p> <?= $_SESSION['user']['vie'] ?></p>
                     <p> <?= $_SESSION['user']['dexterite'] ?></p>
                     <p> <?= $_SESSION['user']['capsules'] ?></p>
                 </div>
-                <p><?= htmlspecialchars($_SESSION['user']['alias']) ?></p>
+                <p class="username"><?= htmlspecialchars($_SESSION['user']['alias']) ?></p>
             </div>
         <?php endif; ?>
 
