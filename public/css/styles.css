@@ -430,10 +430,12 @@ h1 {
     gap: 10px;
     width: 80%;
     height: auto;
-    padding: 20px;
+    padding: 40px 20px;
     white-space: normal;
     justify-items: center;
-    margin: auto;
+    margin: 1vh auto;
+    border: 5px solid #064b9a;
+    border-radius: 20px;
 }
 .detail-img {
     align-self: center;
@@ -441,10 +443,16 @@ h1 {
     height: auto;
 }
 .detail-body {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: flex-start;
     font-size: 50px;
+    width: 100%;
 }
 .detail-symbol {
     height: 30px;
+    padding-left: 40px;
 }
 .detail-description {
     font-size: 30px;
@@ -455,15 +463,17 @@ h1 {
 .return-button{
     position: relative;
     background: #064b9a;
-    color: white;
+    color:orange;
     border: none;
-    padding: 0.5em 1em;
+    padding: 1vh;
     cursor: pointer;
-    font-size: 3vh;
+    font-size: 30px;
     border-radius: 1vh;
     font-family: 'ByteBounce', Arial, sans-serif;
     top: 3vh;
     margin-left:15vh;
+    width: 100px;
+    height: auto;
 }
 
 

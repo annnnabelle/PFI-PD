@@ -11,8 +11,8 @@
 
         <img src="<?=$item['photo']?>" alt="Fishing Rod" class="detail-img">
         <div class="detail-body">
-            <div>nom: <?=$item['nom']?></div>
-            <div>Type: <?=$item['type']?></div>
+            <div><b>nom:</b> <?=$item['nom']?></div>
+            <div><b>Type:</b> <?=$item['type']?></div>
             <div>
                 <img class="detail-symbol" src="/public/img/weight">
                 <span><?=$item['poids']?> lbs</span>
@@ -20,11 +20,13 @@
             <div>
                 <img class="detail-symbol" src="/public/img/gold">
                 <span><?=$item['prix']?> gold</span>
-            </div>
-            <div>
-                <span class="title">Description:</span><br>
-                <span class="detail-description">ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
-            </div>
+            </div><br>
+            <?php foreach ($details as $key => $detail) { ?>
+                <div>
+                
+                    <span><b><?=str_replace("_", " ", $key)?>:</b> <?=$detail?></span>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </main>

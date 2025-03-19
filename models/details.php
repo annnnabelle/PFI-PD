@@ -15,7 +15,7 @@ function itemsGetTypeById(PDO $pdo, $id)
 
 function itemsGetTypeDisplayById(PDO $pdo, $id)
 {
-    $type = itemsGetTypeById($pdo, $id);
+    $type = itemsGetTypeById($pdo, $id)['type'];
     switch($type){
         case 'a':
             return SelectArme($pdo, $id);
@@ -34,9 +34,9 @@ function itemsGetTypeDisplayById(PDO $pdo, $id)
 
 function SelectArme(PDO $pdo, $id)
 {
-    $sql = "select *
-    FROM Armes
-    WHERE idItems = '$id'";
+    $sql = "select efficacite, genre, description
+            FROM Armes
+            WHERE idItems = '$id'";
 
     $stm = $pdo->prepare($sql);
 
@@ -46,9 +46,9 @@ function SelectArme(PDO $pdo, $id)
 }
 function SelectArmures(PDO $pdo, $id)
 {
-    $sql = "select *
-    FROM Armures
-    WHERE idItems = '$id'";
+    $sql = "select matiere, taille, description
+            FROM Armures
+            WHERE idItems = '$id'";
 
     $stm = $pdo->prepare($sql);
 
@@ -58,9 +58,9 @@ function SelectArmures(PDO $pdo, $id)
 }
 function SelectNourritures(PDO $pdo, $id)
 {
-    $sql = "select *
-    FROM Nourritures
-    WHERE idItems = '$id'";
+    $sql = "select ptsVie, composant_nutritif, apport_calorique, mineral, description
+            FROM Nourritures
+            WHERE idItems = '$id'";
 
     $stm = $pdo->prepare($sql);
 
@@ -70,9 +70,9 @@ function SelectNourritures(PDO $pdo, $id)
 }
 function SelectMunitions(PDO $pdo, $id)
 {
-    $sql = "select *
-    FROM Munitions
-    WHERE idItems = '$id'";
+    $sql = "select type_arme, calibre, description
+            FROM Munitions
+            WHERE idItems = '$id'";
 
     $stm = $pdo->prepare($sql);
 
@@ -82,9 +82,9 @@ function SelectMunitions(PDO $pdo, $id)
 }
 function SelectMedicaments(PDO $pdo, $id)
 {
-    $sql = "select *
-    FROM Médicaments
-    WHERE idItems = '$id'";
+    $sql = "select effet_attendu, effet_indesirable, duree, description
+            FROM Medicaments
+            WHERE idItems = '$id'";
 
     $stm = $pdo->prepare($sql);
 
