@@ -18,6 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <h2>Knapsack</h2>
     <div class="links">
         <?php if (isset($_SESSION['user'])): ?>
+            <a>Mon Profile</a>
             <a href="/deconnexion">Déconnexion</a>
         <?php else: ?>
         <a href="/inscription">Inscription</a>
