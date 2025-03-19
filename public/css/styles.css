@@ -18,12 +18,6 @@ html, body {
 }
 
 /* -----HEAD----- */
-header{
-    position: sticky; /* Make the header sticky */
-    left: 0px; /* Stick to the top of the viewport */
-    width: 100vw;
-    overflow: auto
-}
 .head {
     background-color: #064b9a;
     color: orange;
@@ -31,13 +25,7 @@ header{
     justify-content: center;
     align-items: center;
     padding: 3vh;
-    overflow: auto;
-    position: sticky; /* Make the header sticky */
-    left: 0px; /* Stick to the top of the viewport */
-    width: 100vw;
-    overflow: auto;
-    width: 100%; /* Ensure it spans the full width */
-    z-index: 1000; /* Ensure it stays above other content */
+    width: 100%;
 }
 .head h2 {
     font-size: 5vh;
@@ -69,12 +57,12 @@ a:hover {
     background-color: #0D683D;
     color: #418b34;
     text-align: right;
-    padding: 0.5vh;
-    font-size: 3vh;
-    position: sticky;
+    padding: 1vh;
+    font-size: 1em;
+    width:100%;
 }
 .footer img {
-    width: 3vh;
+    width: 1em;
     height: auto;
     vertical-align: middle;
 }
@@ -440,9 +428,9 @@ h1 {
 }
 .detail-img {
     align-self: center;
-    width: 70em;
+    width: 60em;
     height: auto;
-    margin: 5em;
+    margin: 3em;
 }
 .detail-body {
     display: flex;
@@ -452,6 +440,21 @@ h1 {
     font-size: 3em;
     height: auto;
     width: auto;
+}
+@media (max-width: 768px) {
+    .detail {
+        flex-direction: column;
+        width: auto;
+        padding:20px;
+    }
+    .detail-img {
+        width: 100%;
+        margin: 2em 0;
+    }
+    .detail-body {
+        width: 100%;
+        font-size: 2em;
+    }
 }
 .detail-values{
     padding-left: 40px;
@@ -463,14 +466,14 @@ h1 {
     background: #064b9a;
     color: orange;
     border: none;
-    padding: 1rem; /* Use rem units for padding */
+    padding: 1rem;
     cursor: pointer;
-    font-size: 1.875rem; /* 30px, use rem units for font size */
-    border-radius: 0.625rem; /* 10px, use rem units for border radius */
+    font-size: 1.875rem;
+    border-radius: 0.625rem;
     font-family: 'ByteBounce', Arial, sans-serif;
-    width: 6rem; /* 96px, use rem units for width */
+    width: 6rem;
     height: auto;
-    display: inline-block; /* Ensure it respects margin and padding */
+    display: inline-block;
     position:absolute;
     top:-0.5em;
     left:-0.5em;
