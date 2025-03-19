@@ -6,4 +6,5 @@ const ROUTES =[
     '/connexion' => 'connexion.php',
     '/panier' => 'panier.php',
     '/details' => 'details.php',
+    '/deconnexion' => 'deconnexion.php',
 ];
