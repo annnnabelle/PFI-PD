@@ -1,10 +1,20 @@
-body {
+/* -----------Main---------- */
+main {
+    flex: 1;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     background-color: #a0d8ef;
     background-image: url('/public/img/background-img.jpg');
     background-size: cover;
     background-position: center center;
     font-family: 'ByteBounce', Arial, sans-serif;
     background-attachment: fixed;
+    height: 100%;
 }
 
 /* -----HEAD----- */
@@ -37,6 +47,10 @@ body {
     padding:1vh;
 }
 
+a:hover {
+    color: #db8e29;
+}
+
 /* -----FOOTER----- */
 .footer {
     background-color: #0D683D;
@@ -52,65 +66,29 @@ body {
     vertical-align: middle;
 }
 
+/* -------------User--------------- */
 
 
 
 
-a:hover {
+/* ---------Barre Nav------- */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1E90FF;
+    padding: 10px;
+}
+
+.navbar a {
+    color: orange;
+    font-size: 27px;
+    text-decoration: none;
+
+}
+
+.navbar a:hover {
     color: #db8e29;
 }
-
-.top-right {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-}
-.top-right button {
-    background: #23BA0A;
-    border: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-    max-width: 80%;
-    margin: auto;
-    overflow: auto;
-    padding-bottom: 20px;
-    overflow: visible;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
-
-
-a {
-    color: orange;
-    font-size: 20px;
-    text-decoration: none;
-    font-family: 'ByteBounce', sans-serif;
-    color: inherit;
-}
-
-
-
-.item:hover {
-    background-color: #ebebeb;
-}
-
 /* --------Inscription & Connexion ---------- */
 .inscription-container {
     background-color: white;
@@ -372,6 +350,18 @@ h1 {
     vertical-align: middle;
     text-overflow: ellipsis;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 80%;
+    margin: auto;
+    overflow: auto;
+    padding-bottom: 20px;
+    overflow: visible;
+}
+
 
 /*Filter*/
 .filter {

@@ -2,7 +2,9 @@
 require "models/connexion.php";
 require "src/database.php";
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!empty($_SESSION['user'])) {
     header('Location: /');
