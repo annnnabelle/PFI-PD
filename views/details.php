@@ -23,10 +23,12 @@
             </div><br>
             <?php foreach ($details as $key => $detail) { ?>
                 <div>
-                
                     <span><b><?=str_replace("_", " ", $key)?>:</b> <?=$detail?></span>
                 </div>
             <?php } ?>
+            <div>
+                <span><b>Description:</b> <?=$item['description']?></span>
+            </div>
         </div>
     </div>
 </main>

@@ -474,6 +474,7 @@ h1 {
     margin-left:15vh;
     width: 100px;
     height: auto;
+    min-width: 100px;
 }
 
 
