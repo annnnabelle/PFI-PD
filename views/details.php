@@ -50,7 +50,7 @@
                             </div>
                             <div class="gold-row">
                                 <span>Prix: </span>
-                                <span>10</span>
+                                <span id="total-price"><?=$item['prix']?></span>
                             </div>
                         </div>
                     </div>
@@ -59,5 +59,18 @@
         </div>
     </div>
 </main>
+
+<script>
+    const basePrice = <?=$item['prix']?>; // Get the item's base price
+    
+    function updateTotalPrice() {
+        const quantity = document.getElementById('quantity').value;
+        const totalPrice = basePrice * quantity;
+        document.getElementById('total-price').textContent = totalPrice;
+    }
+
+    // Initialize the price when the page loads
+    updateTotalPrice();
+</script>
 
 <?php require 'partials/footer.php'; ?>
