@@ -19,13 +19,24 @@ if (session_status() === PHP_SESSION_NONE) {
     <header class="head">
         <?php if (isset($_SESSION['user'])): ?>
             <div class="profile-container">
-                <img>
-                <div class="stats">
-                    <p> <?= $_SESSION['user']['vie'] ?></p>
-                    <p> <?= $_SESSION['user']['dexterite'] ?></p>
-                    <p> <?= $_SESSION['user']['capsules'] ?></p>
+                <div class="user-section">
+                    <img class="user" src="public/img/character.png" alt="Profile">
+                    <p class="username"><?= htmlspecialchars($_SESSION['user']['alias']) ?></p>
                 </div>
-                <p class="username"><?= htmlspecialchars($_SESSION['user']['alias']) ?></p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <img src="public/img/heart.jpg" class="img-profile">
+                        <span><?= $_SESSION['user']['vie'] ?></span>
+                    </div>
+                    <div class="stat-item">
+                        <img src="public/img/energy.png" class="img-profile">
+                        <span><?= $_SESSION['user']['dexterite'] ?></span>
+                    </div>
+                    <div class="stat-item">
+                        <img src="public/img/gold.png" class="img-profile">
+                        <span><?= $_SESSION['user']['capsules'] ?></span>
+                    </div>
+                </div>
             </div>
         <?php endif; ?>
 
@@ -33,7 +44,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <h2>Knapsack</h2>
         <div class="links">
             <?php if (isset($_SESSION['user'])): ?>
-                <a>Mon Profile</a>
+                <a href="/">Mon Profile</a>
                 <a href="/deconnexion">Déconnexion</a>
             <?php else: ?>
                 <a href="/inscription">Inscription</a>
@@ -41,10 +52,10 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php endif; ?>
         </div>
     </header>
-    <?php if(isset($_SESSION['user'])):?>
+    <?php if (isset($_SESSION['user'])): ?>
         <nav class="navbar">
             <a href="/panier">Panier</a>
             <a href="/">Sac a dos</a>
             <a href="/">Enigme</a>
         </nav>
-        <?php endif;?>
+    <?php endif; ?>
