@@ -7,9 +7,9 @@
 <main class="detail-main">
 
     <div class="detail">
-    <a href="/">
-        <button class="return-button">Retour</button>
-    </a>
+        <a href="/">
+            <button class="return-button">Retour</button>
+        </a>
         <img src="<?=$item['photo']?>" alt="Fishing Rod" class="detail-img">
         <div class="detail-body">
             <div>
@@ -34,37 +34,30 @@
                     <span><b>Description:</b> <?=$item['description']?></span>
                 </div>
             </div>
-            <div>
-                <table class="addToCart">
-                    <tr>
-                        <td rowspan="2"><img src="/public/img/Cart"></td>
-                        <td>
-                            <span>Quantité:</span>
-                        </td>
-                        <td>
-                            <select name="qty" id="quantity" onchange="updateTotalPrice()">
-                                <?php for ($i = 1; $i <= $item['quantite']; $i++) { ?>
-                                    <option value="<?=$i?>"><?=$i?></option>
-                                <?php } ?>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="detail-symbol" src="/public/img/gold">
-                            <span>Prix total:</span>
-                        </td>
-                        <td id="totalPrice"><?=$item['prix']?></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><button style="width:auto;">Ajouter</button></td>
-                    </tr>
-                </table>
-            </div>
+
+            <div class="addToCart">
+                <div>
+                    <div class="cart-header">
+                        <img src="public/img/Cart.png" class="cart-icon">
+                        <div class="cart-info">
+                            <div class="qty-row">
+                                <span>Quantité: </span>
+                                <select name="qty" id="quantity" onchange="updateTotalPrice()">
+                                    <?php for ($i = 1; $i <= $item['quantite']; $i++) { ?>
+                                        <option value="<?=$i?>"><?=$i?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="gold-row">
+                                <span>Prix: </span>
+                                <span>10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-button">Ajouté au paniers</button>
+                </div>
         </div>
     </div>
 </main>
-
-
 
 <?php require 'partials/footer.php'; ?>
