@@ -37,8 +37,8 @@ html, body {
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
     position: sticky; 
-    top: 0; 
     z-index: 100; 
+    padding:25px;
   }
 .head h2 {
     font-size: 5vh;
@@ -84,53 +84,49 @@ a:hover {
 .profile-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     position: absolute;
-    left: 2.5%;
+    left: 20px;
+    padding: 5px;
+    width: 180px;
+    top: 0.5px;
 }
-
 .user-section {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+.user {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border: solid 3px orange;
+}
+
 .stats {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    font-size: 18px;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    gap: 2px;
+    font-size: 20px; 
 }
 
 .img-profile {
-    width: 25px;
-    height: 25px;
-}
-
-.user {
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border-radius: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 .username {
-    font-size: 20px;
-    margin-top: 5px;
-    color: orange;
+    font-size: 25px;
+    margin-top: 1px;
 }
+
 
 
 /* ---------Barre Nav------- */
 .navbar {
     display: flex;
     justify-content: space-around;
-    background-color: #1E90FF;
+    background-color: #197de1;
     padding: 10px;
 }
 
@@ -207,14 +203,10 @@ a:hover {
 
 /* ----------- Panier ---------- */
 .cart-container {
-    margin: auto;
+    margin: 0;
     padding: 20px;
     background: #f8c984;
-    border-radius: 10px;
-    border: 6px solid #a56629;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    max-width: 80%;
+    max-width: 100%;
 }
 .cart-container a {
     text-decoration: none;
@@ -234,6 +226,14 @@ a:hover {
 h1 {
     color: #8a4f20;
     text-align: center;
+}
+.background h1{
+    background-color: #f8c984;
+    border: solid 5px #a56629;
+    border-radius: 20px;
+    width:20%;
+    margin: auto;
+    margin-top: 1%;
 }
 
 .cart-items {
@@ -278,18 +278,14 @@ h1 {
 
 
 .cart-summary {
-    margin: auto;
-    padding: 10px;
-    max-width: 81%;
+    margin: 0;
+    padding: 15px;
+    width: 100%;
     background: #a56629;
     color: white;
-    border: 6px solid #a56629;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2%;
+    align-items: center;
 }
 
 .cart-summary .details {
@@ -320,13 +316,17 @@ h1 {
     vertical-align: middle
 }
 
-.delete-item {
-    cursor: pointer;
-    font-size: 18px;
-    color: red;
+.cart-border {
+    border: 6px solid #a56629;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 1.5%;
+    margin-bottom:2.5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
 }
-
-
 
 
 
