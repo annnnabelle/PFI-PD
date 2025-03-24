@@ -20,14 +20,14 @@
                             <img class="cart-item-img" src="<?= $panierItem['img'] ?>" alt="<?= $panierItem['name'] ?>">
                             <div class="item-details">
                                 <div><?= $panierItem['title'] ?></div>
-                                <div>
-                                    <img class="symbol" src="/public/img/Weight">
-                                    <span class="value"><?= $panierItem['weight'] ?> lbs</span>
-                                </div>
-                                <div>
-                                    <img class="symbol" src="/public/img/Gold">
-                                    <span class="value"><?= $panierItem['price'] ?> gold</span>
-                                </div>
+                                <div class="detail-values">
+                    <img class="detail-symbol" src="/public/img/weight">
+                    <span><?=$item['weight']?> lbs</span>
+                </div>
+                <div class="detail-values">
+                    <img class="detail-symbol" src="/public/img/gold">
+                    <span><?=$item['price']?> gold</span>
+                </div>
                                 <span class="type"><?= $panierItem['type'] ?></span>
                                 <div>Qte: <?= $panierItem['qty'] ?></div>
                             </div>
