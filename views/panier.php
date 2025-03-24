@@ -42,11 +42,11 @@
             <div class="stats">
                 <div>
                     <img class="symbol" src="/public/img/Weight">
-                    <span class="value"><?= $poidstotal ?> lbs</span>
+                    <span><?= $poidstotal ?> lbs</span>
                 </div>
                 <div>
                     <img class="symbol" src="/public/img/Gold">
-                    <span class="value"><?= $prixtotal ?> gold</span>
+                    <span><?= $prixtotal ?> gold</span>
                 </div>
             </div>
             <form method="post">
