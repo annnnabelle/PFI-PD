@@ -1,6 +1,4 @@
-<?php
-require 'partials/header.php';
-?>
+<?php require 'partials/header.php'; ?>
 
 <main>
     <div class="background">
@@ -9,47 +7,54 @@ require 'partials/header.php';
     <div class="cart-border">
         <div class="cart-container">
             <a href="/">&larr; Retour</a>
-            <div class="cart-items">
-                <?php foreach ($testData as $key => $item) { ?>
-                    <div class="cart-item">
-                        <button class="garbage-btn">
-                            <img src="/public/img/Garbage_can.png" alt="Delete">
-                        </button>
-                        <img class="cart-item-img" src="<?= $item['img'] ?>" alt="Fishing Rod">
-                        <div class="item-details">
-                            <div><?= $item['title'] ?></div>
-                            <div class="detail-values">
-                    <img class="detail-symbol" src="/public/img/weight">
-                    <span><?=$item['weight']?> lbs</span>
-                </div>
-                <div class="detail-values">
-                    <img class="detail-symbol" src="/public/img/gold">
-                    <span><?=$item['price']?> gold</span>
-                </div>
-                           
-                            <span class="type"><?= $item['type'] ?></span>
-                            <div>Qte: <?= $item['qty'] ?></div>
+            <?php if (!empty($panier)): ?>
+                <?php foreach ($panier as $panierItem): ?>
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <form method="post">
+                                <input type="hidden" name="item_name" value="<?= $panierItem['name'] ?>">
+                                <button class="garbage-btn" type="submit" name="Supprimer">
+                                    <img src="/public/img/Garbage_can.png" alt="Delete">
+                                </button>
+                            </form>
+                            <img class="cart-item-img" src="<?= $panierItem['img'] ?>" alt="<?= $panierItem['name'] ?>">
+                            <div class="item-details">
+                                <div><?= $panierItem['title'] ?></div>
+                                <div>
+                                    <img class="symbol" src="/public/img/Weight">
+                                    <span class="value"><?= $panierItem['weight'] ?> lbs</span>
+                                </div>
+                                <div>
+                                    <img class="symbol" src="/public/img/Gold">
+                                    <span class="value"><?= $panierItem['price'] ?> gold</span>
+                                </div>
+                                <span class="type"><?= $panierItem['type'] ?></span>
+                                <div>Qte: <?= $panierItem['qty'] ?></div>
+                            </div>
                         </div>
                     </div>
-                <?php } ?>
-            </div>
-
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Le panier est vide</p>
+            <?php endif; ?>
         </div>
         <div class="cart-summary">
-            <div class="details">
+            <div class="stats">
                 <div>
                     <img class="symbol" src="/public/img/Weight">
-                    <span class="value"><?= $item['weight'] ?> lbs</span>
+                    <span><?= $poidstotal ?> lbs</span>
                 </div>
                 <div>
                     <img class="symbol" src="/public/img/Gold">
-                    <span class="value"><?= $item['price'] ?> gold</span>
+                    <span><?= $prixtotal ?> gold</span>
                 </div>
             </div>
-            <button class="buy-button">Acheter</button>
+            <form method="post">
+                <input type="hidden" name="Acheter">
+                <button type="submit" class="buy-button">Acheter</button>
+            </form>
         </div>
     </div>
 </main>
-
 
 <?php require 'partials/footer.php'; ?>

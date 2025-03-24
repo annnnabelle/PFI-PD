@@ -89,7 +89,7 @@ a:hover {
     left: 20px;
     padding: 5px;
     width: 180px;
-    top: 0.5px;
+    top: 3%;
 }
 .user-section {
     display: flex;
@@ -101,13 +101,23 @@ a:hover {
     height: 80px;
     background-color: white;
     border: solid 3px orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.user img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover'
 }
 
 .stats {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    font-size: 20px; 
+    font-size: 25px; 
 }
 
 .img-profile {
@@ -203,7 +213,6 @@ a:hover {
 
 /* ----------- Panier ---------- */
 .cart-container {
-    margin: 0;
     padding: 20px;
     background: #f8c984;
     max-width: 100%;
@@ -219,12 +228,18 @@ a:hover {
     align-items: flex-start;
 
 }
+.cart-container p{
+    font-size: 25px;
+    color:#573316;
+    text-align:center;
+    padding-bottom: 10%;
+}
 .cart-container a:hover {
     color: #db8e29;
 }
 
 h1 {
-    color: #8a4f20;
+    color: #5f3614;
     text-align: center;
 }
 .background h1{
@@ -295,6 +310,7 @@ h1 {
     flex-direction: column;
     align-items: flex-end; 
     font-size: 23px;
+
 }
 .buy-button {
     background-color: #23BA0A;
@@ -476,9 +492,6 @@ h1 {
     padding-bottom: 20px;
     overflow: visible;
 }
-
-
-
 
 
 /*Filter*/
