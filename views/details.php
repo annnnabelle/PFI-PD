@@ -1,7 +1,7 @@
 <?php
     require 'partials/header.php';
 
-    $prix = 0;
+
 ?>
 
 <main class="detail-main">
@@ -12,7 +12,7 @@
         </a>
         <img src="<?=$item['photo']?>" alt="Fishing Rod" class="detail-img">
         <div class="detail-body">
-            <div>
+            <div class="detail-section">
                 <div><b>nom:</b> <?=$item['nom']?></div>
                 <div><b>Type:</b> <?=$item['type']?></div>
                 <div class="detail-values">
@@ -24,7 +24,7 @@
                     <span><?=$item['prix']?> gold</span>
                 </div>
             </div>
-            <div>
+            <div class="detail-section">
                 <?php foreach ($details as $key => $detail) { ?>
                     <div>
                         <span><b><?=str_replace("_", " ", $key)?>:</b> <?=$detail?></span>
@@ -34,29 +34,32 @@
                     <span><b>Description:</b> <?=$item['description']?></span>
                 </div>
             </div>
-
-            <div class="addToCart">
-                <div>
-                    <div class="cart-header">
-                        <img src="public/img/Cart.png" class="cart-icon">
-                        <div class="cart-info">
-                            <div class="qty-row">
-                                <span>Quantité: </span>
-                                <select name="qty" id="quantity" onchange="updateTotalPrice()">
-                                    <?php for ($i = 1; $i <= $item['quantite']; $i++) { ?>
-                                        <option value="<?=$i?>"><?=$i?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                            <div class="gold-row">
-                                <span>Prix: </span>
-                                <span id="total-price"><?=$item['prix']?></span>
+            <?php if (!empty($_SESSION['user'])) { ?>
+                <form method="GET" class="addToCart" onsubmit="return confirmAddToCart()">
+                    <div>
+                        <div class="cart-header">
+                            <img src="public/img/Cart.png" class="cart-icon">
+                            <div class="cart-info">
+                                <div class="qty-row">
+                                    <span>Quantité: </span>
+                                    <select name="qty" id="quantity" onchange="updateTotalPrice()">
+                                        <?php for ($i = 0; $i <= $item['quantite']; $i++) { ?>
+                                            <option value="<?=$i?>"><?=$i?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <div class="gold-row">
+                                    <span>Prix: </span>
+                                    <span id="total-price"><?=$item['prix']?></span>
+                                </div>
                             </div>
                         </div>
+                        <button type="submit" class="add-button">Ajouté au paniers</button>
                     </div>
-                    <button class="add-button">Ajouté au paniers</button>
-                </div>
-        </div>
+                    <input type="hidden" name="quantityAdded" value="<?=$item['idItems']?>"/>
+                    <input type="hidden" name="idItem" value="<?=$item['idItems']?>"/>
+                </form>
+            <?php }?>
     </div>
 </main>
 
@@ -69,7 +72,12 @@
         document.getElementById('total-price').textContent = totalPrice;
     }
 
-    // Initialize the price when the page loads
+    function confirmAddToCart() {
+        const quantity = document.getElementById('quantity').value;
+        alert(`Vous avez ajouté ${quantity} article(s) au panier.`);
+        return true;
+    }
+
     updateTotalPrice();
 </script>
 

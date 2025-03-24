@@ -489,7 +489,6 @@ h1 {
 .detail-body {
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
     align-items: flex-start;
     font-size: 3em;
     height: auto;
@@ -520,6 +519,9 @@ h1 {
 .detail-symbol {
     height: 30px;
 }
+.detail-section {
+    padding-top: 20px;
+}
 .return-button {
     background: #064b9a;
     color: orange;
@@ -540,14 +542,6 @@ h1 {
 }
 
 
-
-
-
-
-
-
-
-
 .addToCart {
     display:flex;
     align-items: center;
@@ -559,7 +553,8 @@ h1 {
     gap:20px;
     border: 1px solid black;
     padding:15px;
-    margin-left: auto;
+    margin: auto;
+    margin-top:30px;
 }
 
 .cart-container {

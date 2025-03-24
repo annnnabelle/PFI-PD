@@ -46,3 +46,16 @@ function itemsGetDisplayById(PDO $pdo, $id)
         
     return $stm->fetch(PDO::FETCH_ASSOC);
 }
+
+
+function addToCart(PDO $pdo, $id, $quantite)
+{
+    $stm = $pdo->prepare('CALL ajouterPanier(:idItem, :idJoueur, :quantite);');
+    $stm->bindParam(':idItem', $id, PDO::PARAM_STR);
+    $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->bindParam(':quantite', $quantite, PDO::PARAM_STR);
+    return $stm->execute();
+
+}
+
+
