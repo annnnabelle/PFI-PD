@@ -49,12 +49,18 @@
                     <span><?= $prixtotal ?> gold</span>
                 </div>
             </div>
-            <form method="post">
+            <form method="post" onsubmit="return confirmAchat()">
                 <input type="hidden" name="Acheter">
                 <button type="submit" class="buy-button">Acheter</button>
             </form>
         </div>
     </div>
 </main>
+
+<script>
+    function confirmAchat() {
+        return confirm("Êtes-vous sûr de vouloir acheter ces articles ?");
+    }
+</script>
 
 <?php require 'partials/footer.php'; ?>
