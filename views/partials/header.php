@@ -55,7 +55,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <?php if (isset($_SESSION['user'])): ?>
         <nav class="navbar">
             <a href="/panier">Panier</a>
-            <a href="/">Sac a dos</a>
+            <a href="/sacados">Sac a dos</a>
             <a href="/">Enigme</a>
         </nav>
     <?php endif; ?>
