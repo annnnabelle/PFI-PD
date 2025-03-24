@@ -20,19 +20,19 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php if (isset($_SESSION['user'])): ?>
             <div class="profile-container">
                 <div class="user-section">
-                    <img class="user" src="public/img/character.png" alt="Profile">
+                    <img class="user" src="public/img/Personnage.png" alt="Profile">
                     <p class="username"><?= htmlspecialchars($_SESSION['user']['alias']) ?></p>
                 </div>
                 <div class="stats">
-                    <div class="stat-item">
+                    <div>
                         <img src="public/img/heart.jpg" class="img-profile">
                         <span><?= $_SESSION['user']['vie'] ?></span>
                     </div>
-                    <div class="stat-item">
+                    <div>
                         <img src="public/img/energy.png" class="img-profile">
                         <span><?= $_SESSION['user']['dexterite'] ?></span>
                     </div>
-                    <div class="stat-item">
+                    <div>
                         <img src="public/img/gold.png" class="img-profile">
                         <span><?= $_SESSION['user']['capsules'] ?></span>
                     </div>
@@ -55,7 +55,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <?php if (isset($_SESSION['user'])): ?>
         <nav class="navbar">
             <a href="/panier">Panier</a>
-            <a href="/">Sac a dos</a>
+            <a href="/sacados">Sac a dos</a>
             <a href="/">Enigme</a>
         </nav>
     <?php endif; ?>
