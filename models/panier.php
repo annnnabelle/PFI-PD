@@ -24,13 +24,33 @@ function itemsGetDisplay(PDO $pdo, $id)
     return $stm->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function deleteItem(PDO $pdo, $idJoueur, $idItem)
+function deleteItem(PDO $pdo, $idItem)
 {
-    $sql = 'DELETE FROM Paniers WHERE idJoueur = :idJoueur AND idItem = :idItem';
+    $stm = $pdo->prepare('CALL supprimerPanier(:idItem, :idJoueur);');
+    $stm->bindParam(':idItem', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->bindParam(':idJoueur', $idItem, PDO::PARAM_STR);
+    return $stm->execute();
+}
 
-    $stm = $pdo->prepare($sql);
-    $stm->bindParam(':idJoueur', $idJoueur, PDO::PARAM_STR);
-    $stm->bindParam(':idItem', $idItem, PDO::PARAM_STR);
+function getPrixMax(PDO $pdo)
+{
+    $stm = $pdo->prepare("SELECT montantPanier(:idJoueur);");
+
+    $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
 
     $stm->execute();
+
+    return $stm->fetch(PDO::FETCH_ASSOC)["montantPanier('3')"];
+}
+
+function getPoidMax(PDO $pdo)
+{
+    $id = $_SESSION['user']['idJoueurs'];
+    $stm = $pdo->prepare("SELECT poidsPanier(:idJoueur);");
+
+    $stm->bindParam(':idJoueur', $id, PDO::PARAM_STR);
+
+    $stm->execute();
+
+    return $stm->fetch(PDO::FETCH_ASSOC)["poidsPanier('$id')"];
 }

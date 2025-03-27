@@ -10,20 +10,17 @@ $panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
 
 
 
-$prixtotal = 0;
-foreach ($panier as $item) {
-    $prixtotal += $item['prix'] * $item['quantite'];
-}
+$prixtotal = getPrixMax($pdo) ? null : "0";
 
-$poidstotal = 0;
-foreach ($panier as $item) {
-    $poidstotal += $item['poids'] * $item['quantite'];
-}
+
+var_dump($prixtotal);
+
+$poidstotal = getPoidMax($pdo) ? null : "0";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     var_dump($_POST);
     if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
-        deleteItem($pdo, $_SESSION['user']['idJoueurs'], $_POST['item_id']);
+        deleteItem($pdo, $_POST['item_id']);
         redirect('/panier');
     }
 }
