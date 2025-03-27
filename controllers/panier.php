@@ -1,32 +1,30 @@
 <?php 
-session_start();
 require "models/panier.php";
 require "src/database.php";
 
+session_start();
+
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
-$panier = $_SESSION['panier'] ?? [];
+$panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
 
-$prixtotal = calculerPrixTotal($panier);
-$poidstotal = calculerPoidsTotal($panier);
+
+
+$prixtotal = 0;
+foreach ($panier as $item) {
+    $prixtotal += $item['prix'] * $item['quantite'];
+}
+
+$poidstotal = 0;
+foreach ($panier as $item) {
+    $poidstotal += $item['poids'] * $item['quantite'];
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['Supprimer']) && isset($_POST['item_name'])) {
-        foreach ($panier as $key => $item) {
-            if ($item['name'] === $_POST['item_name']) {
-                unset($panier[$key]);
-                $_SESSION['panier'] = array_values($panier);
-                break;
-            }
-        }
-        redirect("/panier");
-        exit();
-    }
-
-    if (isset($_POST['Ajouter'])) {
-        unset($_SESSION['panier']);
-        redirect("/");
-        exit();
+    var_dump($_POST);
+    if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
+        deleteItem($pdo, $_SESSION['user']['idJoueurs'], $_POST['item_id']);
+        redirect('/panier');
     }
 }
 
