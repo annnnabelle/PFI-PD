@@ -34,3 +34,4 @@ function deleteItem(PDO $pdo, $idJoueur, $idItem)
 
     $stm->execute();
 }
+

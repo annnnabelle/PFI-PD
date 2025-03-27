@@ -4,26 +4,26 @@ require 'partials/header.php';
 
 <main>
     <div class="inscription-container">
-        <a href="/">&larr; Retour</a>
+        <a href="/" class="return">&larr; Retour</a>
         <form method="POST">
             <label for="alias">Alias:</label>
-            <input type="text" id="alias" name="alias" value="<?= htmlspecialchars($data['alias'] ?? '') ?>" required>
+            <input  type="text" id="alias" name="alias" value="<?= htmlspecialchars($data['alias'] ?? '') ?>">
             <span><?= $errors['alias'] ?? '' ?></span>
-            <br>
+            
             <label for="prenom">Prénom:</label>
-            <input type="text" id="prenom" name="prenom" value="<?= htmlspecialchars($data['prenom'] ?? '') ?>" required>
+            <input type="text" id="prenom" name="prenom" value="<?= htmlspecialchars($data['prenom'] ?? '') ?>">
             <span><?= $errors['prenom'] ?? '' ?></span>
-            <br>
+            
             <label for="nom">Nom:</label>
-            <input type="text" id="nom" name="nom" value="<?= htmlspecialchars($data['nom'] ?? '') ?>" required>
+            <input type="text" id="nom" name="nom" value="<?= htmlspecialchars($data['nom'] ?? '') ?>">
             <span><?= $errors['nom'] ?? '' ?></span>
-            <br>
+
             <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password">
             <span><?= $errors['password'] ?? '' ?></span>
-            <br>
+
             <button type="submit" class="inscription-btn">Inscription</button>
-            <br>
+
             <?php if (!empty($errors['global'])): ?>
                 <span class="error"><?= $errors['global'] ?></span>
             <?php endif; ?>

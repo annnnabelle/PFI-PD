@@ -27,19 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if (empty($data['alias'])) {
-        $errors['alias'] = 'L\'alias est obligatoire';
+        $errors['alias'] = 'L\'alias est obligatoire<br>';
     }
 
     if (empty($data['prenom'])) {
-        $errors['prenom'] = 'Le prénom est obligatoire';
+        $errors['prenom'] = 'Le prénom est obligatoire<br>';
     }
 
     if (empty($data['nom'])) {
-        $errors['nom'] = 'Le nom est obligatoire';
+        $errors['nom'] = 'Le nom est obligatoire<br>';
     }
 
     if (empty($data['password'])) {
-        $errors['password'] = 'Le mot de passe est obligatoire';
+        $errors['password'] = 'Le mot de passe est obligatoire<br>';
     }
 
     if (empty($errors)) {
