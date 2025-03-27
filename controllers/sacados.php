@@ -66,7 +66,7 @@ $testData = [
         'price' => 10
     ],
 
-    ];
+];
 
 
 require "views/sacados.php";

@@ -55,7 +55,6 @@ function addToCart(PDO $pdo, $id, $quantite)
     $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     $stm->bindParam(':quantite', $quantite, PDO::PARAM_STR);
     return $stm->execute();
-
 }
 
 
