@@ -50,7 +50,7 @@ function itemsGetDisplayById(PDO $pdo, $id)
 
 function addToCart(PDO $pdo, $id, $quantite)
 {
-    $stm = $pdo->prepare('CALL ajouterPanier(:idItem, :idJoueur, :quantite);');
+    $stm = $pdo->prepare('CALL ajouterItemPanier( :idJoueur, :idItem, :quantite);');
     $stm->bindParam(':idItem', $id, PDO::PARAM_STR);
     $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     $stm->bindParam(':quantite', $quantite, PDO::PARAM_STR);

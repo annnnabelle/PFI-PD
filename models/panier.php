@@ -31,26 +31,3 @@ function deleteItem(PDO $pdo, $idItem)
     $stm->bindParam(':idJoueur', $idItem, PDO::PARAM_STR);
     return $stm->execute();
 }
-
-function getPrixMax(PDO $pdo)
-{
-    $stm = $pdo->prepare("SELECT montantPanier(:idJoueur);");
-
-    $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
-
-    $stm->execute();
-
-    return $stm->fetch(PDO::FETCH_ASSOC)["montantPanier('3')"];
-}
-
-function getPoidMax(PDO $pdo)
-{
-    $id = $_SESSION['user']['idJoueurs'];
-    $stm = $pdo->prepare("SELECT poidsPanier(:idJoueur);");
-
-    $stm->bindParam(':idJoueur', $id, PDO::PARAM_STR);
-
-    $stm->execute();
-
-    return $stm->fetch(PDO::FETCH_ASSOC)["poidsPanier('$id')"];
-}

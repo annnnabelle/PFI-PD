@@ -10,12 +10,15 @@ $panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
 
 
 
-$prixtotal = getPrixMax($pdo) ? null : "0";
+$prixtotal = 0;
+foreach ($panier as $item) {
+    $prixtotal += $item['prix'] * $item['quantite'];
+}
 
-
-var_dump($prixtotal);
-
-$poidstotal = getPoidMax($pdo) ? null : "0";
+$poidstotal = 0;
+foreach ($panier as $item) {
+    $poidstotal += $item['poids'] * $item['quantite'];
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     var_dump($_POST);
