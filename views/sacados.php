@@ -10,7 +10,7 @@ require 'partials/header.php';
         <div class="cart-container">
             <a href="/">&larr; Retour</a>
             <div class="cart-items">
-                <?php foreach ($testData as $key => $item) { ?>
+                <?php foreach ($sacADos as $key => $item) { ?>
                     
                     <div class="backpack-item">
                         <button class="garbage-btn">

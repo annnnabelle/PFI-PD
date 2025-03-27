@@ -1,72 +1,13 @@
 <?php 
 
-$testData = [
-    [
-        'qty' => 20,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
-    [
-        'qty' => 2,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
-    [
-        'qty' => 2,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
-    [
-        'qty' => 2,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
-    [
-        'qty' => 2,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
-    [
-        'qty' => 2,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
-    [
-        'qty' => 2,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
-    [
-        'qty' => 2,
-        'img' => '/public/img/FishingRod',
-        'title' => 'TITRE',
-        'type' => "Arme",
-        'weight' => 20,
-        'price' => 10
-    ],
+require "models/sacados.php";
+require "src/database.php";
 
-];
+session_start();
+
+$pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+
+$sacADos = itemsGetDisplay($pdo);
 
 
 require "views/sacados.php";
