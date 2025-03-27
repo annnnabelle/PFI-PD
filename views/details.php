@@ -10,7 +10,9 @@
         <a href="/">
             <button class="return-button">Retour</button>
         </a>
-        <img src="<?=$item['photo']?>" alt="Fishing Rod" class="detail-img">
+        <div class="detail-imageFrame">
+            <img src="<?=$item['photo']?>" alt="Fishing Rod" class="detail-img">
+        </div>
         <div class="detail-body">
             <div class="detail-section">
                 <div><b>nom:</b> <?=$item['nom']?></div>
