@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'vie' => 100,
         'faim' => 50,
     ];
-    
+
 
     if (empty($data['alias'])) {
         $errors['alias'] = 'L\'alias est obligatoire';
@@ -44,13 +44,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         try {
-            $user = userCreate($pdo, $data);
-
-            if ($user) {
-                header('Location: /connexion');
-                exit;
+            $existingUser = userGetByAlias($pdo, $data['alias']);
+            if ($existingUser) {
+                $errors['alias'] = 'Cet alias est déjà utilisé. <br> Veuillez en choisir un autre.<br>';
             } else {
-                $errors['global'] = 'Une erreur est survenue lors de la création du compte.';
+                $user = userCreate($pdo, $data);
+
+                if ($user) {
+                    redirect('/connexion');
+                    exit;
+                } else {
+                    $errors['global'] = 'Une erreur est survenue lors de la création du compte.';
+                }
             }
         } catch (Exception $e) {
             $errors['global'] = $e->getMessage();

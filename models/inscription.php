@@ -9,10 +9,23 @@ function userCreate(PDO $pdo, array $data)
         $stm->bindParam(':alias', $data['alias'], PDO::PARAM_STR);
         $stm->bindParam(':nom', $data['nom'], PDO::PARAM_STR);
         $stm->bindParam(':prenom', $data['prenom'], PDO::PARAM_STR);
-        $stm->bindParam(':mot_de_passe', $data['password'], PDO::PARAM_STR); // Correction ici
+        $stm->bindParam(':mot_de_passe', $data['password'], PDO::PARAM_STR);
         $stm->bindValue(':est_admin', 0, PDO::PARAM_INT);
         return $stm->execute();
 
+    } catch (PDOException $e) {
+        throw new Exception($e->getMessage());
+    }
+}
+
+
+function userGetByAlias(PDO $pdo, string $alias): array
+{
+    try {
+        $stm = $pdo->prepare('SELECT * FROM Joueurs WHERE alias = :alias');
+        $stm->bindParam(':alias', $alias, PDO::PARAM_STR);
+        $stm->execute();
+        return $stm->fetch(PDO::FETCH_ASSOC) ?: null;
     } catch (PDOException $e) {
         throw new Exception($e->getMessage());
     }
