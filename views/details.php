@@ -8,7 +8,7 @@
 
     <div class="detail">
         <a href="/">
-            <button class="return-button">Retour</button>
+            <button class="return-button">&larr; Retour</button>
         </a>
         <div class="detail-imageFrame">
             <img src="<?=$item['photo']?>" alt="Fishing Rod" class="detail-img">

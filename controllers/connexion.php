@@ -18,11 +18,11 @@ $password = $_POST['password'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($alias)) {
-        $errors['alias'] = 'L\'alias est obligatoire';
+        $errors['alias'] = '*L\'alias est obligatoire';
     }
 
     if (empty($password)) {
-        $errors['password'] = 'Le mot de passe est obligatoire';
+        $errors['password'] = '*Le mot de passe est obligatoire';
     }
 
     if (empty($errors)) {
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user'] = $user;
             redirect('/');
         } else {
-            $errors['global'] = 'Identifiants incorrects';
+            $errors['global'] = '*Identifiants incorrects';
         }
     }
 }

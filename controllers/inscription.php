@@ -27,26 +27,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if (empty($data['alias'])) {
-        $errors['alias'] = 'L\'alias est obligatoire<br>';
+        $errors['alias'] = '*L\'alias est obligatoire<br>';
     }
 
     if (empty($data['prenom'])) {
-        $errors['prenom'] = 'Le prénom est obligatoire<br>';
+        $errors['prenom'] = '*Le prénom est obligatoire<br>';
     }
 
     if (empty($data['nom'])) {
-        $errors['nom'] = 'Le nom est obligatoire<br>';
+        $errors['nom'] = '*Le nom est obligatoire<br>';
     }
 
     if (empty($data['password'])) {
-        $errors['password'] = 'Le mot de passe est obligatoire<br>';
+        $errors['password'] = '*Le mot de passe est obligatoire<br>';
     }
 
     if (empty($errors)) {
         try {
             $existingUser = userGetByAlias($pdo, $data['alias']);
             if ($existingUser) {
-                $errors['alias'] = 'Cet alias est déjà utilisé. <br> Veuillez en choisir un autre.<br>';
+                $errors['alias'] = '*Cet alias est déjà utilisé. <br> Veuillez en choisir un autre.<br>';
             } else {
                 $user = userCreate($pdo, $data);
 
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     redirect('/connexion');
                     exit;
                 } else {
-                    $errors['global'] = 'Une erreur est survenue lors de la création du compte.';
+                    $errors['global'] = '*Une erreur est survenue lors de la création du compte.';
                 }
             }
         } catch (Exception $e) {
