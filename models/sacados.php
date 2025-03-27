@@ -1,6 +1,6 @@
 <?php
 
-function itemsGetDisplay(PDO $pdo, $id)
+function itemsGetDisplay(PDO $pdo)
 {
     $sql = 'select idItems, nom, 
                 CASE
@@ -10,14 +10,14 @@ function itemsGetDisplay(PDO $pdo, $id)
                     WHEN type="u" then "Munition"
                     WHEN type="m" then "Médicament"
                 end
-                type, prix, poids, photo, Paniers.quantite
+                type, prix, poids, photo, SacADos.quantite
             FROM Items
-            INNER JOIN Paniers
-            ON Items.idItems = Paniers.idItem
+            INNER JOIN SacADos
+            ON Items.idItems = SacADos.idItem
             AND idJoueur = :id;';
 
     $stm = $pdo->prepare($sql);
-    $stm->bindParam(':id', $id, PDO::PARAM_STR);
+    $stm->bindParam(':id', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
 
     $stm->execute();
 
@@ -26,7 +26,7 @@ function itemsGetDisplay(PDO $pdo, $id)
 
 function deleteItem(PDO $pdo, $idItem)
 {
-    $stm = $pdo->prepare('CALL supprimerPanier(:idItem, :idJoueur);');
+    $stm = $pdo->prepare('CALL supprimerSacADos(:idItem, :idJoueur);');
     $stm->bindParam(':idItem', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     $stm->bindParam(':idJoueur', $idItem, PDO::PARAM_STR);
     return $stm->execute();

@@ -23,7 +23,7 @@ foreach ($panier as $item) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     var_dump($_POST);
     if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
-        deleteItem($pdo, $_SESSION['user']['idJoueurs'], $_POST['item_id']);
+        deleteItem($pdo, $_POST['item_id']);
         redirect('/panier');
     }
 }

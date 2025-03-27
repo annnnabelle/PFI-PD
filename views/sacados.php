@@ -10,34 +10,37 @@ require 'partials/header.php';
         <div class="cart-container">
             <a href="/">&larr; Retour</a>
             <div class="cart-items">
-                <?php foreach ($testData as $key => $item) { ?>
-                    
+                <?php foreach ($sacADos as $key => $item) { ?>
+
                     <div class="backpack-item">
-                        <button class="garbage-btn">
-                            <img src="/public/img/Garbage_can.png" alt="Delete">
-                        </button>
-                        <img class="cart-item-img" src="<?= $item['img'] ?>" alt="Fishing Rod">
+                    <form method="post">
+                                <input type="hidden" name="item_id" value="<?= $item['idItems'] ?>">
+                                <button type="submit" class="garbage-btn" name="Supprimer" value="<?php $item['idItems']?>">
+                                    <img src="/public/img/Garbage_can.png" alt="Delete">
+                                </button>
+                            </form>
+                        <img class="cart-item-img" src="<?= $item['photo'] ?>">
                         <div class="item-details">
-                            <div><?= $item['title'] ?></div>
+                            <div><?= $item['nom'] ?></div>
                             <div class="detail-values">
-                    <img class="detail-symbol" src="/public/img/weight">
-                    <span><?=$item['weight']?> lbs</span>
-                </div>
-                <div class="detail-values">
-                    <img class="detail-symbol" src="/public/img/gold">
-                    <span><?=$item['price']?> gold</span>
-                </div>
+                                <img class="detail-symbol" src="/public/img/weight">
+                                <span><?= $item['poids'] ?> lbs</span>
+                            </div>
+                            <div class="detail-values">
+                                <img class="detail-symbol" src="/public/img/gold">
+                                <span><?= $item['prix'] ?> gold</span>
+                            </div>
                             <span class="type"><?= $item['type'] ?></span>
-                            <div>Qte: <?= $item['qty'] ?></div>
-                            
+                            <div>Qte: <?= $item['quantite'] ?></div>
+
                         </div>
                         <div class="sell-button-container">
                             <span class="backpack-span">Quantité: </span>
                             <select id="quantity" name="quantity" class="backpack-select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
                             </select>
                             <button class="sell-button">Vendre</button>
                         </div>
