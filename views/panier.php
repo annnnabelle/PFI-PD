@@ -41,6 +41,7 @@
             </div>
         </div>
         <div class="cart-summary">
+        <form method="post">
             <div class="stats">
                 <div>
                     <img class="symbol" src="/public/img/Weight">
@@ -51,8 +52,8 @@
                     <span><?= $prixtotal ?> gold</span>
                 </div>
             </div>
-            <form method="post" onsubmit="return confirmAchat()">
-                <input type="hidden" name="Acheter">
+
+                <input type="hidden" name="Acheter" value="Acheter">
                 <button type="submit" class="buy-button">Acheter</button>
             </form>
         </div>

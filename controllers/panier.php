@@ -7,9 +7,7 @@ session_start();
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
 $panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
-
-
-
+var_dump($_POST);
 $prixtotal = 0;
 foreach ($panier as $item) {
     $prixtotal += $item['prix'] * $item['quantite'];
@@ -24,7 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     var_dump($_POST);
     if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
         deleteItem($pdo, $_POST['item_id']);
-        redirect('/panier');
+
+    }
+    if(isset($_POST['Acheter'])) {
+        print("test");
+        payerPanier($pdo);
     }
 }
 
