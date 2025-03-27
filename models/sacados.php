@@ -23,3 +23,11 @@ function itemsGetDisplay(PDO $pdo)
 
     return $stm->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function deleteItem(PDO $pdo, $idItem)
+{
+    $stm = $pdo->prepare('CALL supprimerSacADos(:idItem, :idJoueur);');
+    $stm->bindParam(':idItem', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->bindParam(':idJoueur', $idItem, PDO::PARAM_STR);
+    return $stm->execute();
+}
