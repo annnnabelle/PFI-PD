@@ -38,3 +38,26 @@ function payerPanier(PDO $pdo)
     $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     $stm->execute();
 }
+
+function poidsSacADos(PDO $pdo)
+{
+    $stm = $pdo->prepare('SELECT poidsSacADos(:idJoueur)');
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->execute();
+    return $stm->fetch(PDO::FETCH_ASSOC)['poidsSacADos(\'' . $_SESSION['user']['idJoueurs'] . '\')'];
+}
+
+function poidsPanier(PDO $pdo)
+{
+    $stm = $pdo->prepare('SELECT poidsPanier(:idJoueur)');
+    $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->execute();
+    return $stm->fetch(PDO::FETCH_ASSOC)['poidsPanier(\'' . $_SESSION['user']['idJoueurs'] . '\')'];
+}
+
+
+
+
+
+
+
