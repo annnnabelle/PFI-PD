@@ -1,11 +1,14 @@
 <?php 
 
+require "models/general.php";
 require "models/sacados.php";
 require "src/database.php";
 
 session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+$user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
+$_SESSION['user'] = $user;
 
 $sacADos = itemsGetDisplay($pdo);
 

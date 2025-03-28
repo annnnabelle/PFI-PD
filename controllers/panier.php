@@ -1,4 +1,6 @@
 <?php 
+
+require "models/general.php";
 require "models/panier.php";
 require "src/database.php";
 
@@ -6,9 +8,10 @@ session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
-$panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
-var_dump($_SESSION['user']);
+$user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
+$_SESSION['user'] = $user;
 
+$panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
 
 $prixtotal = 0;
 foreach ($panier as $item) {
@@ -20,9 +23,7 @@ foreach ($panier as $item) {
     $poidstotal += $item['poids'] * $item['quantite'];
 }
 
-var_dump($_POST);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump($_POST);
     if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
         deleteItem($pdo, $_POST['item_id']);
     }
@@ -40,19 +41,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 if (isset($_SESSION['confirmBuy'])) {
-    $totalWeight = poidsSacADos($pdo) + poidsPanier($pdo);
-    $maxWeight = $_SESSION['user']['poids_max'];
-    $dexterity = $_SESSION['user']['dexterite'];
 
-    if ($dexterity == 0 || $totalWeight > $maxWeight + $dexterity) {
+    $totalWeight = poidsSacADos($pdo) + poidsPanier($pdo);
+
+    if ($totalWeight >= poidsSacADos($pdo) + $user['dexterite']) {
+        unset($_SESSION['confirmBuy']);
         $info = [
             'message' => 'Vous n\'avez pas assez de dexteriter',
             'from' => '/panier',
             'confirm' => False
         ];
         $_SESSION['info'] = $info;
+        redirect('/confirm');
     }
-    else if ($totalWeight > $maxWeight && $dexterity < 100) {
+    if (!isset($_SESSION['confirmDex']) && $totalWeight > $user['poids_max']) {
         $info = [
             'message' => 'Acceptez vous de perdre de la dexterité ?',
             'from' => '/panier',
@@ -60,16 +62,15 @@ if (isset($_SESSION['confirmBuy'])) {
             'return' => 'confirmDex'
         ];
         $_SESSION['info'] = $info;
+        redirect('/confirm');
     }
-    else {
-        // Proceed with the purchase
-        unset($_SESSION['confirmBuy']);
-        unset($_SESSION['confirmDex']);
-        payerPanier($pdo);
-        redirect('/panier');
-    }
+    // Proceed with the purchase
+    unset($_SESSION['confirmBuy']);
+    unset($_SESSION['confirmDex']);
+    payerPanier($pdo);
+    redirect('/panier');
+    
 
-    redirect('/confirm');
 }
 
 require "views/panier.php";
