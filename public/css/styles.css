@@ -784,13 +784,25 @@ h1 {
 
 .info-button-container{
     display: flex;
-
     padding: 20px;
     justify-content: space-between;
     align-items: center;
 }
 .info-button{
+    background: #064b9a;
+    color: orange;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 30px;
+    font-family: 'ByteBounce', Arial, sans-serif;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
     margin: auto;
+    width: 150px;
 }
 
 

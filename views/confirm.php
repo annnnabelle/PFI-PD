@@ -8,9 +8,9 @@
             <div>
                 <span class="confirm-text"><?= $info['message'] ?></span>
                 <div class="info-button-container">
-                    <input type="submit" name="back" value="Annuler" class="btn btn-primary info-button">
+                    <button type="submit" name="back" class="btn btn-primary info-button">Retour</button>
                     <?php if($info['confirm']) { ?>
-                        <input type="submit" name="confirm" value="Confirmer" class="btn btn-primary info-button">
+                        <button type="submit" name="confirm" value="Annuler" class="btn btn-primary info-button">Confirmer</button>
                     <?php } ?>
                 </div>
             </div>
