@@ -263,7 +263,6 @@ a:hover {
 .cart-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-    padding: 20px;
     background: #f8c984;
     gap: 20px;
 }
@@ -300,7 +299,8 @@ a:hover {
     font-size: 25px;
     font-family: 'ByteBounce', sans-serif;
     display: block;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-left:20px;
     text-align: left;
     width: fit-content;
 
@@ -429,6 +429,7 @@ h1 {
     
 }
 
+
 .sell-button {
     background-color: #23BA0A;
     color: white;
@@ -480,6 +481,7 @@ h1 {
     align-items: stretch; 
 
 }
+
 
 /* -----ITEMS----- */
 .item {
