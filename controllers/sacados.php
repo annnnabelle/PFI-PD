@@ -1,20 +1,33 @@
 <?php 
 
+require "models/general.php";
 require "models/sacados.php";
 require "src/database.php";
 
 session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+$user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
+$_SESSION['user'] = $user;
 
 $sacADos = itemsGetDisplay($pdo);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump($_POST);
-    if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
-        deleteItem($pdo, $_POST['item_id']);
-        redirect('/sacados');
-    }
+if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
+    $_SESSION['itemToDelete'] = $_POST['item_id'];
+    $info = [
+        'message' => 'Voulez vous vraiment supprimer cet item de votre sac à dos ?',
+        'from' => '/sacados',
+        'confirm' => True,
+        'return' => 'deleteItem'
+    ];
+    $_SESSION['info'] = $info;
+    redirect('/confirm');
+}
+if(isset($_SESSION['deleteItem'])) {
+    deleteItem($pdo, $_SESSION['itemToDelete']);
+    unset($_SESSION['deleteItem']);
+    unset($_SESSION['itemToDelete']);
+    redirect('/sacados');
 }
 
 require "views/sacados.php";
