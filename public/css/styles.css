@@ -88,8 +88,9 @@ a:hover {
     position: absolute;
     left: 20px;
     padding: 5px;
-    width: 180px;
-    top: 3%;
+    width: 90%;
+    max-width: 250px;
+    top: auto;
 }
 .user-section {
     display: flex;
@@ -603,8 +604,9 @@ h1 {
     position: relative;
     background: rgb(219, 244, 255);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    width: 75em;
-    height: 600px;
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
     white-space: normal;
     justify-items: center;
     margin: 1vh auto;
@@ -612,6 +614,8 @@ h1 {
     border-radius: 20px;
     justify-content: center;
 }
+
+
 .detail-img {
     align-self: center;
     width: 30em;
@@ -624,7 +628,7 @@ h1 {
     align-items: flex-start;
     font-size: 3em;
     height: auto;
-    width: 600px;
+    width: 100%;
 }
 @media (max-width: 1400px) {
     .detail {
@@ -756,7 +760,7 @@ h1 {
 
 
 
-
+/* -----------FONTS-------------- */
 
 @font-face {
     font-family: 'ByteBounce';
