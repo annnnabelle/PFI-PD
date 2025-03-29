@@ -11,6 +11,12 @@ $user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
 $_SESSION['user'] = $user;
 
 $sacADos = itemsGetDisplay($pdo);
+$poids_max = poidsMaxSacADos($pdo);
+
+$poidstotal = 0;
+foreach ($sacADos as $item) {
+    $poidstotal += $item['poids'] * $item['quantite'];
+}
 
 if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
     $_SESSION['itemToDelete'] = $_POST['item_id'];

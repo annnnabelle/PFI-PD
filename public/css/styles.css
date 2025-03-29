@@ -352,7 +352,6 @@ h1 {
 
 
 .cart-summary {
-    margin: 0;
     padding: 15px;
     width: 100%;
     background: #a56629;
@@ -378,6 +377,9 @@ h1 {
     cursor: pointer;
     width: 200px;
     height: 60px;
+    position: absolute;
+    right: 11%;
+    transform: translateY(-130%);
     margin-top: auto;
     margin-bottom: auto;
     font-family: 'ByteBounce', sans-serif;
@@ -404,6 +406,7 @@ h1 {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    align-items: stretch;
 }
 
 /*-----Sac-à-dos------*/
@@ -421,6 +424,7 @@ h1 {
     width: calc(25% - 20px);
     box-sizing: border-box;
     position: relative; 
+    width: 440px;
     padding-bottom: 70px;
     
 }
@@ -428,7 +432,6 @@ h1 {
 .sell-button {
     background-color: #23BA0A;
     color: white;
-
     font-size: 30px;
     border-radius: 20px;
     cursor: pointer;
@@ -455,15 +458,27 @@ h1 {
 }
 
 .backpack-select{
-    font-size: 15px; /* Adjust to match label size */
+    font-size: 15px;
         padding: 5px;
         border-radius: 5px;
         border: 2px solid #8a4f20;
         background-color: #fff5d6;
-        margin-bottom: 0; /* Remove margin-bottom */
+
         transform: translateY(-5px);
         margin-right: 7px;
         
+}
+
+.backpack_summary {
+    padding: 15px;
+    width: 100%;
+    background: #a56629;
+    color: white;
+    display: flex;
+    flex-grow:1;
+    justify-content: flex-start;
+    align-items: stretch; 
+
 }
 
 /* -----ITEMS----- */
