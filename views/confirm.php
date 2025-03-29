@@ -6,7 +6,7 @@
     <form method="POST">
         <div class="info-container">
             <div>
-                <?= $info['message'] ?>
+                <span class="confirm-text"><?= $info['message'] ?></span>
                 <div class="info-button-container">
                     <input type="submit" name="back" value="Annuler" class="btn btn-primary info-button">
                     <?php if($info['confirm']) { ?>

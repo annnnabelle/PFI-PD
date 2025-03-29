@@ -13,6 +13,7 @@ $_SESSION['user'] = $user;
 
 $panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
 
+
 $prixtotal = 0;
 foreach ($panier as $item) {
     $prixtotal += $item['prix'] * $item['quantite'];
@@ -23,28 +24,55 @@ foreach ($panier as $item) {
     $poidstotal += $item['poids'] * $item['quantite'];
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
-        deleteItem($pdo, $_POST['item_id']);
-    }
-    if(isset($_POST['Acheter'])) {
-        $info = [
-            'message' => 'Voulez vous vraiment acheter ces objets ?',
-            'from' => '/panier',
-            'confirm' => True,
-            'return' => 'confirmBuy'
-        ];
-        $_SESSION['info'] = $info;
-        redirect('/confirm');
-    }
+
+
+if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
+    $_SESSION['itemToDelete'] = $_POST['item_id'];
+    $info = [
+        'message' => 'Voulez vous vraiment supprimer cet objet ?',
+        'from' => '/panier',
+        'confirm' => True,
+        'return' => 'deleteItem'
+    ];
+    $_SESSION['info'] = $info;
+    redirect('/confirm');
+}
+if(isset($_SESSION['deleteItem'])) {
+    deleteItem($pdo, $_SESSION['itemToDelete']);
+    unset($_SESSION['deleteItem']);
+    unset($_SESSION['itemToDelete']);
+    redirect('/panier');
 }
 
+
+
+
+if(isset($_POST['Acheter'])) {
+    $info = [
+        'message' => 'Voulez vous vraiment acheter ces objets ?',
+        'from' => '/panier',
+        'confirm' => True,
+        'return' => 'confirmBuy'
+    ];
+    $_SESSION['info'] = $info;
+    redirect('/confirm');
+}
 
 if (isset($_SESSION['confirmBuy'])) {
 
     $totalWeight = poidsSacADos($pdo) + poidsPanier($pdo);
 
-    if ($totalWeight >= poidsSacADos($pdo) + $user['dexterite']) {
+    if ($user['capsules'] < $prixtotal) {
+        unset($_SESSION['confirmBuy']);
+        $info = [
+            'message' => 'Vous n\'avez pas assez d\'or.',
+            'from' => '/panier',
+            'confirm' => False,
+        ];
+        $_SESSION['info'] = $info;
+        redirect('/confirm');
+    }
+    if ($totalWeight > $user['poids_max'] + $user['dexterite']) {
         unset($_SESSION['confirmBuy']);
         $info = [
             'message' => 'Vous n\'avez pas assez de dexteriter',

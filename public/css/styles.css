@@ -775,6 +775,13 @@ h1 {
     border: 3px solid #064b9a;
 }
 
+.confirm-text{
+    padding: 20px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #005bb1;
+}
+
 .info-button-container{
     display: flex;
 

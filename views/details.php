@@ -37,7 +37,7 @@
                 </div>
             </div>
             <?php if (!empty($_SESSION['user'])) { ?>
-                <form method="GET" class="addToCart" onsubmit="return confirmAddToCart()">
+                <form method="GET" class="addToCart">
                     <div>
                         <div class="cart-header">
                             <img src="public/img/Cart.png" class="cart-icon">
@@ -67,19 +67,11 @@
 
 <script>
     const basePrice = <?=$item['prix']?>; // Get the item's base price
-    
     function updateTotalPrice() {
         const quantity = document.getElementById('quantity').value;
         const totalPrice = basePrice * quantity;
         document.getElementById('total-price').textContent = totalPrice;
     }
-
-    function confirmAddToCart() {
-        const quantity = document.getElementById('quantity').value;
-        alert(`Vous avez ajouté ${quantity} article(s) au panier.`);
-        return true;
-    }
-
     updateTotalPrice();
 </script>
 
