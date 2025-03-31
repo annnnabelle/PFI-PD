@@ -19,14 +19,12 @@ function userCreate(PDO $pdo, array $data)
 }
 
 
-function userGetByAlias(PDO $pdo, string $alias): array
+function userGetByAlias($pdo, $alias)
 {
-    try {
-        $stm = $pdo->prepare('SELECT * FROM Joueurs WHERE alias = :alias');
-        $stm->bindParam(':alias', $alias, PDO::PARAM_STR);
-        $stm->execute();
-        return $stm->fetch(PDO::FETCH_ASSOC) ?: null;
-    } catch (PDOException $e) {
-        throw new Exception($e->getMessage());
-    }
+
+    $stm = $pdo->prepare('SELECT * FROM Joueurs WHERE alias = :alias');
+    $stm->bindParam(':alias', $alias, PDO::PARAM_STR);
+    $stm->execute();
+    return $stm->fetch(PDO::FETCH_ASSOC);
+
 }

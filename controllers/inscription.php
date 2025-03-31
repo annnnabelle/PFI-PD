@@ -43,9 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        try {
             $existingUser = userGetByAlias($pdo, $data['alias']);
-            if ($existingUser) {
+            if ($existingUser != null) {
                 $errors['alias'] = '*Cet alias est déjà utilisé. <br> Veuillez en choisir un autre.<br>';
             } else {
                 $user = userCreate($pdo, $data);
@@ -57,9 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $errors['global'] = '*Une erreur est survenue lors de la création du compte.';
                 }
             }
-        } catch (Exception $e) {
-            $errors['global'] = $e->getMessage();
-        }
     }
 }
 
