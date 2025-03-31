@@ -1,6 +1,5 @@
 <?php 
 
-require "models/general.php";
 require "models/sacados.php";
 require "src/database.php";
 

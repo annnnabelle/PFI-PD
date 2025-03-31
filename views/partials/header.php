@@ -1,8 +1,12 @@
 <?php
+
+require "models/general.php";
+
+$pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +65,6 @@ if (session_status() === PHP_SESSION_NONE) {
         <nav class="navbar">
             <a href="/">Enigme</a>
             <a href="/sacados">Sac a dos</a>
-            <a href="/panier">Panier</a>
+            <a href="/panier">Panier (<?=getCartItemCount($pdo)?>)</a>
         </nav>
     <?php endif; ?>

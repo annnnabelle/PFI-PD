@@ -1,6 +1,5 @@
 <?php 
 
-require "models/general.php";
 require "models/panier.php";
 require "src/database.php";
 
@@ -45,7 +44,21 @@ if(isset($_SESSION['deleteItem'])) {
 }
 
 
-
+if(isset($_POST['Vider'])) {
+    $info = [
+        'message' => 'Voulez vous vraiment vider le panier ?',
+        'from' => '/panier',
+        'confirm' => True,
+        'return' => 'confirmVider'
+    ];
+    $_SESSION['info'] = $info;
+    redirect('/confirm');
+}
+if (isset($_SESSION['confirmVider'])) {
+    unset($_SESSION['confirmVider']);
+    viderPanier($pdo);
+    redirect('/panier');
+}
 
 if(isset($_POST['Acheter'])) {
     $info = [
@@ -97,8 +110,6 @@ if (isset($_SESSION['confirmBuy'])) {
     unset($_SESSION['confirmDex']);
     payerPanier($pdo);
     redirect('/panier');
-    
-
 }
 
 require "views/panier.php";

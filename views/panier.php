@@ -1,5 +1,5 @@
-<?php 
-    require 'partials/header.php'; 
+<?php
+require 'partials/header.php';
 ?>
 
 <main>
@@ -10,12 +10,13 @@
         <div class="cart-container">
             <a href="/">&larr; Retour</a>
             <div class="cart-items">
-            <?php if (!empty($panier)): ?>
-                <?php foreach ($panier as $panierItem): ?>
+                <?php if (!empty($panier)): ?>
+                    <?php foreach ($panier as $panierItem): ?>
                         <div class="cart-item">
                             <form method="post">
                                 <input type="hidden" name="item_id" value="<?= $panierItem['idItems'] ?>">
-                                <button type="submit" class="garbage-btn" name="Supprimer" value="<?php $panierItem['idItems']?>">
+                                <button type="submit" class="garbage-btn" name="Supprimer"
+                                    value="<?php $panierItem['idItems'] ?>">
                                     <img src="/public/img/Garbage_can.png" alt="Delete">
                                 </button>
                             </form>
@@ -34,27 +35,39 @@
                                 <div>Qte: <?= $panierItem['quantite'] ?></div>
                             </div>
                         </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Le panier est vide</p>
-            <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Le panier est vide</p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="cart-summary">
-        <form method="post">
-            <div class="stats">
-                <div>
-                    <img class="symbol" src="/public/img/Weight">
-                    <span><?= $poidstotal ?> lbs</span>
-                </div>
-                <div>
-                    <img class="symbol" src="/public/img/Gold">
-                    <span><?= $prixtotal ?> gold</span>
-                </div>
-            </div>
+            <form method="post" class="cart-actions">
+                    <div class="stats">
+                        <div>
+                            <img class="symbol" src="/public/img/Weight">
+                            <span><?= $poidstotal ?> lbs</span>
+                        </div>
+                        <div>
+                            <img class="symbol" src="/public/img/Gold">
+                            <span><?= $prixtotal ?> gold</span>
+                        </div>
+                    </div>
 
-                <input type="hidden" name="Acheter" value="Acheter">
-                <button type="submit" class="buy-button">Acheter</button>
+                    <form method="post">
+                        <?php if(getCartItemCount($pdo) > 0) { ?>
+                            <input type="hidden" name="Vider" value="Vider">
+                        <?php } ?>
+                        <button type="submit" class="empty-button">Vider</button>
+                    </form>
+                    <form method="post">
+                        <?php if(getCartItemCount($pdo) > 0) { ?>
+                            <input type="hidden" name="Acheter" value="Acheter">
+                        <?php } ?>
+                        <button type="submit" class="buy-button">Acheter</button>
+                    </form>
+
+                </div>
             </form>
         </div>
     </div>
