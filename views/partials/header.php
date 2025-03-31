@@ -2,6 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +37,10 @@ if (session_status() === PHP_SESSION_NONE) {
                         <img src="public/img/gold.png" class="img-profile">
                         <span><?= $_SESSION['user']['capsules'] ?></span>
                     </div>
+                    <div>
+                        <img src="public/img/inventory_tab.png" class="img-profile">
+                        <!-- <span><?= $poidstotal ?>  / <?= $_SESSION['user']['poids_max'] ?></span> -->
+                    </div>
                 </div>
             </div>
         <?php endif; ?>
@@ -54,8 +59,8 @@ if (session_status() === PHP_SESSION_NONE) {
     </header>
     <?php if (isset($_SESSION['user'])): ?>
         <nav class="navbar">
-            <a href="/panier">Panier</a>
-            <a href="/sacados">Sac a dos</a>
             <a href="/">Enigme</a>
+            <a href="/sacados">Sac a dos</a>
+            <a href="/panier">Panier</a>
         </nav>
     <?php endif; ?>
