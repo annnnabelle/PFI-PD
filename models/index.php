@@ -11,7 +11,8 @@ function itemsGetDisplay(PDO $pdo)
                     WHEN type="m" then "Médicament"
                 end
                 type, prix, poids, photo
-            FROM Items;';
+            FROM Items
+            WHERE flag_dispo = 1;';
 
     $stm = $pdo->prepare($sql);
 
