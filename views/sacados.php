@@ -75,5 +75,4 @@ require 'partials/header.php';
 </script>
 
 
-
 <?php require 'partials/footer.php'; ?>
