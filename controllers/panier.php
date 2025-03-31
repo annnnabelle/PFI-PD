@@ -73,7 +73,7 @@ if(isset($_POST['Acheter'])) {
 
 if (isset($_SESSION['confirmBuy'])) {
 
-    $totalWeight = poidsSacADos($pdo) + poidsPanier($pdo);
+    $totalWeight = $poidsTotal + poidsPanier($pdo);
 
     if ($user['capsules'] < $prixtotal) {
         unset($_SESSION['confirmBuy']);

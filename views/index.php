@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'partials/header.php';
 ?>
 <main>

@@ -7,3 +7,14 @@ function getCartItemCount(PDO $pdo)
     $stm->execute();
     return $stm->fetch(PDO::FETCH_ASSOC)['item'];
 }
+
+function poidsSacADos(PDO $pdo)
+{
+    if(!isset($_SESSION['user'])) {
+        return 0;
+    }
+    $stm = $pdo->prepare('SELECT poidsSacADos(:idJoueur)');
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->execute();
+    return $stm->fetch(PDO::FETCH_ASSOC)['poidsSacADos(\'' . $_SESSION['user']['idJoueurs'] . '\')'];
+}

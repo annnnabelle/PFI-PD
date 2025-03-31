@@ -55,7 +55,7 @@ require 'partials/header.php';
                 <div class="stats">
                     <div>
                         <img class="symbol" src="/public/img/Weight">
-                        <span><?= $poidstotal ?> lbs / <?=$poids_max['poids_max'] ?></span>
+                        <span><?= $poidstotal ?>/<?=$poids_max['poids_max'] ?> lbs</span>
                     </div>
                 </div>
             </div>

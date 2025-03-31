@@ -1,11 +1,15 @@
 <?php
 
-require "models/general.php";
-
-$pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+include "models/general.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
+else{
+
+    $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+    
+    $poidsTotal = poidsSacADos($pdo);
 }
 ?>
 
@@ -42,8 +46,8 @@ if (session_status() === PHP_SESSION_NONE) {
                         <span><?= $_SESSION['user']['capsules'] ?></span>
                     </div>
                     <div>
-                        <img src="public/img/inventory_tab.png" class="img-profile">
-                        <!-- <span><?= $poidstotal ?>  / <?= $_SESSION['user']['poids_max'] ?></span> -->
+                        <img src="public/img/weight" class="img-profile">
+                        <span> <?=$poidsTotal ?>/<?= $_SESSION['user']['poids_max'] ?></span>
                     </div>
                 </div>
             </div>
