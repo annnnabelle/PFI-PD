@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="add-button">Ajouté au paniers</button>
+                        <button type="submit" class="add-button">Ajouté au panier</button>
                     </div>
                     <input type="hidden" name="quantityAdded" value="<?=$item['idItems']?>"/>
                     <input type="hidden" name="idItem" value="<?=$item['idItems']?>"/>
