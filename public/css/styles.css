@@ -88,8 +88,9 @@ a:hover {
     position: absolute;
     left: 20px;
     padding: 5px;
-    width: 180px;
-    top: 3%;
+    width: 90%;
+    max-width: 250px;
+    top: auto;
 }
 .user-section {
     display: flex;
@@ -262,7 +263,6 @@ a:hover {
 .cart-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-    padding: 20px;
     background: #f8c984;
     gap: 20px;
 }
@@ -299,7 +299,8 @@ a:hover {
     font-size: 25px;
     font-family: 'ByteBounce', sans-serif;
     display: block;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-left:20px;
     text-align: left;
     width: fit-content;
 
@@ -351,7 +352,6 @@ h1 {
 
 
 .cart-summary {
-    margin: 0;
     padding: 15px;
     width: 100%;
     background: #a56629;
@@ -377,6 +377,9 @@ h1 {
     cursor: pointer;
     width: 200px;
     height: 60px;
+    position: absolute;
+    right: 11%;
+    transform: translateY(-130%);
     margin-top: auto;
     margin-bottom: auto;
     font-family: 'ByteBounce', sans-serif;
@@ -403,6 +406,7 @@ h1 {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    align-items: stretch;
 }
 
 /*-----Sac-à-dos------*/
@@ -420,14 +424,15 @@ h1 {
     width: calc(25% - 20px);
     box-sizing: border-box;
     position: relative; 
+    width: 440px;
     padding-bottom: 70px;
     
 }
 
+
 .sell-button {
     background-color: #23BA0A;
     color: white;
-
     font-size: 30px;
     border-radius: 20px;
     cursor: pointer;
@@ -454,16 +459,29 @@ h1 {
 }
 
 .backpack-select{
-    font-size: 15px; /* Adjust to match label size */
+    font-size: 15px;
         padding: 5px;
         border-radius: 5px;
         border: 2px solid #8a4f20;
         background-color: #fff5d6;
-        margin-bottom: 0; /* Remove margin-bottom */
+
         transform: translateY(-5px);
         margin-right: 7px;
         
 }
+
+.backpack_summary {
+    padding: 15px;
+    width: 100%;
+    background: #a56629;
+    color: white;
+    display: flex;
+    flex-grow:1;
+    justify-content: flex-start;
+    align-items: stretch; 
+
+}
+
 
 /* -----ITEMS----- */
 .item {
@@ -603,8 +621,9 @@ h1 {
     position: relative;
     background: rgb(219, 244, 255);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    width: 75em;
-    height: fit-content;
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
     white-space: normal;
     justify-items: center;
     margin: 1vh auto;
@@ -612,6 +631,8 @@ h1 {
     border-radius: 20px;
     justify-content: center;
 }
+
+
 .detail-img {
     align-self: center;
     width: 30em;
@@ -624,7 +645,7 @@ h1 {
     align-items: flex-start;
     font-size: 3em;
     height: auto;
-    width: 600px;
+    width: 100%;
 }
 @media (max-width: 1400px) {
     .detail {
@@ -805,7 +826,7 @@ h1 {
     width: 150px;
 }
 
-
+/* -----------FONTS-------------- */
 
 @font-face {
     font-family: 'ByteBounce';
