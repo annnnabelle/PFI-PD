@@ -61,7 +61,7 @@ function poidsPanier(PDO $pdo)
 
 function viderPanier(PDO $pdo)
 {
-    $stm = $pdo->prepare('DELETE FROM Paniers WHERE idJoueur = :idJoueur');
+    $stm = $pdo->prepare('CALL supprimerPanierComplet(:idJoueur)');
     $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     $stm->execute();
 }
