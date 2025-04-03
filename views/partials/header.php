@@ -67,7 +67,7 @@ else{
     </header>
     <?php if (isset($_SESSION['user'])): ?>
         <nav class="navbar">
-            <a href="/">Enigme</a>
+            <a href="/enigme">Enigme</a>
             <a href="/sacados">Sac a dos</a>
             <a href="/panier">Panier (<?=getCartItemCount($pdo)?>)</a>
         </nav>
