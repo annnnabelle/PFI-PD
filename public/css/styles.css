@@ -25,6 +25,55 @@ html, body {
     background-attachment: fixed;
     height: 100%;
 }
+/* -------------Enigme---------- */
+.enigme-background{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #a0d8ef;
+    background-image: url('/public/img/Ginger_Island_Mermaid.png');
+    background-size: cover;
+    background-position: center center;
+    font-family: 'ByteBounce', Arial, sans-serif;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+
+.enigme-bubble {
+    min-height: 300px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/public/img/Wizard-Bubble.png') !important;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;  
+    font-family: 'ByteBounce', Arial, sans-serif;
+    background-attachment: scroll; 
+}
+
+.img-enigme {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    margin-left: 27%;
+    column-gap: 150%;
+    row-gap: 20px;
+}
+
+
+.img-enigme img {
+    width: 65px;
+    height: 65px; 
+    object-fit: contain;
+    cursor: pointer;
+    margin: auto;
+}
 
 /* -----HEAD----- */
 * {
