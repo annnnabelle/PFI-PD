@@ -9,5 +9,6 @@ const ROUTES =[
     '/deconnexion' => 'deconnexion.php',
     '/sacados' => 'sacados.php',
     '/confirm' => 'confirm.php',
-    '/enigme' => 'enigme.php'
+    '/enigme' => 'enigme.php',
+    '/enigme-questions' => 'enigme-questions.php',
 ];

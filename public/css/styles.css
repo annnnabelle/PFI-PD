@@ -42,19 +42,44 @@ html, body {
 
 
 .enigme-bubble {
-    min-height: 300px;
+    min-height: 200px;
     margin: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    text-align: left;
     background-image: url('/public/img/Wizard-Bubble.png') !important;
     background-size: contain; 
     background-position: center;
     background-repeat: no-repeat;  
-    font-family: 'ByteBounce', Arial, sans-serif;
     background-attachment: scroll; 
+    font-family: 'ByteBounce', Arial, sans-serif;
+    color: #573316;
+    line-height: 2;
+    box-sizing: border-box;
+    max-width: 90%;
+    margin-left:85px;
+}
+.enigme-bubble p{
+    margin-left:19rem; 
+    /* 13rem pr bee/etienne */
+    padding:2rem;
+    font-size: 25px;
 }
 
+
 .img-enigme {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    margin-left: 20%;
+    column-gap: 25rem;
+    row-gap: 20px;
+}
+.img-enigme-reponse {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -66,7 +91,6 @@ html, body {
     row-gap: 20px;
 }
 
-
 .img-enigme img {
     width: 65px;
     height: 65px; 
@@ -74,6 +98,7 @@ html, body {
     cursor: pointer;
     margin: auto;
 }
+
 
 /* -----HEAD----- */
 * {
