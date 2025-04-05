@@ -4,11 +4,10 @@ include "models/general.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-}
-else{
+} else {
 
     $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
-    
+
     $poidsTotal = poidsSacADos($pdo);
 }
 ?>
@@ -47,7 +46,7 @@ else{
                     </div>
                     <div>
                         <img src="public/img/weight" class="img-profile">
-                        <span> <?=$poidsTotal ?>/<?= $_SESSION['user']['poids_max'] ?></span>
+                        <span> <?= $poidsTotal ?>/<?= $_SESSION['user']['poids_max'] ?></span>
                     </div>
                 </div>
             </div>
@@ -57,6 +56,9 @@ else{
         <h2>Knapsack</h2>
         <div class="links">
             <?php if (isset($_SESSION['user'])): ?>
+                <?php if ($_SESSION['user']['est_admin'] == 1): ?>
+                    <a href="/admin">Admin</a>
+                <?php endif; ?>
                 <a href="/">Mon Profile</a>
                 <a href="/deconnexion">Déconnexion</a>
             <?php else: ?>
@@ -69,6 +71,6 @@ else{
         <nav class="navbar">
             <a href="/enigme">Enigme</a>
             <a href="/sacados">Sac a dos</a>
-            <a href="/panier">Panier (<?=getCartItemCount($pdo)?>)</a>
+            <a href="/panier">Panier (<?= getCartItemCount($pdo) ?>)</a>
         </nav>
     <?php endif; ?>

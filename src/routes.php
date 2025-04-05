@@ -11,4 +11,5 @@ const ROUTES =[
     '/confirm' => 'confirm.php',
     '/enigme' => 'enigme.php',
     '/enigme-questions' => 'enigme-questions.php',
+    '/admin' => 'admin.php',
 ];
