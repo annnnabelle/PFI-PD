@@ -74,7 +74,7 @@ body {
     margin-left:22rem;
     color: #8a4f20;
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: left;
 
 }
@@ -126,7 +126,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 7px;
     padding: 25px 35px;
-    gap: 30px;
+    gap: 20px;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: fit-content;
