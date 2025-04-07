@@ -7,7 +7,7 @@ require 'partials/header.php';
     <div class="enigme-bubble">
 
     </div>
-    <div class="img-enigme-reponse">
+    <div class="img-enigme">
         <img src="public/img/catfish.png">
         <img src="public/img/flounder.png">
         <img src="public/img/Pufferfish.png">

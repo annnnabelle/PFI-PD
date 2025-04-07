@@ -64,7 +64,7 @@ body {
 }
 
 .enigme-bubble p {
-    margin-left: 19rem;
+    margin-left: 25rem;
     /* 13rem pr bee/etienne */
     padding: 2rem;
     font-size: 25px;
@@ -78,7 +78,7 @@ body {
     width: 300px;
     height: 300px;
     padding: 30px;
-    margin-left: 20%;
+    margin-left: 24%;
     column-gap: 25rem;
     row-gap: 20px;
 }
@@ -103,7 +103,39 @@ body {
     margin: auto;
 }
 
-
+.img-enigme p {
+    font-size: 30px;
+    color: #E9AA67;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: -45px;
+    text-decoration: none;
+}
+.img-enigme p:hover{
+    color: #b47524;
+}
+    .img-enigme a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white, tweak as needed */
+        border-radius: 15px;
+        padding: 20px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .img-enigme a:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .img-enigme a p {
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    
 /* -----HEAD----- */
 * {
     margin: 0;
@@ -939,7 +971,7 @@ h1 {
 .user-container {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
     gap: 20px;
     /* Adds spacing between users */
     padding: 30px 10px;
