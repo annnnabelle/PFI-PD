@@ -8,14 +8,14 @@ require 'partials/header.php';
         <a href="/enigme">&larr; Retour</a>
         <p>
             Ah, brave âme en quête de sagesse! <br>
-            Le chemin qui s'offre à toi se divise en trois voies mystérieuses...
+            Le chemin qui s'offre à toi se divise en trois voies...
         </p>
         <p>Choisis avec prudence, <br>car le niveau de défi façonnera ton destin!</p>
     </div>
-    <div class="img-enigme">
+    <div class="img-enigme-difficulter">
         <div value="Facile">
             <a href="/enigme-questions">
-                <img src="public/img/Lionfish.jpeg" alt="catfish">
+                <img src="public/img/Legend_II.png" alt="catfish">
                 <p>
                     Facile
                 </p>
@@ -23,7 +23,7 @@ require 'partials/header.php';
         </div>
         <div value="Moyen">
             <a href="/enigme-questions">
-                <img src="public/img/Blue_Discus.jpeg" alt="flounder">
+                <img src="public/img/Son_of_Crimsonfish.png" alt="flounder">
                 <p>
                     Moyen
                 </p>
@@ -31,7 +31,7 @@ require 'partials/header.php';
         </div>
         <div value="Difficile">
             <a href="/enigme-questions">
-                <img src="public/img/Pufferfish.png" alt="Pufferfish">
+                <img src="public/img/Midnight_Carp.png" alt="Pufferfish">
                 <p>
                     Difficile
                 </p>

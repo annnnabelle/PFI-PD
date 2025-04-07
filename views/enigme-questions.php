@@ -6,9 +6,9 @@ require 'partials/header.php';
 
     <div class="enigme-bubble">
         <a href="/enigme">&larr; Retour</a>
-        <p>
-
-        </p>
+        <p> Voici la question: </p>
+        <br><br><br><br><br>
+        <p></p>
     </div>
     <div class="img-enigme">
         <div>
