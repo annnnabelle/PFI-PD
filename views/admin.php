@@ -5,13 +5,15 @@ require 'partials/header.php';
 <main>
 
     <div class="user-container">
-        <a href="/">&larr; Retour</a>
-        <div class="cart-item">
-
-            <div>
-                <div>Alias Prenom Nom</div>
-            </div>
+        
+       
+    
+    <a href="/">&larr; Retour</a>
+        <div class="background-admin">
+        
+        <h1>Section admin</h1>
         </div>
+      
 
         <?php foreach ($users as $user) { ?>
             <form method="post">

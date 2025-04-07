@@ -50,3 +50,12 @@ function poidsMaxSacADos(PDO $pdo)
     $stm->execute();
     return $stm->fetch(PDO::FETCH_ASSOC);
 }
+
+function sellItem(PDO $pdo, $idItem, $quantite)
+{
+    $stm = $pdo->prepare('CALL sellItem(:idJoueur, :idItem, :quantite);');
+    $stm->bindValue(':idItem', $idItem, PDO::PARAM_STR);
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->bindValue(':quantite', $quantite, PDO::PARAM_STR);
+    return $stm->execute();
+}
