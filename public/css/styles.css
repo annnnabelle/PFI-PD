@@ -980,27 +980,6 @@ h1 {
 
 /*----- Admin -----*/
 
-.admin-header {
-    display: flex;
-    align-items: center; /* Vertically align items */
-    justify-content: space-between; /* Space out the items */
-    width: 100%; /* Ensure it spans the full width */
-    margin-bottom: 20px; /* Add spacing below */
-}
-
-.admin-header a {
-    text-decoration: none;
-    color: #8a4f20;
-    font-size: 25px;
-    font-family: 'ByteBounce', sans-serif;
-    margin-left: 20px; /* Align with the user list */
-}
-
-.admin-header h1 {
-    flex: 1; /* Allow the header to take up remaining space */
-    text-align: center; /* Center the text */
-    margin: 0; /* Remove default margin */
-}
 
 
 .background-admin {
@@ -1016,7 +995,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    /* Adds spacing between users */
     padding: 30px 10px;
 }
 
@@ -1037,7 +1015,6 @@ h1 {
     color: #db8e29;
 }
 
-
 .admin-user {
     
     background: #fff5d6;
@@ -1054,9 +1031,7 @@ h1 {
     position: relative;
     height: 100%;
     overflow: hidden;
-    text-overflow: ellipsis;
-   
-    
+    text-overflow: ellipsis;  
 }
 
 .admin-left{
@@ -1075,7 +1050,6 @@ h1 {
 }
 
 .user-details {
-    
     display: flex;
     justify-content: space-between; 
     width: 100%;
