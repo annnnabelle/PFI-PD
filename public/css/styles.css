@@ -65,16 +65,16 @@ body {
 }
 
 .enigme-bubble p {
-    margin-left:28rem;
+    margin-left:22rem;
     /* 13rem pr bee/etienne */
     font-size: 28px;
 }
 .enigme-bubble a{
     text-decoration: none;
-    margin-left:28rem;
+    margin-left:22rem;
     color: #8a4f20;
     font-size: 20px;
-    margin-bottom: 27px;
+    margin-bottom: 15px;
     text-align: left;
 
 }
