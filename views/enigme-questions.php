@@ -5,7 +5,7 @@ require 'partials/header.php';
 <main class="enigme-background">
 
     <div class="enigme-bubble">
-        <a href="/">&larr; Retour</a>
+        <a href="/enigme">&larr; Retour</a>
         <p>
 
         </p>
@@ -13,12 +13,12 @@ require 'partials/header.php';
     <div class="img-enigme">
         <div>
             <a href="/enigme-questions">
-                <img src="public/img/catfish.png" alt="catfish">
+                <img src="public/img/Lionfish.jpeg" alt="catfish">
             </a>
         </div>
         <div>
             <a href="/enigme-questions">
-                <img src="public/img/flounder.png" alt="flounder">
+                <img src="public/img/Blue_Discus.jpeg" alt="flounder">
             </a>
         </div>
         <div>
