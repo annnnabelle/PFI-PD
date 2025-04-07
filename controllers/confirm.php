@@ -16,10 +16,8 @@ if(isset($_POST['back'])) {
 if($info['confirm'] && isset($_POST['confirm'])) {
     $_SESSION[$info['return']] = True;
     unset($_SESSION['info']);
-    var_dump($_SESSION[$info['return']]);
     header('Location: ' . $returnTo);
     exit;
 }
-
 
 require "views/confirm.php";
