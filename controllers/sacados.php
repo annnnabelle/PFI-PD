@@ -17,6 +17,27 @@ foreach ($sacADos as $item) {
     $poidstotal += $item['poids'] * $item['quantite'];
 }
 
+
+if (isset($_POST['itemSold'])) {
+    $_SESSION['itemToSell'] = $_POST['itemSold'];
+    $_SESSION['quantitySold'] = $_POST['quantitySold'];
+    $info = [
+        'message' => 'Voulez vous vraiment vendre cet item ?',
+        'from' => '/sacados',
+        'confirm' => True,
+        'return' => 'sellItem'
+    ];
+    $_SESSION['info'] = $info;
+    redirect('/confirm');
+}
+if(isset($_SESSION['sellItem'])) {
+    sellItem($pdo, $_SESSION['itemToSell'], $_SESSION['quantitySold']);
+    unset($_SESSION['sellItem']);
+    unset($_SESSION['itemToSell']);
+    unset($_SESSION['quantitySold']);
+    redirect('/sacados');
+}
+
 if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
     $_SESSION['itemToDelete'] = $_POST['item_id'];
     $info = [
