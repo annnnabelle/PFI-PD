@@ -7,10 +7,8 @@ session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
-$user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
-$_SESSION['user'] = $user;
-
 $panier = itemsGetDisplay($pdo, $_SESSION['user']['idJoueurs']);
+$user = $_SESSION['user'];
 
 
 $prixtotal = 0;
