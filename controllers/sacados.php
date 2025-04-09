@@ -16,9 +16,11 @@ foreach ($sacADos as $item) {
 }
 
 
-if (isset($_POST['itemId'])) {
+var_dump($_POST);
+
+if (isset($_POST['sell'])) {
     $_SESSION['itemToSell'] = $_POST['itemId'];
-    $_SESSION['quantitySold'] = $_POST['quantitySold'];
+    $_SESSION['quantityUsed'] = $_POST['quantityUsed'];
     $info = [
         'message' => 'Voulez vous vraiment vendre cet item ?',
         'from' => '/sacados',
@@ -29,12 +31,43 @@ if (isset($_POST['itemId'])) {
     redirect('/confirm');
 }
 if(isset($_SESSION['sellItem'])) {
-    sellItem($pdo, $_SESSION['itemToSell'], $_SESSION['quantitySold']);
+    sellItem($pdo, $_SESSION['itemToSell'], $_SESSION['quantityUsed']);
     unset($_SESSION['sellItem']);
     unset($_SESSION['itemToSell']);
-    unset($_SESSION['quantitySold']);
+    unset($_SESSION['quantityUsed']);
     redirect('/sacados');
 }
+
+
+
+if (isset($_POST['eat'])) {
+    $_SESSION['itemToEat'] = $_POST['itemId'];
+    $_SESSION['quantityUsed'] = $_POST['quantityUsed'];
+    $_SESSION['itemType'] = $_POST['itemType'];
+    $info = [
+        'message' => 'Voulez vous vraiment manger cet item ?',
+        'from' => '/sacados',
+        'confirm' => True,
+        'return' => 'eatItem'
+    ];
+    $_SESSION['info'] = $info;
+    redirect('/confirm');
+}
+if(isset($_SESSION['eatItem'])) {
+    eatItem($pdo, $_SESSION['itemToEat'], $_SESSION['quantityUsed'], $_SESSION['itemType'] == 'Médicament' ? 1 : 0);
+    var_dump($_SESSION['itemType']);
+    unset($_SESSION['eatItem']);
+    unset($_SESSION['itemToEat']);
+    unset($_SESSION['quantityUsed']);
+    unset($_SESSION['itemType']);
+    //redirect('/sacados');
+}
+
+
+
+
+
+
 
 if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
     $_SESSION['itemToDelete'] = $_POST['item_id'];

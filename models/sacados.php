@@ -52,3 +52,14 @@ function sellItem(PDO $pdo, $idItem, $quantite)
     $stm->bindValue(':quantite', $quantite, PDO::PARAM_STR);
     return $stm->execute();
 }
+
+
+function eatItem(PDO $pdo, $idItem, $quantite, $type)
+{
+    $stm = $pdo->prepare('CALL eatItem(:idJoueur, :idItem, :quantite, :type);');
+    $stm->bindValue(':idItem', $idItem, PDO::PARAM_STR);
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->bindValue(':quantite', $quantite, PDO::PARAM_STR);
+    $stm->bindValue(':type', $type, PDO::PARAM_STR);
+    return $stm->execute();
+}

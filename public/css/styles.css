@@ -680,7 +680,7 @@ h1 {
 }
 
 .consumable-button {
-    background-color: #cca150;
+    background-color: #b37d19;
     color: white;
     font-size: 25px;
     border-radius: 20px;
@@ -700,7 +700,7 @@ h1 {
 .sell-button-container {
     position: absolute;
     bottom: 10px;
-    right: 10px;
+    right: 5px;
     align-self: right;
 }
 .backpack-span {
