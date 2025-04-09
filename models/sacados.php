@@ -24,7 +24,7 @@ function itemsGetDisplay(PDO $pdo)
     $stm->execute();
 
     return $stm->fetchAll(PDO::FETCH_ASSOC);
-}
+}   
 
 function deleteItem(PDO $pdo, $idItem)
 {

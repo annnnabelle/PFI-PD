@@ -8,8 +8,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
     $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
-    $poidsTotalSacADos = poidsSacADos($pdo);
+    if (isset($_SESSION['user'])) {
+        $user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
+        $_SESSION['user'] = $user;
+    }
 
-    $user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
-    $_SESSION['user'] = $user;
+    $poidsTotalSacADos = poidsSacADos($pdo);
 }

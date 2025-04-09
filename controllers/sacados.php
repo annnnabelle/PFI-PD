@@ -16,8 +16,8 @@ foreach ($sacADos as $item) {
 }
 
 
-if (isset($_POST['itemSold'])) {
-    $_SESSION['itemToSell'] = $_POST['itemSold'];
+if (isset($_POST['itemId'])) {
+    $_SESSION['itemToSell'] = $_POST['itemId'];
     $_SESSION['quantitySold'] = $_POST['quantitySold'];
     $info = [
         'message' => 'Voulez vous vraiment vendre cet item ?',
