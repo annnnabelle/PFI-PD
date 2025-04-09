@@ -65,16 +65,16 @@ body {
 }
 
 .enigme-bubble p {
-    margin-left:28rem;
+    margin-left:22rem;
     /* 13rem pr bee/etienne */
     font-size: 28px;
 }
 .enigme-bubble a{
     text-decoration: none;
-    margin-left:28rem;
+    margin-left:22rem;
     color: #8a4f20;
     font-size: 20px;
-    margin-bottom: 27px;
+    margin-bottom: 10px;
     text-align: left;
 
 }
@@ -86,20 +86,8 @@ body {
     width: 300px;
     height: 300px;
     padding: 30px;
-    margin-left: 26%;
-    column-gap: 20rem;
-    row-gap: 20px;
-}
-
-.img-enigme-reponse {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    width: 300px;
-    height: 300px;
-    padding: 30px;
     margin-left: 27%;
-    column-gap: 150%;
+    column-gap: 17rem;
     row-gap: 20px;
 }
 
@@ -126,7 +114,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 7px;
     padding: 25px 35px;
-    gap: 30px;
+    gap: 10px;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: fit-content;
@@ -149,6 +137,62 @@ body {
     color: #E9AA67;
 }
 
+.img-enigme-difficulter {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    margin: 0 auto; 
+}
+.img-enigme-difficulter img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    cursor: pointer;
+    margin: auto;
+}
+
+.img-enigme-difficulter p {
+    font-size: 30px;
+    color: #E9AA67;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: -45px;
+    text-decoration: none;
+}
+.img-enigme-difficulter a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    padding: 25px 35px;
+    gap: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+.img-enigme-difficulter a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.img-enigme-difficulter a img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin: 0;
+}
+
+.img-enigme-difficulter a p {
+    margin: 0;
+    font-size: 35px;
+    color: #E9AA67;
+}
 /* -----HEAD----- */
 * {
     margin: 0;
@@ -980,27 +1024,6 @@ h1 {
 
 /*----- Admin -----*/
 
-.admin-header {
-    display: flex;
-    align-items: center; /* Vertically align items */
-    justify-content: space-between; /* Space out the items */
-    width: 100%; /* Ensure it spans the full width */
-    margin-bottom: 20px; /* Add spacing below */
-}
-
-.admin-header a {
-    text-decoration: none;
-    color: #8a4f20;
-    font-size: 25px;
-    font-family: 'ByteBounce', sans-serif;
-    margin-left: 20px; /* Align with the user list */
-}
-
-.admin-header h1 {
-    flex: 1; /* Allow the header to take up remaining space */
-    text-align: center; /* Center the text */
-    margin: 0; /* Remove default margin */
-}
 
 
 .background-admin {
@@ -1016,7 +1039,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    /* Adds spacing between users */
     padding: 30px 10px;
 }
 
@@ -1037,7 +1059,6 @@ h1 {
     color: #db8e29;
 }
 
-
 .admin-user {
     
     background: #fff5d6;
@@ -1054,9 +1075,7 @@ h1 {
     position: relative;
     height: 100%;
     overflow: hidden;
-    text-overflow: ellipsis;
-   
-    
+    text-overflow: ellipsis;  
 }
 
 .admin-left{
@@ -1075,7 +1094,6 @@ h1 {
 }
 
 .user-details {
-    
     display: flex;
     justify-content: space-between; 
     width: 100%;

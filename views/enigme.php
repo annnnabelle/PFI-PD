@@ -14,13 +14,13 @@ require 'partials/header.php';
 
     <div class="img-enigme">
         <div>
-            <a href="/enigme-questions">
+            <a href="/enigme-difficulter" value="difficulter">
                 <img src="public/img/catfish.png" alt="catfish">
                 <p>Difficulté</p>
             </a>
         </div>
         <div>
-            <a href="/enigme-questions">
+            <a href="/enigme-questions" value="aleatoire">
                 <img src="public/img/flounder.png" alt="flounder">
                 <p>Aléatoire</p>
             </a>
