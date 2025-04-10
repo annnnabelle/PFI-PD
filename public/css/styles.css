@@ -235,6 +235,13 @@ body {
     padding: 1vh;
 }
 
+.clickTitle{
+    color: #db8e29;
+}
+.clickTitle:hover {
+    cursor: pointer;
+}
+
 a:hover {
     color: #db8e29;
 }

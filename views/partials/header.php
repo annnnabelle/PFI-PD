@@ -45,8 +45,10 @@ include "controllers/general.php";
             </div>
         <?php endif; ?>
 
+        <a class="clickTitle" href="/">
+            <h2>Knapsack</h2>
+        </a>
 
-        <h2>Knapsack</h2>
         <div class="links">
             <?php if (isset($_SESSION['user'])): ?>
                 <?php if ($_SESSION['user']['est_admin'] == 1): ?>
