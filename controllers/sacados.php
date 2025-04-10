@@ -6,6 +6,7 @@ require "src/database.php";
 session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
+checkRestock($pdo);
 
 $sacADos = itemsGetDisplay($pdo);
 $poids_max = poidsMaxSacADos($pdo);

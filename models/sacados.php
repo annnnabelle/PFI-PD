@@ -63,3 +63,14 @@ function eatItem(PDO $pdo, $idItem, $quantite, $type)
     $stm->bindValue(':type', $type, PDO::PARAM_STR);
     return $stm->execute();
 }
+
+function checkRestock(PDO $pdo)
+{
+    $stm = $pdo->prepare('CALL checkForFood(:idJoueur);');
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->execute();
+
+    $stm = $pdo->prepare('CALL checkForMedicine(:idJoueur);');
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->execute();
+}
