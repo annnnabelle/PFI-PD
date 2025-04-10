@@ -15,9 +15,6 @@ foreach ($sacADos as $item) {
     $poidstotal += $item['poids'] * $item['quantite'];
 }
 
-
-var_dump($_POST);
-
 if (isset($_POST['sell'])) {
     $_SESSION['itemToSell'] = $_POST['itemId'];
     $_SESSION['quantityUsed'] = $_POST['quantityUsed'];
@@ -55,12 +52,11 @@ if (isset($_POST['eat'])) {
 }
 if(isset($_SESSION['eatItem'])) {
     eatItem($pdo, $_SESSION['itemToEat'], $_SESSION['quantityUsed'], $_SESSION['itemType'] == 'Médicament' ? 1 : 0);
-    var_dump($_SESSION['itemType']);
     unset($_SESSION['eatItem']);
     unset($_SESSION['itemToEat']);
     unset($_SESSION['quantityUsed']);
     unset($_SESSION['itemType']);
-    //redirect('/sacados');
+    redirect('/sacados');
 }
 
 
