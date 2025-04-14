@@ -35,16 +35,22 @@ require 'partials/header.php';
                                 <div>Qte: <?= $item['quantite'] ?></div>
 
                             </div>
-                            <form method="post">
-                                <input type="hidden" name="itemSold" value="<?= $item['idItems'] ?>">
+                            <form method="post" >
+                                <input type="hidden" name="itemId" value="<?= $item['idItems'] ?>">
                                 <div class="sell-button-container">
                                     <span class="backpack-span">Quantité: </span>
-                                        <select id="quantity" name="quantitySold" class="backpack-select">
+                                        <select id="quantity" name="quantityUsed" class="backpack-select">
                                             <?php for ($i = 1; $i <= $item['quantite']; $i++) { ?>
                                                 <option value="<?=$i?>"><?=$i?></option>
                                             <?php } ?>
                                         </select>
-                                    <button type="submit" class="sell-button">Vendre</button>
+                                    <?php if ($item['type'] == 'Nourriture' || $item['type'] == 'Médicament') { ?>
+                                        <input type="hidden" name="itemType" value="<?= $item['type'] ?>">
+                                        <button type="submit" name="eat" class="consumable-button">Consommer</button>
+                                        <button type="submit" name="sell" class="consumable-sell-button">Vendre</button>
+                                    <?php } else { ?>
+                                        <button type="submit" name="sell" class="sell-button">Vendre</button>
+                                    <?php } ?>
                                 </div>
                             </form>
                             

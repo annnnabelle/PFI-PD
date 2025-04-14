@@ -1,15 +1,8 @@
 <?php
 
-include "models/general.php";
+include "controllers/general.php";
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-} else {
 
-    $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
-
-    $poidsTotal = poidsSacADos($pdo);
-}
 ?>
 
 <!DOCTYPE html>
@@ -46,14 +39,16 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                     <div>
                         <img src="public/img/weight" class="img-profile">
-                        <span> <?= $poidsTotal ?>/<?= $_SESSION['user']['poids_max'] ?></span>
+                        <span> <?= $poidsTotalSacADos ?>/<?= $_SESSION['user']['poids_max'] ?></span>
                     </div>
                 </div>
             </div>
         <?php endif; ?>
 
+        <a class="clickTitle" href="/">
+            <h2>Knapsack</h2>
+        </a>
 
-        <h2>Knapsack</h2>
         <div class="links">
             <?php if (isset($_SESSION['user'])): ?>
                 <?php if ($_SESSION['user']['est_admin'] == 1): ?>

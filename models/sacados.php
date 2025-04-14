@@ -1,12 +1,5 @@
 <?php
 
-function userGetById(PDO $pdo, $id): array
-{
-    $stm = $pdo->prepare('SELECT * FROM Joueurs WHERE idJoueurs = :id');
-    $stm->bindParam(':id', $id, PDO::PARAM_STR);
-    $stm->execute();
-    return $stm->fetch(PDO::FETCH_ASSOC);
-}
 
 
 function itemsGetDisplay(PDO $pdo)
@@ -31,7 +24,7 @@ function itemsGetDisplay(PDO $pdo)
     $stm->execute();
 
     return $stm->fetchAll(PDO::FETCH_ASSOC);
-}
+}   
 
 function deleteItem(PDO $pdo, $idItem)
 {
@@ -58,4 +51,26 @@ function sellItem(PDO $pdo, $idItem, $quantite)
     $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     $stm->bindValue(':quantite', $quantite, PDO::PARAM_STR);
     return $stm->execute();
+}
+
+
+function eatItem(PDO $pdo, $idItem, $quantite, $type)
+{
+    $stm = $pdo->prepare('CALL eatItem(:idJoueur, :idItem, :quantite, :type);');
+    $stm->bindValue(':idItem', $idItem, PDO::PARAM_STR);
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->bindValue(':quantite', $quantite, PDO::PARAM_STR);
+    $stm->bindValue(':type', $type, PDO::PARAM_STR);
+    return $stm->execute();
+}
+
+function checkRestock(PDO $pdo)
+{
+    $stm = $pdo->prepare('CALL checkForFood(:idJoueur);');
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->execute();
+
+    $stm = $pdo->prepare('CALL checkForMedicine(:idJoueur);');
+    $stm->bindValue(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
+    $stm->execute();
 }

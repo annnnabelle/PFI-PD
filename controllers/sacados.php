@@ -6,8 +6,7 @@ require "src/database.php";
 session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
-$user = userGetById($pdo, $_SESSION['user']['idJoueurs']);
-$_SESSION['user'] = $user;
+checkRestock($pdo);
 
 $sacADos = itemsGetDisplay($pdo);
 $poids_max = poidsMaxSacADos($pdo);
@@ -17,10 +16,9 @@ foreach ($sacADos as $item) {
     $poidstotal += $item['poids'] * $item['quantite'];
 }
 
-
-if (isset($_POST['itemSold'])) {
-    $_SESSION['itemToSell'] = $_POST['itemSold'];
-    $_SESSION['quantitySold'] = $_POST['quantitySold'];
+if (isset($_POST['sell'])) {
+    $_SESSION['itemToSell'] = $_POST['itemId'];
+    $_SESSION['quantityUsed'] = $_POST['quantityUsed'];
     $info = [
         'message' => 'Voulez vous vraiment vendre cet item ?',
         'from' => '/sacados',
@@ -31,12 +29,42 @@ if (isset($_POST['itemSold'])) {
     redirect('/confirm');
 }
 if(isset($_SESSION['sellItem'])) {
-    sellItem($pdo, $_SESSION['itemToSell'], $_SESSION['quantitySold']);
+    sellItem($pdo, $_SESSION['itemToSell'], $_SESSION['quantityUsed']);
     unset($_SESSION['sellItem']);
     unset($_SESSION['itemToSell']);
-    unset($_SESSION['quantitySold']);
+    unset($_SESSION['quantityUsed']);
     redirect('/sacados');
 }
+
+
+
+if (isset($_POST['eat'])) {
+    $_SESSION['itemToEat'] = $_POST['itemId'];
+    $_SESSION['quantityUsed'] = $_POST['quantityUsed'];
+    $_SESSION['itemType'] = $_POST['itemType'];
+    $info = [
+        'message' => 'Voulez vous vraiment manger cet item ?',
+        'from' => '/sacados',
+        'confirm' => True,
+        'return' => 'eatItem'
+    ];
+    $_SESSION['info'] = $info;
+    redirect('/confirm');
+}
+if(isset($_SESSION['eatItem'])) {
+    eatItem($pdo, $_SESSION['itemToEat'], $_SESSION['quantityUsed'], $_SESSION['itemType'] == 'Médicament' ? 1 : 0);
+    unset($_SESSION['eatItem']);
+    unset($_SESSION['itemToEat']);
+    unset($_SESSION['quantityUsed']);
+    unset($_SESSION['itemType']);
+    redirect('/sacados');
+}
+
+
+
+
+
+
 
 if (isset($_POST['Supprimer']) && isset($_POST['item_id'])) {
     $_SESSION['itemToDelete'] = $_POST['item_id'];

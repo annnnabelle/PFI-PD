@@ -278,6 +278,13 @@ body {
     padding: 1vh;
 }
 
+.clickTitle{
+    color: #db8e29;
+}
+.clickTitle:hover {
+    cursor: pointer;
+}
+
 a:hover {
     color: #db8e29;
 }
@@ -709,19 +716,43 @@ h1 {
     font-family: 'ByteBounce', sans-serif;
 }
 
+.consumable-sell-button {
+    background-color: #23BA0A;
+    color: white;
+    font-size: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 110px;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'ByteBounce', sans-serif;
+}
+
+.consumable-button {
+    background-color: #b37d19;
+    color: white;
+    font-size: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 110px;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'ByteBounce', sans-serif;
+}
+
 .sell-button:hover {
     background-color: #318620;
 }
 
+
 .sell-button-container {
     position: absolute;
     bottom: 10px;
-    /* Adjust the distance from the bottom */
-    right: 10px;
-    /* Push it to the bottom */
-
+    right: 5px;
+    align-self: right;
 }
-
 .backpack-span {
     font-size: 35px;
     min-width: 60px;

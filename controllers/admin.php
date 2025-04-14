@@ -6,8 +6,6 @@ require "src/database.php";
 session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
-$userConnected = userGetById($pdo, $_SESSION['user']['idJoueurs']);
-$_SESSION['user'] = $userConnected;
 $users = usersGetAll($pdo);
 
 if(isset($_POST['augmenter'])) {
