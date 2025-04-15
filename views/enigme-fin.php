@@ -19,6 +19,12 @@ require 'partials/header.php';
                 <p>Retour</p>
             </a>
         </div>
+        <div>
+            <a href="/enigme-recommencer">
+                <img src="public/img/Albacore.png" alt="catfish">
+                <p>Rejouer</p>
+            </a>
+        </div>
     </div>
 </main>
 
