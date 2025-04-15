@@ -403,18 +403,28 @@ a:hover {
     display: flex;
     justify-content: space-around;
     background-color: #197de1;
-    padding: 10px;
+    padding: 0.5vw;
 }
 
 .navbar a {
     color: orange;
-    font-size: 27px;
+    font-size: 2.3vw;
     text-decoration: none;
 
 }
 
 .navbar a:hover {
     color: #db8e29;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0.5vw;
+    }
+    
+    .navbar a {
+        font-size: 5vw;
+    }
 }
 
 /* --------Inscription & Connexion ---------- */
