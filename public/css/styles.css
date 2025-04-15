@@ -805,6 +805,7 @@ h1 {
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 80%;
+    padding-left: 10px;
 }
 
 
