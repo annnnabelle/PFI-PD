@@ -39,9 +39,7 @@ body {
     background-position: center center;
     font-family: 'ByteBounce', Arial, sans-serif;
     background-attachment: fixed;
-    height: 100%;
 }
-
 
 .enigme-bubble {
     min-height: 375px;
@@ -65,18 +63,17 @@ body {
 }
 
 .enigme-bubble p {
-    margin-left:22rem;
-    /* 13rem pr bee/etienne */
+    margin-left: 22rem;
     font-size: 28px;
 }
-.enigme-bubble a{
+
+.enigme-bubble a {
     text-decoration: none;
-    margin-left:22rem;
+    margin-left: 22rem;
     color: #8a4f20;
     font-size: 20px;
     margin-bottom: 10px;
     text-align: left;
-
 }
 
 .img-enigme {
@@ -91,22 +88,6 @@ body {
     row-gap: 20px;
 }
 
-.img-enigme img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    cursor: pointer;
-    margin: auto;
-}
-
-.img-enigme p {
-    font-size: 30px;
-    color: #E9AA67;
-    text-align: center;
-    margin-left: 100px;
-    margin-top: -45px;
-    text-decoration: none;
-}
 .img-enigme a {
     display: flex;
     align-items: center;
@@ -137,33 +118,56 @@ body {
     color: #E9AA67;
 }
 
+.img-enigme form {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    padding: 25px 35px;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    border: none;
+}
+
+.img-enigme form:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.img-enigme form button {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-enigme form img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin: 0;
+}
+
+.img-enigme form p {
+    margin: 0;
+    font-size: 35px;
+    color: #E9AA67;
+}
+
 .img-enigme-difficulter {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 5rem;
     width: 100%;
     height: auto;
     padding: 30px;
-    margin: 0 auto; 
-}
-.img-enigme-difficulter img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    cursor: pointer;
-    margin: auto;
+    margin: 0 auto;
 }
 
-.img-enigme-difficulter p {
-    font-size: 30px;
-    color: #E9AA67;
-    text-align: center;
-    margin-left: 100px;
-    margin-top: -45px;
-    text-decoration: none;
-}
 .img-enigme-difficulter a {
     display: flex;
     align-items: center;
@@ -193,6 +197,45 @@ body {
     font-size: 35px;
     color: #E9AA67;
 }
+
+.img-enigme-difficulter form {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    padding: 25px 35px;
+    gap: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    border: none;
+}
+
+.img-enigme-difficulter form:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.img-enigme-difficulter form button {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-enigme-difficulter form img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin: 0;
+}
+
+.img-enigme-difficulter form p {
+    margin: 0;
+    font-size: 35px;
+    color: #E9AA67;
+}
+
 /* -----HEAD----- */
 * {
     margin: 0;
