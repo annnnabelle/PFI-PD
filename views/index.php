@@ -25,7 +25,7 @@
                 <form action="/details" method="GET" class="item" onclick="submit()">
                     <div class="badge"><?= $Item['quantite'] ?></div>
                     <img src="<?= $Item['photo'] ?>" alt="Fishing Rod" class="item-img">
-                    <div>
+                    <div class="index_details_container">
                         <div class="item-title">
                             <span><?= $Item['nom'] ?></span>
                         </div>
