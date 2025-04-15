@@ -14,7 +14,7 @@ require 'partials/header.php';
     </div>
     <div class="img-enigme-difficulter">
         <div value="Facile">
-            <a href="/enigme-questions">
+            <a href="/enigme-questions?difficulte=F">
                 <img src="public/img/Legend_II.png" alt="catfish">
                 <p>
                     Facile
@@ -22,7 +22,7 @@ require 'partials/header.php';
             </a>
         </div>
         <div value="Moyen">
-            <a href="/enigme-questions">
+            <a href="/enigme-questions?difficulte=M">
                 <img src="public/img/Son_of_Crimsonfish.png" alt="flounder">
                 <p>
                     Moyen
@@ -30,7 +30,7 @@ require 'partials/header.php';
             </a>
         </div>
         <div value="Difficile">
-            <a href="/enigme-questions">
+            <a href="/enigme-questions?difficulte=D">
                 <img src="public/img/Midnight_Carp.png" alt="Pufferfish">
                 <p>
                     Difficile

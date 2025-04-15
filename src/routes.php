@@ -14,4 +14,6 @@ const ROUTES =[
     '/enigme-difficulter' => 'enigme-difficulter.php',
     '/admin' => 'admin.php',
     '/enigme-fin' => 'enigme-fin.php',
+    '/enigme-corriger' => 'enigme-corriger.php',
+    '/enigme-recommencer' => 'enigme-recommencer.php',
 ];
