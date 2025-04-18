@@ -22,7 +22,7 @@ if ($selectedAnswer !== null && $enigmeId !== null) {
         }
     }
 
-    $_SESSION['answer_feedback'] = $isCorrect ? 'Correct!' : 'Incorrect!';
+    $_SESSION['answer_feedback'] = $isCorrect ? 'Correct ! Bien joué, aventurier du savoir!' : 'Incorrect! Réessayer, brave adventurer';
     
     if (!$isCorrect && !empty($correctAnswers)) {
         foreach ($correctAnswers as $correctAnswerData) {

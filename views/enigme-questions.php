@@ -11,7 +11,7 @@ require 'partials/header.php';
         <p><?php echo htmlspecialchars($question); ?></p>
     </div>
 
-    <div class="img-enigme">
+    <div class="enigme-question">
         <?php if (!empty($answers) && count($answers) >= 4): ?>
             <div class="answer-option">
                 <a href="/enigme-corriger?answer=<?php echo urlencode($answers[0]['reponse']); ?>&enigme_id=<?php echo $_SESSION['current_enigme_id'] ?? ''; ?>">
