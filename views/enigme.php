@@ -6,7 +6,7 @@ require 'partials/header.php';
     <div class="enigme-bubble">
         <a href="/">&larr; Retour</a>
         <?php if (isset($_SESSION['enigme_termine']) && $_SESSION['enigme_termine'] === true): ?>
-            <p>Vous avez déjà terminé toutes les énigmes !</p>
+            <p>Vous avez terminé toutes les énigmes !</p>
             <p>Merci d'avoir participé.</p>
         <?php else: ?>
             <p>Bienvenue à Enigma, voyageur des arcanes oubliées...</p>
@@ -18,7 +18,7 @@ require 'partials/header.php';
     </div>
 
     <div class="img-enigme">
-        <?php if (!isset($_SESSION['enigme_termine']) || $_SESSION['enigme_termine'] === false): ?>
+        <?php if (!isset($_SESSION['enigme_termine']) || $_SESSION['enigme_termine'] !== true): ?>
             <div>
                 <a href="/enigme-difficulter" value="difficulter">
                     <img src="public/img/catfish.png" alt="catfish">
@@ -32,7 +32,8 @@ require 'partials/header.php';
                 </a>
             </div>
         <?php endif; ?>
-        <?php if (!isset($_SESSION['reset_clicked'])): ?>
+
+        <?php if (isset($_SESSION['enigme_termine']) && $_SESSION['enigme_termine'] === true): ?>
             <div>
                 <a href="/enigme-recommencer" value="reset">
                     <img src="public/img/Octopus.png" alt="Octopus">

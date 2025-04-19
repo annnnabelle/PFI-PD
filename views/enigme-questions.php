@@ -9,6 +9,7 @@ require 'partials/header.php';
         <p> Voici la question: </p>
         <br>
         <p><?php echo htmlspecialchars($question); ?></p>
+        <p>La difficulter est: <?php echo htmlspecialchars($difficulte); ?></p>
     </div>
 
     <div class="enigme-question">

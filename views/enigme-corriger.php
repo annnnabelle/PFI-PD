@@ -7,8 +7,6 @@ require 'partials/header.php';
         <?php if (isset($_SESSION['answer_feedback'])): ?>
             <p class="<?php echo $_SESSION['answer_feedback'] === 'Correct!' ? 'correct-text' : 'incorrect-text'; ?>">
                 <?php echo $_SESSION['answer_feedback']; ?>
-                <?php if ($_SESSION['answer_feedback'] === 'Incorrect! Reessayer, brave adventurer!' && isset($_SESSION['bonne_reponse']) && !empty($_SESSION['bonne_reponse'])): ?>
-                <?php endif; ?>
             </p>
             <?php unset($_SESSION['answer_feedback']); ?>
             <?php unset($_SESSION['bonne_reponse']);?>

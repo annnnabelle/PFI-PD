@@ -3,6 +3,7 @@
 require "src/database.php";
 require "models/enigme.php";
 
+
 session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
@@ -23,7 +24,7 @@ if ($selectedAnswer !== null && $enigmeId !== null) {
     }
 
     $_SESSION['answer_feedback'] = $isCorrect ? 'Correct ! Bien joué, aventurier du savoir!' : 'Incorrect! Réessayer, brave adventurer';
-    
+
     if (!$isCorrect && !empty($correctAnswers)) {
         foreach ($correctAnswers as $correctAnswerData) {
             if ($correctAnswerData['est_bonne'] == 'o') {
@@ -35,11 +36,15 @@ if ($selectedAnswer !== null && $enigmeId !== null) {
 
     $_SESSION['bonne_reponse'] = $bonneReponse;
 
-} else {
-    $_SESSION['answer_feedback'] = 'Erreur: Données de réponse manquantes.';
-    $_SESSION['bonne_reponse'] = '';
+    if ($isCorrect && isset($_SESSION['user_id'])) {
+        $enigmeDetails = getEnigmeDetails($pdo, $enigmeId);
+        if ($enigmeDetails) {
+            $difficulte = $enigmeDetails['difficulte'];
+            $joueurId = $_SESSION['user_id'];
+            repondreEnigme($pdo, 'o', $difficulte, $joueurId);
+        }
+    }
 }
 
-require 'views/enigme-corriger.php';
 
-?>
+require 'views/enigme-corriger.php';
