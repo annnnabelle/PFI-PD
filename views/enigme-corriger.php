@@ -9,7 +9,7 @@ require 'partials/header.php';
                 <?php echo $_SESSION['answer_feedback']; ?>
             </p>
             <?php unset($_SESSION['answer_feedback']); ?>
-            <?php unset($_SESSION['bonne_reponse']);?>
+            <?php unset($_SESSION['bonne_reponse']); ?>
         <?php else: ?>
             <p>Résultat de votre réponse...</p>
         <?php endif; ?>
@@ -23,7 +23,8 @@ require 'partials/header.php';
             </a>
         </div>
         <div>
-            <a href="/enigme-questions" value="Continuer">
+            <a href="/enigme-questions?difficulte=<?php echo $_SESSION['current_difficulte'] ?? ''; ?>"
+                value="Continuer">
                 <img src="public/img/flounder.png" alt="flounder">
                 <p>Continuer</p>
             </a>

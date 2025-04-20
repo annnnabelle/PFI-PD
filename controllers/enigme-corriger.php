@@ -3,13 +3,12 @@
 require "src/database.php";
 require "models/enigme.php";
 
-
 session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
-$selectedAnswer = $_GET['answer'] ?? null;
-$enigmeId = $_GET['enigme_id'] ?? null;
+$selectedAnswer = $_POST['answer'] ?? null;
+$enigmeId = $_POST['enigme_id'] ?? null;
 $bonneReponse = '';
 
 if ($selectedAnswer !== null && $enigmeId !== null) {
@@ -44,7 +43,9 @@ if ($selectedAnswer !== null && $enigmeId !== null) {
             repondreEnigme($pdo, 'o', $difficulte, $joueurId);
         }
     }
+
+
 }
 
-
 require 'views/enigme-corriger.php';
+?>

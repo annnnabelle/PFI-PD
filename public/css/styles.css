@@ -39,52 +39,61 @@ body {
     background-attachment: fixed;
 }
 .enigme-bubble {
-    min-height: 375px;
-    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
-    background-image: url('/public/img/Wizard-Bubble.png') !important;
+    background-image: url('/public/img/Wizard-Bubble.png');
     background-size: contain;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
     background-attachment: scroll;
     font-family: 'ByteBounce', Arial, sans-serif;
     color: #573316;
-    line-height: 2;
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    min-height: 375px;
     box-sizing: border-box;
-    max-width: 200%;
-    padding: 2rem 3rem 2rem 17rem;
+    text-align: left;
 }
 
 .enigme-bubble p,
 .enigme-bubble a {
     font-size: 1.5rem;
-    max-width: 500px;
+    line-height: 1.5;
+    max-width: 40ch;
     white-space: normal;
+    word-wrap: break-word;
 }
 
 .enigme-bubble a {
     text-decoration: none;
     color: #8a4f20;
-    text-align: left;
+    margin-bottom:1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .enigme-bubble {
-        padding: 1rem;
+        padding: 2rem 1.5rem;
         background-size: cover;
-        padding-left: 5rem; 
+        min-height: 300px;
     }
 
     .enigme-bubble p,
     .enigme-bubble a {
         font-size: 1.2rem;
     }
+}
 
+@media (max-width: 480px) {
+    .enigme-bubble {
+        padding: 1.5rem 1rem;
+    }
+
+    .enigme-bubble p,
     .enigme-bubble a {
-        margin-left: 0;
+        font-size: 1rem;
     }
 }
 .img-enigme {
@@ -146,37 +155,41 @@ body {
     }
 }
 .enigme-question {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 1rem; 
-    max-width: 90vw; 
-    margin: 0 auto;
+    max-width: 90vw;
+    margin: 0 auto 1rem;
     padding: 1.5rem;
     box-sizing: border-box;
-    margin-bottom: 1rem;
 }
 
-.enigme-question .answer-option a {
+.enigme-question .answer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+}
+
+.enigme-question button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 7px;
-    padding: 1rem 1.5rem; 
-    gap: 2rem; 
+    padding: 1rem 1.5rem;
+    gap: 2rem;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
     width: 100%;
-    max-width: 100%;
+    font-family: 'ByteBounce', Arial, sans-serif;
 }
 
-.enigme-question .answer-option a:hover {
+.enigme-question button:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.enigme-question .answer-option a img {
+.enigme-question button img {
     width: 8vw;
     height: 8vw;
     max-width: 80px;
@@ -185,62 +198,96 @@ body {
     margin: 0;
 }
 
-.enigme-question .answer-option a p {
+.enigme-question button p {
     margin: 0;
     font-size: 1.5rem;
     color: #E9AA67;
     text-align: left;
 }
+
 @media (max-width: 600px) {
-    .enigme-question {
+    .enigme-question .answer-grid {
         grid-template-columns: 1fr;
     }
-    .enigme-question .answer-option a p {
+    .enigme-question button p {
         font-size: 1rem;
     }
 }
 
-
 .img-enigme-difficulter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
     width: 100%;
-    height: auto;
     padding: 30px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
-.img-enigme-difficulter a {
+.img-enigme-difficulter form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.img-enigme-difficulter button {
     display: flex;
     align-items: center;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 7px;
-    padding: 25px 35px;
+    padding: 20px 30px;
     gap: 20px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: fit-content;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    font-family: 'ByteBounce', Arial, sans-serif;
 }
 
-.img-enigme-difficulter a:hover {
+.img-enigme-difficulter button:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.img-enigme-difficulter a img {
-    width: 65px;
-    height: 65px;
+.img-enigme-difficulter button img {
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     margin: 0;
 }
 
-.img-enigme-difficulter a p {
+.img-enigme-difficulter button p {
     margin: 0;
-    font-size: 35px;
+    font-size: 1.8rem;
     color: #E9AA67;
+}
+
+@media (max-width: 768px) {
+    .img-enigme-difficulter form {
+        flex-direction: column;
+    }
+
+    .img-enigme-difficulter button {
+        max-width: 100%;
+        width: 90%;
+    }
+
+    .img-enigme-difficulter button p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-enigme-difficulter button img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .img-enigme-difficulter button p {
+        font-size: 1.2rem;
+    }
 }
 
 

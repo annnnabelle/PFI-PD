@@ -9,43 +9,32 @@ require 'partials/header.php';
         <p> Voici la question: </p>
         <br>
         <p><?php echo htmlspecialchars($question); ?></p>
-        <p>La difficulter est: <?php echo htmlspecialchars($difficulte); ?></p>
     </div>
 
     <div class="enigme-question">
-        <?php if (!empty($answers) && count($answers) >= 4): ?>
-            <div class="answer-option">
-                <a href="/enigme-corriger?answer=<?php echo urlencode($answers[0]['reponse']); ?>&enigme_id=<?php echo $_SESSION['current_enigme_id'] ?? ''; ?>">
-                    <img src="public/img/Lionfish.jpeg" alt="Answer 1">
+        <form action="/enigme-corriger" method="post" class="answer-grid">
+            <?php if (!empty($answers) && count($answers) >= 4): ?>
+                <button type="submit" name="answer" value="<?php echo htmlspecialchars($answers[0]['reponse']); ?>">
+                    <img src="public/img/Lionfish.jpeg" alt="reponse 1">
                     <p><?php echo htmlspecialchars($answers[0]['reponse']); ?></p>
-                </a>
-            </div>
-            <div class="answer-option">
-                <a href="/enigme-corriger?answer=<?php echo urlencode($answers[1]['reponse']); ?>&enigme_id=<?php echo $_SESSION['current_enigme_id'] ?? ''; ?>">
-                    <img src="public/img/Blue_Discus.jpeg" alt="Answer 2">
+                </button>
+                <button type="submit" name="answer" value="<?php echo htmlspecialchars($answers[1]['reponse']); ?>">
+                    <img src="public/img/Blue_Discus.jpeg" alt="reponse 2">
                     <p><?php echo htmlspecialchars($answers[1]['reponse']); ?></p>
-                </a>
-            </div>
-            <div class="answer-option">
-                <a href="/enigme-corriger?answer=<?php echo urlencode($answers[2]['reponse']); ?>&enigme_id=<?php echo $_SESSION['current_enigme_id'] ?? ''; ?>">
-                    <img src="public/img/Pufferfish.png" alt="Answer 3">
+                </button>
+                <button type="submit" name="answer" value="<?php echo htmlspecialchars($answers[2]['reponse']); ?>">
+                    <img src="public/img/Pufferfish.png" alt="reponse 3">
                     <p><?php echo htmlspecialchars($answers[2]['reponse']); ?></p>
-                </a>
-            </div>
-            <div class="answer-option">
-                <a href="/enigme-corriger?answer=<?php echo urlencode($answers[3]['reponse']); ?>&enigme_id=<?php echo $_SESSION['current_enigme_id'] ?? ''; ?>">
-                    <img src="public/img/squid.png" alt="Answer 4">
+                </button>
+                <button type="submit" name="answer" value="<?php echo htmlspecialchars($answers[3]['reponse']); ?>">
+                    <img src="public/img/squid.png" alt="reponse 4">
                     <p><?php echo htmlspecialchars($answers[3]['reponse']); ?></p>
-                </a>
-            </div>
-        <?php elseif (!empty($answers)): ?>
-            <p>Nombre insuffisant de réponses pour afficher les images.</p>
-        <?php elseif (empty($answers) && $question !== "Aucune question disponible pour cette difficulté pour le moment."): ?>
-            <p>Aucune réponse disponible pour cette question.</p>
-        <?php elseif (empty($answers) && $question === "Aucune question disponible pour cette difficulté pour le moment."): ?>
-            <p><?php echo $question; ?></p>
-        <?php endif; ?>
+                </button>
+            <?php endif; ?>
+            <input type="hidden" name="enigme_id" value="<?php echo $_SESSION['current_enigme_id'] ?? ''; ?>">
+        </form>
     </div>
+
 </main>
 
 <?php require 'partials/footer.php'; ?>
