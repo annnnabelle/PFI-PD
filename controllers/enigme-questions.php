@@ -8,10 +8,11 @@ session_start();
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
+
 if (isset($_POST['difficulte'])) {
     $difficulte = $_POST['difficulte'];
     $_SESSION['current_difficulte'] = $difficulte;
-} elseif (isset($_POST['aleatoire'])) {
+} elseif (isset($_GET['aleatoire'])) {
     $difficulte = 'A';
     $_SESSION['current_difficulte'] = $difficulte;
 } elseif (isset($_SESSION['current_difficulte'])) {
