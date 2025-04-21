@@ -6,14 +6,14 @@ require "models/enigme.php";
 session_start();
 
 if (isset($_POST['difficulte'])) {
-    $difficulte = $_POST['difficulte'];
-    $_SESSION['current_difficulte'] = $difficulte;
+    $difficulter = $_POST['difficulte'];
+    $_SESSION['current_difficulte'] = $difficulter;
 
-    if ($difficulte === 'F') {
+    if ($difficulter === 'F') {
         header("Location: /enigme-questions?F=true");
-    } elseif ($difficulte === 'M') {
+    } elseif ($difficulter === 'M') {
         header("Location: /enigme-questions?M=true");
-    } elseif ($difficulte === 'D') {
+    } elseif ($difficulter === 'D') {
         header("Location: /enigme-questions?D=true");
     }
     exit();

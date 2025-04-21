@@ -8,9 +8,8 @@ require 'partials/header.php';
         <a href="/enigme">&larr; Retour</a>
         <p> Voici la question: </p>
         <br>
-        <p><?php echo htmlspecialchars($question); ?></p>
+        <p><?php echo htmlspecialchars($question); ?></p><br>
     </div>
-
     <div class="enigme-question">
         <form action="/enigme-corriger" method="post" class="answer-grid">
             <?php if (!empty($answers) && count($answers) >= 4): ?>
@@ -34,7 +33,6 @@ require 'partials/header.php';
             <input type="hidden" name="enigme_id" value="<?php echo $_SESSION['current_enigme_id'] ?? ''; ?>">
         </form>
     </div>
-
 </main>
 
 <?php require 'partials/footer.php'; ?>

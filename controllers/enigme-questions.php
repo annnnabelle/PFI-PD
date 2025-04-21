@@ -9,27 +9,27 @@ session_start();
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
 
-$difficulte = null;
+$difficulter = null;
 
 if (isset($_GET['F'])) {
-    $difficulte = 'F';
+    $difficulter = 'F';
 } elseif (isset($_GET['M'])) {
-    $difficulte = 'M';
+    $difficulter = 'M';
 } elseif (isset($_GET['D'])) {
-    $difficulte = 'D';
+    $difficulter = 'D';
 } elseif (isset($_GET['A']) || isset($_GET['aleatoire'])) {
-    $difficulte = 'A';
+    $difficulter = 'A';
 } elseif (isset($_SESSION['current_difficulte'])) {
-    $difficulte = $_SESSION['current_difficulte'];
+    $difficulter = $_SESSION['current_difficulte'];
 } else {
     header("Location: /enigme-fin");
     exit();
 }
 
 
-if ($difficulte) {
-    $_SESSION['current_difficulte'] = $difficulte;
-    $questionData = getEnigme($pdo, $difficulte);
+if ($difficulter) {
+    $_SESSION['current_difficulte'] = $difficulter;
+    $questionData = getEnigme($pdo, $difficulter);
 
     if (is_array($questionData) && count($questionData) > 0) {
         $_SESSION['current_enigme_id'] = $questionData[0]['idEnigme'];

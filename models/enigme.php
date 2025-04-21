@@ -32,10 +32,9 @@ function repondreEnigme(PDO $pdo, $estBonne, $difficulte, $idJoueur)
     return $stm->execute();
 }
 
-function getEnigmeDetails(PDO $pdo, $enigmeId)
+function streakDifficulter(PDO $pdo, $joueurId)
 {
-    $stm = $pdo->prepare('SELECT difficulte FROM Enigmes WHERE idEnigme = :idEnigme;');
-    $stm->bindParam(':idEnigme', $enigmeId, PDO::PARAM_INT);
-    $stm->execute();
-    return $stm->fetch(PDO::FETCH_ASSOC);
+    $stm = $pdo->prepare("UPDATE Joueurs SET capsules = capsules + 1000 WHERE idJoueurs = :id");
+    $stm->bindParam(':id', $joueurId, PDO::PARAM_INT);
+    return $stm->execute();
 }
