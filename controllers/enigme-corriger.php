@@ -36,7 +36,7 @@ if ($selectedAnswer !== null && $enigmeId !== null) {
     $_SESSION['bonne_reponse'] = $bonneReponse;
 
     if ($isCorrect && isset($_SESSION['user_id'])) {
-        $difficulte = $enigmeDetails['difficulte'];
+        $difficulte = $_SESSION['current_difficulte'];
         $joueurId = $_SESSION['user_id'];
         repondreEnigme($pdo, 'o', $difficulte, $joueurId);
     }

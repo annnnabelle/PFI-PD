@@ -19,10 +19,13 @@ if (isset($_GET['F'])) {
     $difficulte = 'D';
 } elseif (isset($_GET['A']) || isset($_GET['aleatoire'])) {
     $difficulte = 'A';
+} elseif (isset($_SESSION['current_difficulte'])) {
+    $difficulte = $_SESSION['current_difficulte'];
 } else {
     header("Location: /enigme-fin");
     exit();
 }
+
 
 if ($difficulte) {
     $_SESSION['current_difficulte'] = $difficulte;
