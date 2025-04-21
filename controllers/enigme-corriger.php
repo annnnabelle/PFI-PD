@@ -36,16 +36,9 @@ if ($selectedAnswer !== null && $enigmeId !== null) {
     $_SESSION['bonne_reponse'] = $bonneReponse;
 
     if ($isCorrect && isset($_SESSION['user_id'])) {
-        $enigmeDetails = getEnigmeDetails($pdo, $enigmeId);
-        if ($enigmeDetails) {
-            $difficulte = $enigmeDetails['difficulte'];
-            $joueurId = $_SESSION['user_id'];
-            repondreEnigme($pdo, 'o', $difficulte, $joueurId);
-        }
+        $difficulte = $enigmeDetails['difficulte'];
+        $joueurId = $_SESSION['user_id'];
+        repondreEnigme($pdo, 'o', $difficulte, $joueurId);
     }
-
-
 }
-
 require 'views/enigme-corriger.php';
-?>
