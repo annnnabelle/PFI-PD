@@ -33,7 +33,7 @@ if (isset($_SESSION['user']['idJoueurs']) && isset($_SESSION['current_difficulte
 
     $diff = getDifficulte($pdo, $enigmeId); 
     $difficulte = $diff['difficulte'];     
-    var_dump($joueurId, $difficulte, $reponseId);
+    //var_dump($joueurId, $difficulte, $reponseId);
 
 repondreEnigme($pdo, $joueurId, $difficulte, $reponseId);
 
