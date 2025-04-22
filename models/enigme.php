@@ -39,3 +39,11 @@ function streakDifficulter(PDO $pdo, $joueurId)
     $stm->bindParam(':id', $joueurId, PDO::PARAM_INT);
     return $stm->execute();
 }
+
+function getDifficulte(PDO $pdo, $enigmeId)
+{
+    $stm = $pdo->prepare("SELECT difficulte from Enigmes where idEnigmes = :enigmeId");
+    $stm->bindParam(':enigmeId', $enigmeId, PDO::PARAM_INT);
+    $stm->execute();
+    return $stm->fetch(PDO::FETCH_ASSOC);
+}
