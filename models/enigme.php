@@ -22,12 +22,13 @@ function recommencerEnigme(PDO $pdo)
     return $stm->execute();
 }
 
-function repondreEnigme(PDO $pdo, $estBonne, $difficulte, $idJoueur)
+function repondreEnigme(PDO $pdo, $idJoueur, $difficulte, $estBonne )
 {
-    $stm = $pdo->prepare('CALL repondreEnigme(:est_bonne, :difficulte, :idJoueur)');
-    $stm->bindParam(':est_bonne', $estBonne, PDO::PARAM_STR);
-    $stm->bindParam(':difficulte', $difficulte, PDO::PARAM_STR);
+    $stm = $pdo->prepare('CALL repondreEnigme(:idJoueur,:difficulte, :est_bonne)');
     $stm->bindParam(':idJoueur', $idJoueur, PDO::PARAM_INT);
+    $stm->bindParam(':difficulte', $difficulte, PDO::PARAM_STR);
+    $stm->bindParam(':est_bonne', $estBonne, PDO::PARAM_STR);
+   
 
     return $stm->execute();
 }

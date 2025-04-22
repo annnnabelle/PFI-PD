@@ -12,46 +12,27 @@ $enigmeId = $_POST['enigme_id'] ?? null;
 $bonneReponse = '';
 
 if ($selectedAnswer !== null && $enigmeId !== null) {
+    
     $correctAnswers = getReponse($pdo, $enigmeId);
     $isCorrect = false;
-
+  
     foreach ($correctAnswers as $correctAnswerData) {
-        if (
-            $selectedAnswer === $correctAnswerData['reponse'] &&
-            $correctAnswerData['est_bonne'] === 'o'
-        ) {
+        if ($correctAnswerData['est_bonne'] === 'o') {
             $isCorrect = true;
-
-            if (isset($_SESSION['user_id']) && isset($_SESSION['current_difficulte'])) {
-                $joueurId = $_SESSION['user_id'];
+            
+            if (isset($_SESSION['user']['idJoueurs']) && isset($_SESSION['current_difficulte'])) {
+                $joueurId = $_SESSION['user']['idJoueurs'];
                 $difficulter = $_SESSION['current_difficulte'];
-                $reponseId = $correctAnswerData['idReponse'];
+                $reponseId = $correctAnswerData['est_bonne'];
 
-                repondreEnigme($pdo, $reponseId, $difficulter, $joueurId);
+                var_dump($joueurId, $difficulter, $reponseId);
 
-                if ($_SESSION['current_difficulte'] !== $difficulter) {
-                    $_SESSION['difficile_streak'] = 0;
-                }
+                repondreEnigme($pdo, $joueurId, $difficulter, $reponseId);
 
-                if ($difficulter === 'D' && $isCorrect) {
-                    if (!isset($_SESSION['difficile_streak'])) {
-                        $_SESSION['difficile_streak'] = 1;
-                    } else {
-                        $_SESSION['difficile_streak']++;
-                    }
-
-                    if ($_SESSION['difficile_streak'] >= 3) {
-                        streakDifficulter($pdo, $joueurId);
-                        $_SESSION['answer_feedback'] .= 'BONUS : 1000 capsules pour 3 réponses difficiles consécutives !';
-                        $_SESSION['difficile_streak'] = 0;
-                    }
-                } else {
-                    $_SESSION['difficile_streak'] = 0;
-                }
             }
-
-            break;
+            
         }
+     
     }
 
     $_SESSION['answer_feedback'] = $isCorrect

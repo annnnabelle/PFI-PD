@@ -103,7 +103,7 @@ if (isset($_SESSION['confirmBuy'])) {
         $_SESSION['info'] = $info;
         redirect('/confirm');
     }
-    // Proceed with the purchase
+
     unset($_SESSION['confirmBuy']);
     unset($_SESSION['confirmDex']);
     payerPanier($pdo);
