@@ -32,7 +32,7 @@ if ($difficulter) {
     $questionData = getEnigme($pdo, $difficulter);
 
     if (is_array($questionData) && count($questionData) > 0) {
-        $_SESSION['current_enigme_id'] = $questionData[0]['idEnigme'];
+        $_SESSION['current_enigme_id'] = $questionData[0]['idEnigmes'];
         $question = $questionData[0]['question'];
         $answers = getReponse($pdo, $_SESSION['current_enigme_id']);
     } else {
