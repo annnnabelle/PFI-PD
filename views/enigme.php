@@ -4,17 +4,22 @@ require 'partials/header.php';
 
 <main class="enigme-background">
     <div class="enigme-bubble">
-        <a href="/">&larr; Retour</a>
-        <?php if (isset($_SESSION['enigme_termine']) && $_SESSION['enigme_termine'] === true): ?>
-            <p>Vous avez terminé toutes les énigmes !</p>
-            <p>Merci d'avoir participé.</p>
-        <?php else: ?>
-            <p>Bienvenue à Enigma, voyageur des arcanes oubliées...</p>
-            <p>Avant que l’aventure ne commence,</p>
-            <p>un choix s’impose à toi</p>
-            <br>
-            <p>Fais ton choix avec sagesse... ou audace !</p>
-        <?php endif; ?>
+    
+        <div class="enigme-bubble-header">
+            <h1>Enigma</h1>
+            <a href="/">&larr; Retour</a>
+            <?php if (isset($_SESSION['enigme_termine']) && $_SESSION['enigme_termine'] === true): ?>
+                <p>Vous avez terminé toutes les énigmes !</p>
+                <p>Merci d'avoir participé.</p>
+            <?php else: ?>
+                <p>Bienvenue à Enigma, voyageur des arcanes oubliées...</p>
+                <p>Avant que l’aventure ne commence,</p>
+                <p>un choix s’impose à toi</p>
+                <br>
+                <p>Fais ton choix avec sagesse... ou audace !</p>
+            <?php endif; ?>
+        </div>
+
     </div>
 
     <div class="img-enigme">

@@ -60,11 +60,16 @@ body {
 
 .enigme-bubble p,
 .enigme-bubble a {
-    font-size: 1.5rem;
+    font-size: 20px;
     line-height: 1.5;
     max-width: 40ch;
     white-space: normal;
     word-wrap: break-word;
+}
+
+.enigme-bubble h1 {
+    width: fit-content;
+    padding-left: 10px;
 }
 
 .enigme-bubble a {
@@ -73,27 +78,47 @@ body {
     margin-bottom:1rem;
 }
 
-@media (max-width: 768px) {
-    .enigme-bubble {
-        padding: 2rem 1.5rem;
-        background-size: cover;
-        min-height: 300px;
-    }
-
-    .enigme-bubble p,
-    .enigme-bubble a {
-        font-size: 1.2rem;
-    }
+.enigme-bubble-header{
+    padding: 10px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1000px) {
     .enigme-bubble {
-        padding: 1.5rem 1rem;
+        padding: 1vh;
+        background-image: url('/public/img/enigma_phone.png');
+
+        background-size: cover;
+        min-height: 800px;
+
+        display: flex;
+        flex-direction: column;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+        font-family: 'ByteBounce', Arial, sans-serif;
+        color: #573316;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: left;
+        margin-top: 10px;
+
+        align-items: center;
+        
+    }
+
+    .enigme-bubble-header{
+        margin:100px;
+        margin-top: 300px;
+        font-size: 30px;
+        width: 250px;
     }
 
     .enigme-bubble p,
-    .enigme-bubble a {
-        font-size: 1rem;
+    .enigme-bubble a,
+    .enigme-bubble h1{
+
+        font-size: 20px;
     }
 }
 .img-enigme {
@@ -351,6 +376,7 @@ a:hover {
 
     .links a {
         font-size: 4vw;
+        padding: 0.3vw;
     }
 
     .head h2 {
@@ -399,7 +425,7 @@ a:hover {
     width: 10vh;
     height: 10vh;
     background-color: white;
-    border: solid vh orange;
+    border: solid 0.7vh orange;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -418,7 +444,7 @@ a:hover {
 
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0.3vh;
     font-size: 25px;
 }
 
@@ -426,17 +452,17 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 30px;
+    font-size: 3vh;
 }
 
 .img-profile {
-    width: 20px;
-    height: 20px;
+    width:3vh;
+    height: 3vh;
 }
 
 .username {
-    font-size: 25px;
-    margin-top: 1px;
+    font-size: 3vh;
+    margin-top: 0.2vh;
 }
 
 @media (max-width: 1000px) {

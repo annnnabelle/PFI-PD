@@ -1,8 +1,10 @@
 <?php
 
+
 function getEnigme(PDO $pdo, $difficulter)
 {
-    $stm = $pdo->prepare('CALL getEnigme(:difficulte);');
+    $stm = $pdo->prepare('CALL getEnigme(:difficulte, :idJoueur);');
+    $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     $stm->bindParam(':difficulte', $difficulter, PDO::PARAM_STR);
     $stm->execute();
     return $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -18,7 +20,8 @@ function getReponse(PDO $pdo, $idEnigme)
 
 function recommencerEnigme(PDO $pdo)
 {
-    $stm = $pdo->prepare('CALL recommencerEnigmes();');
+    $stm = $pdo->prepare('CALL recommencerEnigmes(:idJoueur);');
+    $stm->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
     return $stm->execute();
 }
 

@@ -19,11 +19,10 @@ if (isset($_GET['F'])) {
     $difficulter = 'A';
 } elseif (isset($_SESSION['current_difficulte'])) {
     $difficulter = $_SESSION['current_difficulte'];
-} else {
+} elseif($difficulter === null) {
     header("Location: /enigme-fin");
     exit();
 }
-
 $_SESSION['current_difficulte'] = $difficulter;
 
 $questionData = getEnigme($pdo, $difficulter);

@@ -4,11 +4,13 @@ require 'partials/header.php';
 
 <main class="enigme-background">
     <div class="enigme-bubble">
-        <p>Ah… ainsi, ma dernière énigme s'effondre,</p>
-        <p> brisée par ton esprit. Tu m’as vaincu </p>
-        <p>Je suis défait ! Ma magie chancelle face à ta lumière…</p>
-        <br>
-        <p>Adieu, voyageur. Tu as vaincu le sorcier des énigmes.</p>
+        <div class="enigme-bubble-header">
+            <p>Ah… ainsi, ma dernière énigme s'effondre,</p>
+            <p> brisée par ton esprit. Tu m’as vaincu </p>
+            <p>Je suis défait ! Ma magie chancelle face à ta lumière…</p>
+            <br>
+            <p>Adieu, voyageur. Tu as vaincu le sorcier des énigmes.</p>
+        </div>
     </div>
 
 
@@ -20,10 +22,12 @@ require 'partials/header.php';
             </a>
         </div>
         <div>
-            <a href="/enigme-recommencer">
-                <img src="public/img/Albacore.png" alt="catfish">
-                <p>Rejouer</p>
-            </a>
+            <form action="<?=recommencerEnigme($pdo)?>" method="post">
+                    <a href="/enigme-recommencer">
+                        <img src="public/img/Albacore.png" alt="catfish">
+                        <p>Rejouer</p>
+                    </a>
+            </form>
         </div>
     </div>
 </main>
