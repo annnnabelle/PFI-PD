@@ -301,36 +301,34 @@ body {
 .head {
     background-color: #063c7a;
     color: orange;
-    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: sticky;
     z-index: 100;
-    padding: 25px;
+    padding: 3vh;
 }
 
 .head h2 {
-    font-size: 5vh;
+    font-size: 3vw;
     font-weight: bold;
     font-family: 'Daydream', sans-serif;
 }
 
 .links {
     position: absolute;
-    right: 1vh;
+    right: 1vw;
     display: flex;
     align-items: center;
 }
 
 .links a {
     color: orange;
-    font-size: 3vh;
+    font-size: 1.5vw;
     text-decoration: none;
     font-family: 'ByteBounce', sans-serif;
     color: inherit;
-    padding: 1vh;
+    padding: 1vw;
 }
 
 .clickTitle{
@@ -342,6 +340,22 @@ body {
 
 a:hover {
     color: #db8e29;
+}
+
+
+
+@media (max-width: 1000px) {
+    .links {
+        flex-direction: column;
+    }
+
+    .links a {
+        font-size: 4vw;
+    }
+
+    .head h2 {
+        font-size: 6vw;
+    }
 }
 
 /* -----FOOTER----- */
@@ -366,9 +380,9 @@ a:hover {
 .profile-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1vh;
     position: absolute;
-    left: 20px;
+    left: 1vh;
     padding: 5px;
     width: 90%;
     max-width: 250px;
@@ -382,10 +396,10 @@ a:hover {
 }
 
 .user {
-    width: 80px;
-    height: 80px;
+    width: 10vh;
+    height: 10vh;
     background-color: white;
-    border: solid 3px orange;
+    border: solid vh orange;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -425,6 +439,24 @@ a:hover {
     margin-top: 1px;
 }
 
+@media (max-width: 1000px) {
+    .user {
+        left: 0;
+        width: 7.5vw;
+        height: 7.5vw;
+    }
+    .stats div {
+        font-size: 2vw;
+    }
+    .img-profile {
+        width: 2vw;
+        height: auto;
+    }
+    .username {
+        font-size: 3vw;
+    }
+}
+
 
 
 /* ---------Barre Nav------- */
@@ -444,6 +476,16 @@ a:hover {
 
 .navbar a:hover {
     color: #db8e29;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 0.5vw;
+    }
+    
+    .navbar a {
+        font-size: 5vw;
+    }
 }
 
 /* --------Inscription & Connexion ---------- */
