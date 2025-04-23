@@ -3,7 +3,7 @@
 function usersGetAll(PDO $pdo): array|false
 {
     try {
-        $query = "SELECT  Joueurs.idJoueurs, Joueurs.alias, Joueurs.nom, Joueurs.prenom, Joueurs.caps_augmenter FROM Joueurs";
+        $query = "SELECT  Joueurs.idJoueurs, Joueurs.alias, Joueurs.nom, Joueurs.prenom,Joueurs.capsules, Joueurs.caps_augmenter FROM Joueurs";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
