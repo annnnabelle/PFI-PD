@@ -22,7 +22,7 @@ require 'partials/header.php';
                 <input type="hidden" name="user_id" value="<?= $user['idJoueurs'] ?>">
 
                 <div class="user-details">
-                    <div><?= $user['alias'] ?>     <?= $user['prenom'] ?>     <?= $user['nom'] ?>   <img src="public/img/gold.png" class="img-profile"><?= $user['capsules']?></div>
+                    <div><?= $user['alias'] ?>     <?= $user['prenom'] ?>     <?= $user['nom'] ?>  <br><?= $user['capsules']?><img src="public/img/gold.png" class="img-profile"></div>
                     <div>caps augmentés : <?= $user['caps_augmenter'] ?> fois</div>
                     <?php if ($user['caps_augmenter'] < 3): ?>
                         <input type="submit" name="augmenter" class="augmenter-button" value="Augmenter Caps">
