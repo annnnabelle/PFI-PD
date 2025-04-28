@@ -54,7 +54,7 @@ include "controllers/general.php";
                 <?php if ($_SESSION['user']['est_admin'] == 1): ?>
                     <a href="/admin">Admin</a>
                 <?php endif; ?>
-                <a href="/">Mon Profile</a>
+                <a href="/profile">Mon Profile</a>
                 <a href="/deconnexion">Déconnexion</a>
             <?php else: ?>
                 <a href="/inscription">Inscription</a>
