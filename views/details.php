@@ -127,11 +127,11 @@ require 'partials/header.php';
 
 
 
-
+    //Rating system
     const chickenRating = document.querySelector('.chicken-rating');
     const chickens = document.querySelectorAll('.chicken');
     const ratingInput = document.getElementById('submit-rating');
-    let selectedRating = 0; // Variable to store the currently selected rating
+    let selectedRating = 0;
 
     chickenRating.addEventListener('mouseover', (event) => {
         if (event.target.classList.contains('chicken')) {
@@ -158,7 +158,7 @@ require 'partials/header.php';
     chickenRating.addEventListener('click', (event) => {
         if (event.target.classList.contains('chicken')) {
             selectedRating = parseInt(event.target.dataset.index);
-            ratingInput.value = selectedRating; // Ensure this line is present
+            ratingInput.value = selectedRating;
             console.log('Selected rating:', selectedRating);
 
             chickens.forEach((chicken, index) => {
@@ -170,12 +170,11 @@ require 'partials/header.php';
             });
         }
     });
+
 </script>
 
 <style>
     .comment-section {
-
-
         background: rgb(219, 244, 255);
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         width: 90%;
@@ -311,6 +310,31 @@ require 'partials/header.php';
         /* You can change the image source or apply other styles for the bright effect */
         content: url('/public/img/lightChicken.png');
     }
+
+
+
+    @media (max-width: 768px) {
+        .comment-section{
+            flex-direction: column;
+            width: auto;
+        }
+        .comment-section-header {
+            font-size: 30px;
+        }
+        .detail-main {
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            margin:5px auto
+        }
+        .comment-form {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+
+
 </style>
 
 <?php require 'partials/footer.php'; ?>
