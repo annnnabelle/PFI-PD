@@ -329,9 +329,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
+    
     z-index: 100;
     padding: 3vh;
+    width: 100%;
 }
 
 .head h2 {
@@ -392,8 +393,7 @@ a:hover {
     display: flex;
     justify-content: right;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: relative;
-    bottom: 0; 
+    bottom: 0px; 
     width: 100%; 
 }
 
@@ -1056,6 +1056,7 @@ h1 {
 
 
 /* -----DETAILS----- */
+
 .detail-main {
     height: auto;
     margin: 80px;

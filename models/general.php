@@ -26,3 +26,4 @@ function userGetById(PDO $pdo, $id): array
     $stm->execute();
     return $stm->fetch(PDO::FETCH_ASSOC);
 }
+
