@@ -50,3 +50,13 @@ function getDifficulte(PDO $pdo, $enigmeId)
     $stm->execute();
     return $stm->fetch(PDO::FETCH_ASSOC);
 }
+
+function getVieDifficulte(PDO $pdo, $enigmeId)
+{
+    $stm = $pdo->prepare('CALL');
+    $stm->bindParam(':idJoueur', $idJoueur, PDO::PARAM_INT);
+    $stm->bindParam(':difficulte', $difficulte, PDO::PARAM_STR);
+    $stm->bindParam(':est_bonne', $estBonne, PDO::PARAM_STR);
+
+    return $stm->execute();
+}

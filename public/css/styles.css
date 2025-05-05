@@ -401,6 +401,15 @@ a:hover {
     width: 20px;
     vertical-align: middle;
 }
+/*------------------Profile------------*/
+.img-modifier{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+
 
 /* -------------User--------------- */
 .profile-container {
