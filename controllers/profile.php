@@ -8,5 +8,4 @@ session_start();
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
 
-require "views/profile.php";
 
