@@ -483,7 +483,120 @@ a:hover {
     }
 }
 
+/* ---------Profile------------ */
+.username-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+    gap: 2vh;
+}
 
+.profile-wrapper {
+    position: relative;
+    width: fit-content;
+    min-height: 200px;
+}
+
+
+.userNom {
+    position: absolute;
+    top:46%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.4rem;
+    color: #573316;
+}
+
+.username-form {
+    position: absolute;
+    top: 60%;       
+    left: 20%;
+    text-align: left;
+    font-size: 1.5rem;
+    color: #573316;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-left:-50px;
+}
+.username-form p {
+    min-width: 160px;
+}
+
+.input-row:first-of-type p {
+    min-width: 2rem;
+}
+
+.input-row p {
+    min-width: 1rem;
+}
+
+.input-row:last-of-type p {
+    min-width: 1rem;
+}
+.username-input {
+    width: 150px;
+    padding: 8px;
+    border: 1px solid #573316;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f8c984;
+    border: 2px solid #5f3614;
+    color:#573316;
+}
+
+.username-form p {
+    margin: 5px 0;
+}
+
+.username-btn {
+    position: absolute;
+    top:10rem;
+    left: 10%;
+    margin-top: 10px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    background-color: #064b9a;
+    font-size: 1.4rem;
+    color:orange;
+    text-align: center;
+    width: 200px;
+}
+
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: -50px; /* Match input-row alignment */
+}
+
+.enregistrer-btn, .annuler-btn {
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+    width: 10rem; 
+    cursor: pointer;
+}
+
+.enregistrer-btn {
+    background-color: #064b9a;
+    color: orange;
+    border: 2px solid #5f3614;
+}
+
+.annuler-btn {
+    background-color: #6b7280;
+    color: white;
+    border: 2px solid #5f3614;
+}
 
 /* ---------Barre Nav------- */
 .navbar {

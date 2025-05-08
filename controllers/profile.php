@@ -8,13 +8,20 @@ session_start();
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    ModifierProfile(
-        $pdo,
-        $_SESSION['user']['alias'],
-        $_POST['nom'],
-        $_POST['prenom'],
-        password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT) // hashage sécurisé
-    );
+    $alias = $_SESSION['user']['alias'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $mot_de_passe = !empty($_POST['mot_de_passe']) 
+        ? password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT) 
+        : null;
+
+    $success = ModifierProfile($pdo, $alias, $nom, $prenom, $mot_de_passe);
+
+    if ($success) {
+        $_SESSION['user']['nom'] = $nom;
+        $_SESSION['user']['prenom'] = $prenom;
+    }
+
     header("Location: /profile");
     exit;
 }
