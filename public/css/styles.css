@@ -483,7 +483,7 @@ a:hover {
     }
 }
 
-/* ---------Profile------------ */
+/*---------Profile------------ */
 .username-Container {
     display: flex;
     flex-direction: column;
@@ -501,7 +501,7 @@ a:hover {
 
 .userNom {
     position: absolute;
-    top:48%;
+    top:44%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.4rem;
@@ -513,8 +513,8 @@ a:hover {
     top: 60%;       
     left: 20%;
     text-align: left;
-    font-size: 1.5rem;
-    font-family: 'ByteBounce', sans-serif;
+    font-size: 2rem;
+    font-family: 'ByteBounce', sans-serif !important;
     color: #573316;
     display: flex;
     flex-direction: column;
@@ -546,12 +546,12 @@ a:hover {
     padding: 8px;
     border: 1px solid #573316;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     background: #f8c984;
     border: 2px solid #5f3614;
     color:#573316;
     
-    font-family: 'ByteBounce', sans-serif;
+    font-family: 'ByteBounce', sans-serif !important;
 }
 
 .username-form p {
@@ -571,7 +571,7 @@ a:hover {
     text-align: center;
     width: 200px;
     
-    font-family: 'ByteBounce', sans-serif;
+    font-family: 'ByteBounce', sans-serif !important;
 }
 
 
@@ -594,7 +594,7 @@ a:hover {
 .enregistrer-btn {
     background-color: #064b9a;
     
-    font-family: 'ByteBounce', sans-serif;
+    font-family: 'ByteBounce', sans-serif !important;
     color: orange;
     border: 2px solid #5f3614;
 }
@@ -602,7 +602,7 @@ a:hover {
 .annuler-btn {
     background-color: #6b7280;
     color: white;
-    font-family: 'ByteBounce', sans-serif;
+    font-family: 'ByteBounce', sans-serif !important;
     border: 2px solid #5f3614;
 }
 
