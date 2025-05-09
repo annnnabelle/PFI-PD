@@ -23,6 +23,16 @@ if (isset($_GET['idItem'])) {
         redirect('/confirm');
     }
 
+    $evalStars = [
+        '0' => getEvalStar($pdo, $_GET['idItem'], 0),
+        '1' => getEvalStar($pdo, $_GET['idItem'], 1),
+        '2' => getEvalStar($pdo, $_GET['idItem'], 2),
+        '3' => getEvalStar($pdo, $_GET['idItem'], 3),
+        '4' => getEvalStar($pdo, $_GET['idItem'], 4),
+        '5' => getEvalStar($pdo, $_GET['idItem'], 5),
+    ];
+
+
 
     if (isset($_GET['addComment'])) {
 

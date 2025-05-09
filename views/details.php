@@ -27,6 +27,7 @@ require 'partials/header.php';
                     </div>
                 </div>
                 <div class="detail-section">
+
                     <?php foreach ($details as $key => $detail) { ?>
                         <div>
                             <span><b><?= str_replace("_", " ", $key) ?>:</b> <?= $detail ?></span>
@@ -35,6 +36,12 @@ require 'partials/header.php';
                     <div>
                         <span><b>Description:</b> <?= $item['description'] ?></span>
                     </div>
+                </div>
+                <div class="interaction-row">
+                <div class="eval-stars">
+                    <?php foreach (array_reverse($evalStars, true) as $star => $percentage) { ?>
+                        <div><?= $star ?> stars: <?= $percentage ?>%</div>
+                    <?php } ?>
                 </div>
                 <?php if (!empty($_SESSION['user'])) { ?>
                     <form method="GET" class="addToCart">
@@ -63,6 +70,8 @@ require 'partials/header.php';
                     </form>
                 <?php } ?>
             </div>
+            </div>
+            
         </div>
 
 
@@ -207,6 +216,18 @@ require 'partials/header.php';
         align-items: center;
         margin-top: 60px;
     }
+
+    .interaction-row {
+    display: flex;
+    gap: 30px; /* Space between stars and cart */
+    align-items: flex-start; /* Align them from the top */
+    margin-top: 20px; /* Optional: spacing from above content */
+}
+
+.eval-stars {
+    min-width: 150px; /* Optional: prevents shrinking */
+    font-size: 40px;
+}
 
     .comment-input {
         flex: 10;

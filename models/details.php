@@ -84,3 +84,18 @@ function getAllComments(PDO $pdo, $id): array|false
     $stm->execute();
     return $stm->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getEvalStar(PDO $pdo, $id, $star)
+{
+    $sql = "select pourcentageEvalStars(:id,:star) as percentage;";
+
+    $stm = $pdo->prepare($sql);
+    $stm->bindParam(':id', $id, PDO::PARAM_INT);
+    $stm->bindParam(':star', $star, PDO::PARAM_INT);
+    $stm->execute();
+
+    $result = $stm->fetch(PDO::FETCH_ASSOC);
+    return $result ? $result['percentage'] : 0;
+}
+
+
