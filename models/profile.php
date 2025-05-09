@@ -4,12 +4,12 @@ function ModifierProfile(PDO $pdo, $alias, $nom, $prenom, $mot_de_passe)
 {
     try {
         if ($mot_de_passe !== null) {
-            $stmt = $pdo->prepare('CALL ModifierProfile(:alias, :nom, :prenom, :mot_de_passe);');
+            $stmt = $pdo->prepare('CALL ModifierProfile(:idJoueur, :nom, :prenom, :mot_de_passe);');
         } else {
-            $stmt = $pdo->prepare('CALL ModifierProfileSansMDP(:alias, :nom, :prenom);');
+            $stmt = $pdo->prepare('CALL ModifierProfileSansMDP(:idJoueur, :nom, :prenom);');
         }
 
-        $stmt->bindParam(':alias', $alias, PDO::PARAM_STR);
+        $stmt->bindParam(':idJoueur', $_SESSION['user']['idJoueurs'], PDO::PARAM_STR);
         $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
         $stmt->bindParam(':prenom', $prenom, PDO::PARAM_STR);
 
