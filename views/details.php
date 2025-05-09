@@ -73,6 +73,7 @@ require 'partials/header.php';
             </div>
             
         </div>
+        
 
 
         <div class="comment-section">
@@ -83,16 +84,28 @@ require 'partials/header.php';
 
                     <div class="comment-container">
                         <div class="comment-header">
+                            
                             <span class="comment-user">User: <?= $comment['alias'] ?></span>
+                            
                             <div class="comment-header">
                                 <span class="comment-note"><?= $comment['note'] ?></span>
                                 <div class="badge"></div>
+                                
                             </div>
                         </div>
 
                         <div class="comment"><?= $comment['commentaire'] ?></div>
+                                 <form method="post" class="delete-form">
+                <button type="submit" class="garbage-btn" name="Supprimer" value="<?= $comment['idEvaluations'] ?>">
+                    <img src="/public/img/Garbage_can.png" alt="Delete">
+                </button>
+            </form>
+                            
 
                     </div>
+                    
+                            
+                              
 
                 <?php } ?>
             </div>
@@ -331,6 +344,8 @@ require 'partials/header.php';
         /* You can change the image source or apply other styles for the bright effect */
         content: url('/public/img/lightChicken.png');
     }
+
+
 
 
 

@@ -85,6 +85,14 @@ function getAllComments(PDO $pdo, $id): array|false
     return $stm->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getCommentById(PDO $pdo, $id): array|false
+{
+    $stm = $pdo->prepare('select idEvaluations, idJoueur from Evaluations where idEvaluations = :id');
+    $stm->bindParam(':id', $id, PDO::PARAM_STR);
+    $stm->execute();
+    return $stm->fetch(PDO::FETCH_ASSOC);
+}
+
 function getEvalStar(PDO $pdo, $id, $star)
 {
     $sql = "select pourcentageEvalStars(:id,:star) as percentage;";
@@ -96,6 +104,14 @@ function getEvalStar(PDO $pdo, $id, $star)
 
     $result = $stm->fetch(PDO::FETCH_ASSOC);
     return $result ? $result['percentage'] : 0;
+}
+
+function deleteCommentaire(PDO $pdo, $id)
+{
+    $stm = $pdo->prepare('DELETE FROM Evaluations WHERE idEvaluations = :id');
+    $stm->bindParam(':id', $id, PDO::PARAM_STR);
+
+    return $stm->execute();
 }
 
 
