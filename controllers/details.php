@@ -57,36 +57,36 @@ if (isset($_GET['idItem'])) {
         }
     }
 
-     if (isset($_POST['Supprimer'])) {
-        $commentIdToDelete = $_POST['Supprimer'];
+     
 
-        $commentToDelete = getCommentById($pdo, $commentIdToDelete);
-        if (!empty($_SESSION['user']) && isset($commentToDelete['idUsers']) && $_SESSION['user']['idUsers'] === $commentToDelete['idUsers']) {
-            if (deleteCommentaire($pdo, $commentIdToDelete)) {
-                $info = [
-                    'message' => 'Le commentaire a été supprimé.',
-                    'from' => '/details?idItem=' . $_GET['idItem'],
-                    'confirm' => False,
-                ];
-                $_SESSION['info'] = $info;
-            } else {
-                $info = [
-                    'message' => 'Erreur lors de la suppression du commentaire.',
-                    'from' => '/details?idItem=' . $_GET['idItem'],
-                    'confirm' => False,
-                ];
-                $_SESSION['info'] = $info;
-            }
-        } else {
-            $info = [
-                'message' => 'Vous n\'êtes pas autorisé à supprimer ce commentaire.',
+}
+
+if (isset($_POST['Supprimer'])) {
+    $commentIdToDelete = $_POST['Supprimer'];
+    $commentToDelete = getCommentById($pdo, $commentIdToDelete);
+
+    if (!empty($_SESSION['user'])) {
+        if (deleteCommentaire($pdo, $commentIdToDelete)) {
+            $_SESSION['info'] = [
+                'message' => 'Le commentaire a été supprimé.',
                 'from' => '/details?idItem=' . $_GET['idItem'],
-                'confirm' => False,
+                'confirm' => false,
+            ];
+        } else {
+            $_SESSION['info'] = [
+                'message' => 'Erreur lors de la suppression du commentaire.',
+                'from' => '/details?idItem=' . $_GET['idItem'],
+                'confirm' => false,
             ];
         }
-        redirect('/details?idItem=' . $_GET['idItem']); 
+    } else {
+        $_SESSION['info'] = [
+            'message' => 'Vous n\'êtes pas autorisé à supprimer ce commentaire.',
+            'from' => '/details?idItem=' . $_GET['idItem'],
+            'confirm' => false,
+        ];
     }
-
+    redirect('/details?idItem=' . $_POST['idItem']);
 }
 
 

@@ -90,16 +90,19 @@ require 'partials/header.php';
                             <div class="comment-header">
                                 <span class="comment-note"><?= $comment['note'] ?></span>
                                 <div class="badge"></div>
+                                <form method="post">
+    <input type="hidden" name="idItem" value="<?= $item['idItems'] ?>">
+    <button type="submit" class="comment-garbage-btn" name="Supprimer"
+        value="<?= $comment['idEvaluations'] ?>">
+        <img src="/public/img/Garbage_can.png" alt="Delete">
+    </button>
+</form>
 
                             </div>
                         </div>
 
                         <div class="comment"><?= $comment['commentaire'] ?></div>
-                        <form method="post">
-                            <button type="submit" class="comment-garbage-btn" name="Supprimer"
-                                value="<?= $comment['idEvaluations'] ?>">
-                                <img src="/public/img/Garbage_can.png" alt="Delete">
-                            </button>
+                        
 
                     </div>
 
@@ -200,8 +203,12 @@ require 'partials/header.php';
         border: none;
         cursor: pointer;
         padding: 0;
-        width: 30px;
-        height: 30px;
+ 
+    }
+    .comment-garbage-btn img {
+        width: 40px;
+        height: 40px;
+ 
     }
 
     .comment-section {
