@@ -40,7 +40,12 @@ require 'partials/header.php';
                 <div class="interaction-row">
                     <div class="eval-stars">
                         <?php foreach (array_reverse($evalStars, true) as $star => $percentage) { ?>
-                            <div><?= $star ?> stars: <?= $percentage ?>%</div>
+                            <div>
+                                <?php for ($i = 0; $i < $star; $i++) { ?>
+                                    <img src="/public/img/lightChicken.png" alt="Chicken <?= $i + 1 ?>" class="chicken">
+                                <?php } ?>
+                                <?= $percentage ?>%
+                            </div>
                         <?php } ?>
                     </div>
                     <?php if (!empty($_SESSION['user'])) { ?>
@@ -90,19 +95,24 @@ require 'partials/header.php';
                             <div class="comment-header">
                                 <span class="comment-note"><?= $comment['note'] ?></span>
                                 <div class="badge"></div>
-                                <form method="post">
-    <input type="hidden" name="idItem" value="<?= $item['idItems'] ?>">
-    <button type="submit" class="comment-garbage-btn" name="Supprimer"
-        value="<?= $comment['idEvaluations'] ?>">
-        <img src="/public/img/Garbage_can.png" alt="Delete">
-    </button>
-</form>
+
+
+                                <?php if ($_SESSION['user']['idJoueurs'] == $comment['idJoueur'] || $_SESSION['user']['est_admin'] == 1) { ?>
+
+                                    <form method="post">
+                                        <input type="hidden" name="idItem" value="<?= $item['idItems'] ?>">
+                                        <button type="submit" class="comment-garbage-btn" name="Supprimer"
+                                            value="<?= $comment['idEvaluations'] ?>">
+                                            <img src="/public/img/Garbage_can.png" alt="Delete">
+                                        </button>
+                                    </form>
+                                <?php } ?>
 
                             </div>
                         </div>
 
                         <div class="comment"><?= $comment['commentaire'] ?></div>
-                        
+
 
                     </div>
 
@@ -112,30 +122,30 @@ require 'partials/header.php';
                 <?php } ?>
             </div>
 
-            <?php if (!empty($_SESSION['user'])) { ?>
-                <div>
-                    <form method="GET" class="comment-form">
-                        <div class="chicken-rating">
-                            <img src="/public/img/darkChicken.png" alt="Chicken 1" data-index="1" class="chicken">
-                            <img src="/public/img/darkChicken.png" alt="Chicken 2" data-index="2" class="chicken">
-                            <img src="/public/img/darkChicken.png" alt="Chicken 3" data-index="3" class="chicken">
-                            <img src="/public/img/darkChicken.png" alt="Chicken 4" data-index="4" class="chicken">
-                            <img src="/public/img/darkChicken.png" alt="Chicken 5" data-index="5" class="chicken">
-                        </div>
-                        <input type="hidden" id="submit-rating" name="note" value="0">
-                        <input type="hidden" name="idItem" value="<?= $item['idItems'] ?>" />
-                        <input type="text" name="commentaire" placeholder="Ajouter un commentaire" class="comment-input">
-                        <button type="submit" name="addComment" class="comment-send">Envoyer</button>
-                    </form>
 
-                </div>
-            <?php } ?>
+            <div>
+                <form method="GET" class="comment-form">
+                    <div class="chicken-rating">
+                        <img src="/public/img/darkChicken.png" alt="Chicken 1" data-index="1" class="chicken">
+                        <img src="/public/img/darkChicken.png" alt="Chicken 2" data-index="2" class="chicken">
+                        <img src="/public/img/darkChicken.png" alt="Chicken 3" data-index="3" class="chicken">
+                        <img src="/public/img/darkChicken.png" alt="Chicken 4" data-index="4" class="chicken">
+                        <img src="/public/img/darkChicken.png" alt="Chicken 5" data-index="5" class="chicken">
+                    </div>
+                    <input type="hidden" id="submit-rating" name="note" value="0">
+                    <input type="hidden" name="idItem" value="<?= $item['idItems'] ?>" />
+                    <input type="text" name="commentaire" placeholder="Ajouter un commentaire" class="comment-input">
+                    <button type="submit" name="addComment" class="comment-send">Envoyer</button>
+                </form>
+
+            </div>
+
 
         </div>
 
     </div>
 
-
+    <?php var_dump($_SESSION['user']) ?>
 </main>
 
 
@@ -203,12 +213,13 @@ require 'partials/header.php';
         border: none;
         cursor: pointer;
         padding: 0;
- 
+
     }
+
     .comment-garbage-btn img {
         width: 40px;
         height: 40px;
- 
+
     }
 
     .comment-section {
