@@ -34,7 +34,15 @@ if (isset($_SESSION['user']['idJoueurs']) && isset($_SESSION['current_difficulte
     $diff = getDifficulte($pdo, $enigmeId); 
     $difficulte = $diff['difficulte'];     
 
-repondreEnigme($pdo, $joueurId, $difficulte, $reponseId);
+$vieRestante = repondreEnigme($pdo, $joueurId, $difficulte, $reponseId);
+
+if ($vieRestante <= 0) {
+    $_SESSION['vie_message'] = "Vous devez manger, vous n'avez plus de vie !";
+    $_SESSION['plus_de_vie'] = true;
+} else {
+    unset($_SESSION['plus_de_vie']);
+}
+
 
 
 }
