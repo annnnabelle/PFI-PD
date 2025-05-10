@@ -38,42 +38,42 @@ require 'partials/header.php';
                     </div>
                 </div>
                 <div class="interaction-row">
-                <div class="eval-stars">
-                    <?php foreach (array_reverse($evalStars, true) as $star => $percentage) { ?>
-                        <div><?= $star ?> stars: <?= $percentage ?>%</div>
-                    <?php } ?>
-                </div>
-                <?php if (!empty($_SESSION['user'])) { ?>
-                    <form method="GET" class="addToCart">
-                        <div>
-                            <div class="cart-header">
-                                <img src="public/img/Cart.png" class="cart-icon">
-                                <div class="cart-info">
-                                    <div class="qty-row">
-                                        <span>Quantité: </span>
-                                        <select name="qty" id="quantity" onchange="updateTotalPrice()">
-                                            <?php for ($i = 0; $i <= $item['quantite']; $i++) { ?>
-                                                <option value="<?= $i ?>"><?= $i ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                    <div class="gold-row">
-                                        <span>Prix: </span>
-                                        <span id="total-price"><?= $item['prix'] ?></span>
+                    <div class="eval-stars">
+                        <?php foreach (array_reverse($evalStars, true) as $star => $percentage) { ?>
+                            <div><?= $star ?> stars: <?= $percentage ?>%</div>
+                        <?php } ?>
+                    </div>
+                    <?php if (!empty($_SESSION['user'])) { ?>
+                        <form method="GET" class="addToCart">
+                            <div>
+                                <div class="cart-header">
+                                    <img src="public/img/Cart.png" class="cart-icon">
+                                    <div class="cart-info">
+                                        <div class="qty-row">
+                                            <span>Quantité: </span>
+                                            <select name="qty" id="quantity" onchange="updateTotalPrice()">
+                                                <?php for ($i = 0; $i <= $item['quantite']; $i++) { ?>
+                                                    <option value="<?= $i ?>"><?= $i ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        <div class="gold-row">
+                                            <span>Prix: </span>
+                                            <span id="total-price"><?= $item['prix'] ?></span>
+                                        </div>
                                     </div>
                                 </div>
+                                <button type="submit" name="addToCart" class="add-button">Ajouté au panier</button>
                             </div>
-                            <button type="submit" name="addToCart" class="add-button">Ajouté au panier</button>
-                        </div>
-                        <input type="hidden" name="quantityAdded" value="<?= $item['idItems'] ?>" />
-                        <input type="hidden" name="idItem" value="<?= $item['idItems'] ?>" />
-                    </form>
-                <?php } ?>
+                            <input type="hidden" name="quantityAdded" value="<?= $item['idItems'] ?>" />
+                            <input type="hidden" name="idItem" value="<?= $item['idItems'] ?>" />
+                        </form>
+                    <?php } ?>
+                </div>
             </div>
-            </div>
-            
+
         </div>
-        
+
 
 
         <div class="comment-section">
@@ -84,28 +84,27 @@ require 'partials/header.php';
 
                     <div class="comment-container">
                         <div class="comment-header">
-                            
+
                             <span class="comment-user">User: <?= $comment['alias'] ?></span>
-                            
+
                             <div class="comment-header">
                                 <span class="comment-note"><?= $comment['note'] ?></span>
                                 <div class="badge"></div>
-                                
+
                             </div>
                         </div>
 
                         <div class="comment"><?= $comment['commentaire'] ?></div>
-                                 <form method="post" class="delete-form">
-                <button type="submit" class="garbage-btn" name="Supprimer" value="<?= $comment['idEvaluations'] ?>">
-                    <img src="/public/img/Garbage_can.png" alt="Delete">
-                </button>
-            </form>
-                            
+                        <form method="post">
+                            <button type="submit" class="comment-garbage-btn" name="Supprimer"
+                                value="<?= $comment['idEvaluations'] ?>">
+                                <img src="/public/img/Garbage_can.png" alt="Delete">
+                            </button>
 
                     </div>
-                    
-                            
-                              
+
+
+
 
                 <?php } ?>
             </div>
@@ -196,6 +195,15 @@ require 'partials/header.php';
 </script>
 
 <style>
+    .comment-garbage-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+    }
+
     .comment-section {
         background: rgb(219, 244, 255);
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
@@ -231,16 +239,20 @@ require 'partials/header.php';
     }
 
     .interaction-row {
-    display: flex;
-    gap: 30px; /* Space between stars and cart */
-    align-items: flex-start; /* Align them from the top */
-    margin-top: 20px; /* Optional: spacing from above content */
-}
+        display: flex;
+        gap: 30px;
+        /* Space between stars and cart */
+        align-items: flex-start;
+        /* Align them from the top */
+        margin-top: 20px;
+        /* Optional: spacing from above content */
+    }
 
-.eval-stars {
-    min-width: 150px; /* Optional: prevents shrinking */
-    font-size: 40px;
-}
+    .eval-stars {
+        min-width: 150px;
+        /* Optional: prevents shrinking */
+        font-size: 40px;
+    }
 
     .comment-input {
         flex: 10;
@@ -350,27 +362,27 @@ require 'partials/header.php';
 
 
     @media (max-width: 768px) {
-        .comment-section{
+        .comment-section {
             flex-direction: column;
             width: auto;
         }
+
         .comment-section-header {
             font-size: 30px;
         }
+
         .detail-main {
             flex-direction: column;
             align-items: center;
             width: 90%;
-            margin:5px auto
+            margin: 5px auto
         }
+
         .comment-form {
             flex-direction: column;
             align-items: stretch;
         }
     }
-
-
-
 </style>
 
 <?php require 'partials/footer.php'; ?>
