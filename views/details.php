@@ -145,7 +145,6 @@ require 'partials/header.php';
 
     </div>
 
-    <?php var_dump($_SESSION['user']) ?>
 </main>
 
 
