@@ -157,14 +157,19 @@ require 'partials/header.php';
     }
     updateTotalPrice();
 
-
-
-
     //Rating system
     const chickenRating = document.querySelector('.chicken-rating');
-    const chickens = document.querySelectorAll('.chicken');
+    const chickens = chickenRating.querySelectorAll('.chicken'); // Corrected: Select chickens only within the chickenRating element
     const ratingInput = document.getElementById('submit-rating');
     let selectedRating = 0;
+
+    const darkChickenSrc = '/public/img/darkChicken.png';
+    const lightChickenSrc = '/public/img/lightChicken.png';
+
+    // Set initial state for all rating chickens to dark (though HTML src should already be dark)
+    chickens.forEach(chicken => {
+        chicken.src = darkChickenSrc;
+    });
 
     chickenRating.addEventListener('mouseover', (event) => {
         if (event.target.classList.contains('chicken')) {
@@ -172,18 +177,21 @@ require 'partials/header.php';
 
             chickens.forEach((chicken, index) => {
                 if (index + 1 <= hoveredIndex) {
-                    chicken.classList.add('bright');
-                } else if (index + 1 > selectedRating) {
-                    chicken.classList.remove('bright');
+                    chicken.src = lightChickenSrc;
+                } else if (index + 1 > selectedRating) { // Only darken those not part of current selection
+                    chicken.src = darkChickenSrc;
                 }
+                // Chickens part of selectedRating but beyond hoveredIndex remain light (their src won't be changed here if they were already light)
             });
         }
     });
 
     chickenRating.addEventListener('mouseleave', () => {
         chickens.forEach((chicken, index) => {
-            if (index + 1 > selectedRating) {
-                chicken.classList.remove('bright');
+            if (index + 1 <= selectedRating) {
+                chicken.src = lightChickenSrc;
+            } else {
+                chicken.src = darkChickenSrc;
             }
         });
     });
@@ -192,13 +200,13 @@ require 'partials/header.php';
         if (event.target.classList.contains('chicken')) {
             selectedRating = parseInt(event.target.dataset.index);
             ratingInput.value = selectedRating;
-            console.log('Selected rating:', selectedRating);
+            // console.log('Selected rating:', selectedRating); // Optional: for debugging
 
             chickens.forEach((chicken, index) => {
                 if (index + 1 <= selectedRating) {
-                    chicken.classList.add('bright');
+                    chicken.src = lightChickenSrc;
                 } else {
-                    chicken.classList.remove('bright');
+                    chicken.src = darkChickenSrc;
                 }
             });
         }
