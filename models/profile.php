@@ -4,7 +4,7 @@ function ModifierProfile(PDO $pdo, $alias, $nom, $prenom, $mot_de_passe)
 {
     try {
         if ($mot_de_passe !== null) {
-            $stmt = $pdo->prepare('CALL ModifierProfile(:idJoueur, :nom, :prenom, :mot_de_passe);');
+            $stmt = $pdo->prepare('CALL modifierProfil(:idJoueur, :nom, :prenom, :mot_de_passe);');
         } else {
             $stmt = $pdo->prepare('CALL ModifierProfileSansMDP(:idJoueur, :nom, :prenom);');
         }

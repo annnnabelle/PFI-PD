@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $mot_de_passe = !empty($_POST['mot_de_passe']) 
-        ? password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT) 
+        ? $_POST['mot_de_passe']
         : null;
 
     $success = ModifierProfile($pdo, $alias, $nom, $prenom, $mot_de_passe);
